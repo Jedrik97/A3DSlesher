@@ -13,13 +13,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenject-Editor", "Zenject-E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenject-IntegrationTests", "Zenject-IntegrationTests.csproj", "{5153e688-6f37-1596-f479-2fa5b94f6140}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{15a5672e-a18b-9b4f-b9dd-d191c9dbd479}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenject-TestFramework", "Zenject-TestFramework.csproj", "{cb8ebbc8-4313-0aa0-a6ee-330a36ae3e14}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{4713d8eb-3d27-9294-95ae-f9b7bd45d9a3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenject-PoolMonitor-Editor", "Zenject-PoolMonitor-Editor.csproj", "{afc0d673-b70f-e9cf-5dd4-9875824c17a1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{15a5672e-a18b-9b4f-b9dd-d191c9dbd479}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,14 +38,14 @@ Global
 		{e62faa61-b76d-4686-cccc-6a5fc0d283d4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5153e688-6f37-1596-f479-2fa5b94f6140}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5153e688-6f37-1596-f479-2fa5b94f6140}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15a5672e-a18b-9b4f-b9dd-d191c9dbd479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15a5672e-a18b-9b4f-b9dd-d191c9dbd479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{cb8ebbc8-4313-0aa0-a6ee-330a36ae3e14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{cb8ebbc8-4313-0aa0-a6ee-330a36ae3e14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4713d8eb-3d27-9294-95ae-f9b7bd45d9a3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4713d8eb-3d27-9294-95ae-f9b7bd45d9a3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{afc0d673-b70f-e9cf-5dd4-9875824c17a1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{afc0d673-b70f-e9cf-5dd4-9875824c17a1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{15a5672e-a18b-9b4f-b9dd-d191c9dbd479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{15a5672e-a18b-9b4f-b9dd-d191c9dbd479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
