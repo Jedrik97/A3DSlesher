@@ -900,9 +900,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1261968448497977942, guid: 28a83f6415b9ce5488ac7bb9dab2308d, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1261968448497977942, guid: 28a83f6415b9ce5488ac7bb9dab2308d, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 1433377220257069248, guid: 28a83f6415b9ce5488ac7bb9dab2308d, type: 3}
       propertyPath: m_Name
       value: LoadingCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352940790453517024, guid: 28a83f6415b9ce5488ac7bb9dab2308d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3716927546799268954, guid: 28a83f6415b9ce5488ac7bb9dab2308d, type: 3}
+      propertyPath: m_Name
+      value: LoadingSlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480798350584446900, guid: 28a83f6415b9ce5488ac7bb9dab2308d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911401052674262136, guid: 28a83f6415b9ce5488ac7bb9dab2308d, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911401052674262136, guid: 28a83f6415b9ce5488ac7bb9dab2308d, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911401052674262136, guid: 28a83f6415b9ce5488ac7bb9dab2308d, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911401052674262136, guid: 28a83f6415b9ce5488ac7bb9dab2308d, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 8981984488000069320, guid: 28a83f6415b9ce5488ac7bb9dab2308d, type: 3}
       propertyPath: m_Pivot.x
@@ -934,6 +970,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8981984488000069320, guid: 28a83f6415b9ce5488ac7bb9dab2308d, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981984488000069320, guid: 28a83f6415b9ce5488ac7bb9dab2308d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981984488000069320, guid: 28a83f6415b9ce5488ac7bb9dab2308d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981984488000069320, guid: 28a83f6415b9ce5488ac7bb9dab2308d, type: 3}
+      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8981984488000069320, guid: 28a83f6415b9ce5488ac7bb9dab2308d, type: 3}

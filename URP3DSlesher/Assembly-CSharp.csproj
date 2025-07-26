@@ -487,6 +487,9 @@
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.nuget.newtonsoft-json@74deb55db2a0\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.42f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
     </Reference>
@@ -859,6 +862,9 @@
     <Reference Include="UnityEditor.UI">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Addressables.Editor">
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Searcher.Editor">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
     </Reference>
@@ -873,6 +879,9 @@
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime.Shared">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.Shared.dll</HintPath>
@@ -901,17 +910,26 @@
     <Reference Include="Unity.Multiplayer.Center.Editor">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Multiplayer.Center.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Mathematics.Editor">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.GPUDriven.Runtime">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.GPUDriven.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline">
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Collections">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
     </Reference>
     <Reference Include="PPv2URPConverters">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Addressables">
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rendering.LightTransport.Editor">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Rendering.LightTransport.Editor.dll</HintPath>
@@ -927,6 +945,9 @@
     </Reference>
     <Reference Include="Unity.Collections.Editor">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Collections.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Profiling.Core">
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Profiling.Core.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
@@ -979,6 +1000,9 @@
     <Reference Include="Unity.Burst.Editor">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Localization.Editor">
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Localization.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Burst">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
     </Reference>
@@ -993,6 +1017,9 @@
     </Reference>
     <Reference Include="Unity.Rendering.LightTransport.Runtime">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Rendering.LightTransport.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Localization">
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Localization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InputSystem">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
