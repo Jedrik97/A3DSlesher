@@ -17,7 +17,23 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 2800bc9b942e151459bf8040ebd258e0, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 7742353408
+    m_Localized: New Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107055083520
+    m_Localized: "Load game\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1902858924032
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38052986286080
+    m_Localized: New Game
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -234,3 +234,19 @@ Received Import Request.
 Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Electronic Highway Sign SDF.asset using Guid(dc36b3fdc14f47ebb36fd484a67e268a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3c7d79ac7453663863ad26ac2c636ef4') in 0.7573171 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
 
+========================================================================
+Received Import Request.
+  Time since last request: 9320.776824 seconds.
+  path: Assets/Localization/UI_Texts_en.asset
+  artifactKey: Guid(3498fae1ef9140c4ab6d0e62227c198e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Localization/UI_Texts_en.asset using Guid(3498fae1ef9140c4ab6d0e62227c198e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c76cda39c35f5709c56ad3a11a4b88ec') in 0.0482099 seconds
+Number of updated asset objects reloaded before import = 1Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000438 seconds.
+  path: Assets/Localization/UI_Texts_ru.asset
+  artifactKey: Guid(d3ba051e83ffdda4bb16494babfc0353) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Localization/UI_Texts_ru.asset using Guid(d3ba051e83ffdda4bb16494babfc0353) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e7fdb934b687253965db4151c4b8deda') in 0.0021832 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+

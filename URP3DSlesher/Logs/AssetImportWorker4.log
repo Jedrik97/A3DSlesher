@@ -186,3 +186,11 @@ Unloading 7530 unused Assets / (7.0 MB). Loaded Objects now: 8210.
 Memory consumption went from 175.1 MB to 168.1 MB.
 Total: 17.873200 ms (FindLiveObjects: 1.673800 ms CreateObjectMapping: 2.350100 ms MarkObjects: 9.333400 ms  DeleteObjects: 4.514500 ms)
 
+========================================================================
+Received Import Request.
+  Time since last request: 40113.390613 seconds.
+  path: Assets/Localization/UI_Texts Shared Data.asset
+  artifactKey: Guid(2800bc9b942e151459bf8040ebd258e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Localization/UI_Texts Shared Data.asset using Guid(2800bc9b942e151459bf8040ebd258e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0f35197531d839c2231f5fee4e501649') in 0.2016401 seconds
+Number of updated asset objects reloaded before import = 2Number of asset objects unloaded after import = 1
+
