@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 306}
   m_MaxSize: {x: 10000, y: 10000}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 42
+  controlID: 104
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 43
+  controlID: 105
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -401,7 +401,7 @@ MonoBehaviour:
       height: 879.4839
     m_MinimalGUI: 1
   m_defaultScale: 0.6458333
-  m_LastWindowPixelSize: {x: 1240, y: 736.25}
+  m_LastWindowPixelSize: {x: 992, y: 589}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -447,23 +447,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 68e7ffff
-      m_LastClickedID: -6296
-      m_ExpandedIDs: 1afbffff48be0000
+      m_SelectedIDs: d0c10000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 1afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: EnemyBossLocation
-        m_OriginalName: EnemyBossLocation
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -12378
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
         m_ClientGUIView: {fileID: 9}
@@ -818,7 +818,7 @@ MonoBehaviour:
       sizeOverridden: 0
     - dockPosition: 0
       containerId: Floating
-      displayed: 1
+      displayed: 0
       id: Terrain Tools
       index: 0
       contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":true,"m_FloatingSnapOffset":{"x":-190.39996337890626,"y":-44.0009765625},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":3,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
@@ -1167,7 +1167,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 151.2418, y: -135.92972, z: 131.27594}
     speed: 2
-    m_Value: {x: 151.2418, y: -135.92972, z: 131.27594}
+    m_Value: {x: 0.17745145, y: 0.1545595, z: 0.09503334}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1215,11 +1215,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.3735357, y: -0.39602757, z: 0.18057331, w: -0.8192019}
     speed: 2
-    m_Value: {x: -0.37373996, y: -0.39503136, z: 0.18011907, w: -0.8196498}
+    m_Value: {x: -0.007304015, y: -0.97681785, z: 0.21127617, w: -0.0337043}
   m_Size:
     m_Target: 120.678894
     speed: 2
-    m_Value: 115.48219
+    m_Value: 1.0478792
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1372,7 +1372,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Characters
+    - Assets/Characters/Armored_Sentinel_fbx/Armored_Sentinel
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1382,16 +1382,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 62
   m_LastFolders:
-  - Assets/Characters
+  - Assets/Characters/Armored_Sentinel_fbx/Armored_Sentinel
   m_LastFoldersGridSize: 62
   m_LastProjectPath: D:\Slesher\3DSlesher\URP3DSlesher
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 5cc30000
-    m_LastClickedID: 50012
-    m_ExpandedIDs: 0000000006bf000008bf00000abf00002eea0000c2ea000000ca9a3b
+    scrollPos: {x: 0, y: 2.5}
+    m_SelectedIDs: d4c10000
+    m_LastClickedID: 49620
+    m_ExpandedIDs: 000000002ebf000030bf000032bf000034bf000036bf000078c10000e0c1000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1420,7 +1420,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000006bf000008bf00000abf0000
+    m_ExpandedIDs: 000000002ebf000030bf000032bf000034bf000036bf0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1448,8 +1448,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000003002007c3401002e5101001c4e0100420b0100500b0100b60c0100c80c0100da0c0100de0c0100020d0100120d0100220d0100d20a0100d80a0100f40a0100720b0100240b0100460b0100800b0100860b01004c0b0100760e0100ce1201005c0c01007c0c010066eb00008c1601008616010060260100162701007e260100562701003e270100d0250100d6250100dc250100e225010030250100c40f0100c00f0100b00f0100a40f01009c0f0100d40e0100c80e0100ee0e0100dc0e010060ad010064ad01005cad010036ad010018160100061601000251010070df01008a1f0100961f0100a21f0100ae1f01005c1401003c140100b21401008c1401007a14010048140100261401009a1401006814010042140100fc9c01007ef701009e0d02002a0d0200780d0200041301003a830100b2170100be17010052170100581701005e170100d8f80200b68a010016150100f414010078f50100801601003215010066150100b4280100d0280100d4280100de28010060170100c0170100ba17010052160100ca160100c616010090160100a0160100f8fa0000442201009c4301004e120400561204005e120400621204006e1204007212040026170100f0b80100b45a0100e01e01008a420100504201000000000050220100c8220100c42201008e220100b4cf0000
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c6230000003002007c3401002e5101001c4e0100420b0100500b0100b60c0100c80c0100da0c0100de0c0100020d0100120d0100220d0100d20a0100d80a0100f40a0100720b0100240b0100460b0100800b0100860b01004c0b0100760e0100ce1201005c0c01007c0c010066eb00008c1601008616010060260100162701007e260100562701003e270100d0250100d6250100dc250100e225010030250100c40f0100c00f0100b00f0100a40f01009c0f0100d40e0100c80e0100ee0e0100dc0e010060ad010064ad01005cad010036ad010018160100061601000251010070df01008a1f0100961f0100a21f0100ae1f01005c1401003c140100b21401008c1401007a14010048140100261401009a1401006814010042140100fc9c01007ef701009e0d02002a0d0200780d0200041301003a830100b2170100be17010052170100581701005e170100d8f80200b68a010016150100f414010078f50100801601003215010066150100b4280100d0280100d4280100de28010060170100c0170100ba17010052160100ca160100c616010090160100a0160100f8fa0000442201009c4301004e120400561204005e120400621204006e1204007212040026170100f0b80100b45a0100e01e01008a420100504201000000000050220100c8220100c42201008e220100b4cf0000d0c10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1500,9 +1500,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 553.60004
+    y: 428.80002
     width: 1119.8
-    height: 224.4
+    height: 349.19998
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
