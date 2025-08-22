@@ -15,7 +15,7 @@ C:/Users/User794/Documents/My Games/A3DSlesher/URP3DSlesher
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60527
+62768
 -job-worker-count
 7
 -background-job-worker-count
@@ -59,12 +59,12 @@ C:/Users/User794/Documents/My Games/A3DSlesher/URP3DSlesher
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [6844]  Target information:
+Player connection [18328]  Target information:
 
-Player connection [6844]  * "[IP] 192.168.200.232 [Port] 0 [Flags] 2 [Guid] 2943953723 [EditorId] 2943953723 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-FPB70SL) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [18328]  * "[IP] 192.168.200.232 [Port] 0 [Flags] 2 [Guid] 4214320130 [EditorId] 4214320130 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-FPB70SL) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [6844] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [6844] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [18328] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [18328] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -76,7 +76,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 2.29 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 3.88 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.42f1 (feb9a7235030)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.42f1-x86_64/Editor/Data/Resources/UnitySubsystems
@@ -92,45 +92,45 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.42f1-x86_64/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.42f1-x86_64/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.42f1-x86_64/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56196
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56872
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.42f1-x86_64/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Trying to register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.42f1-x86_64/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll (that doesn't exist). Retrying without overrides.
 Platform support module is not available: C:/Program Files/Unity/Hub/Editor/6000.0.42f1-x86_64/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Registered in 0.003485 seconds.
-- Loaded All Assemblies, in  0.591 seconds
+Registered in 0.003719 seconds.
+- Loaded All Assemblies, in  0.488 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.485 seconds
-Domain Reload Profiling: 1073ms
-	BeginReloadAssembly (200ms)
+- Finished resetting the current domain, in  0.329 seconds
+Domain Reload Profiling: 815ms
+	BeginReloadAssembly (180ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (53ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (67ms)
-	LoadAllAssembliesAndSetupDomain (252ms)
-		LoadAssemblies (195ms)
+	RebuildCommonClasses (37ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (58ms)
+	LoadAllAssembliesAndSetupDomain (199ms)
+		LoadAssemblies (180ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (248ms)
-			TypeCache.Refresh (246ms)
-				TypeCache.ScanAssembly (200ms)
+		AnalyzeDomain (193ms)
+			TypeCache.Refresh (190ms)
+				TypeCache.ScanAssembly (160ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (485ms)
+	FinalizeReload (329ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (416ms)
+		SetupLoadedEditorAssemblies (283ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (34ms)
-			SetLoadedEditorAssemblies (8ms)
-			BeforeProcessingInitializeOnLoad (78ms)
-			ProcessInitializeOnLoadAttributes (224ms)
-			ProcessInitializeOnLoadMethodAttributes (71ms)
+			InitializePlatformSupportModulesInManaged (23ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (56ms)
+			ProcessInitializeOnLoadAttributes (150ms)
+			ProcessInitializeOnLoadMethodAttributes (49ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -140,80 +140,148 @@ Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  1.425 seconds
-Refreshing native plugins compatible for Editor in 1.10 ms, found 3 plugins.
+- Loaded All Assemblies, in  1.141 seconds
+Refreshing native plugins compatible for Editor in 1.93 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.089 seconds
-Domain Reload Profiling: 2509ms
-	BeginReloadAssembly (259ms)
+- Finished resetting the current domain, in  0.890 seconds
+Domain Reload Profiling: 2026ms
+	BeginReloadAssembly (204ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (7ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (61ms)
-	RebuildCommonClasses (54ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (51ms)
-	LoadAllAssembliesAndSetupDomain (1038ms)
-		LoadAssemblies (652ms)
+		CreateAndSetChildDomain (40ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (37ms)
+	LoadAllAssembliesAndSetupDomain (851ms)
+		LoadAssemblies (559ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (534ms)
-			TypeCache.Refresh (418ms)
-				TypeCache.ScanAssembly (329ms)
-			BuildScriptInfoCaches (97ms)
-			ResolveRequiredComponents (15ms)
-	FinalizeReload (1090ms)
+		AnalyzeDomain (420ms)
+			TypeCache.Refresh (324ms)
+				TypeCache.ScanAssembly (258ms)
+			BuildScriptInfoCaches (78ms)
+			ResolveRequiredComponents (14ms)
+	FinalizeReload (891ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (877ms)
+		SetupLoadedEditorAssemblies (712ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (3ms)
-			SetLoadedEditorAssemblies (9ms)
-			BeforeProcessingInitializeOnLoad (184ms)
-			ProcessInitializeOnLoadAttributes (563ms)
-			ProcessInitializeOnLoadMethodAttributes (112ms)
-			AfterProcessingInitializeOnLoad (6ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (142ms)
+			ProcessInitializeOnLoadAttributes (455ms)
+			ProcessInitializeOnLoadMethodAttributes (103ms)
+			AfterProcessingInitializeOnLoad (4ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 1.28 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.11 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 243 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 7512 unused Assets / (5.5 MB). Loaded Objects now: 8245.
-Memory consumption went from 179.1 MB to 173.6 MB.
-Total: 22.544400 ms (FindLiveObjects: 3.275400 ms CreateObjectMapping: 2.074200 ms MarkObjects: 10.764800 ms  DeleteObjects: 6.427600 ms)
+Memory consumption went from 181.0 MB to 175.5 MB.
+Total: 15.830500 ms (FindLiveObjects: 1.549800 ms CreateObjectMapping: 0.642100 ms MarkObjects: 8.872300 ms  DeleteObjects: 4.765100 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 373736.074518 seconds.
-  path: Assets/Characters/Pro Melee Axe Pack/Warior With Blade.prefab
-  artifactKey: Guid(6a91a28fc8a44ed4186e6c8f27211539) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Pro Melee Axe Pack/Warior With Blade.prefab using Guid(6a91a28fc8a44ed4186e6c8f27211539) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '39a52142753c61fcc984bdcb8a1119f3') in 0.7404976 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 101
+  Time since last request: 257886.044052 seconds.
+  path: Assets/Characters/Warrior/sheath sword 1.fbx
+  artifactKey: Guid(315f4c6eab1435948b648c11ea156aae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/sheath sword 1.fbx using Guid(315f4c6eab1435948b648c11ea156aae) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '01eb44b13508d79a4b88d0a2b5d805ed') in 0.0523945 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.694951 seconds.
-  path: Assets/Characters/Pro Melee Axe Pack/Warior With Blade.prefab
-  artifactKey: Guid(6a91a28fc8a44ed4186e6c8f27211539) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Pro Melee Axe Pack/Warior With Blade.prefab using Guid(6a91a28fc8a44ed4186e6c8f27211539) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd4ac4679a551cc5490dd949dae1582c1') in 0.0353359 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+  Time since last request: 0.000028 seconds.
+  path: Assets/Characters/Warrior/slash (2).fbx
+  artifactKey: Guid(0d618d9ee3e6513469b5eb01a925a9dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/slash (2).fbx using Guid(0d618d9ee3e6513469b5eb01a925a9dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8d7d77874efbc5bdcb4b33b5ac58a15d') in 0.0072767 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
 
 ========================================================================
 Received Import Request.
-  Time since last request: 32.927712 seconds.
-  path: Assets/Characters/Pro Melee Axe Pack/Warior.fbx
-  artifactKey: Guid(1f93afb6d16660d4084abc239b5eb7fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Pro Melee Axe Pack/Warior.fbx using Guid(1f93afb6d16660d4084abc239b5eb7fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c3a453126836db6fcad7b41510ae7605') in 0.1085211 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 103
+  Time since last request: 0.000019 seconds.
+  path: Assets/Characters/Warrior/Attack1.fbx
+  artifactKey: Guid(18b5f5082dcbc194eb2eb16fe8a9c4d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/Attack1.fbx using Guid(18b5f5082dcbc194eb2eb16fe8a9c4d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0139442f51b4d6818f5f528ef32e585c') in 0.0067891 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
 
 ========================================================================
 Received Import Request.
-  Time since last request: 182.450111 seconds.
-  path: Assets/Characters/Pro Melee Axe Pack/WariorWithSword.prefab
-  artifactKey: Guid(34a1f12752f5c99469b346f5185be084) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Pro Melee Axe Pack/WariorWithSword.prefab using Guid(34a1f12752f5c99469b346f5185be084) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3dc1add4e27dfeea6d3ffeab17b7bfcb') in 0.0674066 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 101
+  Time since last request: 0.000015 seconds.
+  path: Assets/Characters/Warrior/Run Left.fbx
+  artifactKey: Guid(8a3bac3c5dbade74284925530de305a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/Run Left.fbx using Guid(8a3bac3c5dbade74284925530de305a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4989146332700e8d602b80daccec1369') in 0.0045243 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Characters/Warrior/attack.fbx
+  artifactKey: Guid(88c0c6469557ec646ab5b850638cfdd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/attack.fbx using Guid(88c0c6469557ec646ab5b850638cfdd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6ca1d9e649eea2a8cf6cbe41ada1b89a') in 0.0051292 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Characters/Warrior/180 turn (2).fbx
+  artifactKey: Guid(62755f53abd2d144f9e65c3f9ec5df32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/180 turn (2).fbx using Guid(62755f53abd2d144f9e65c3f9ec5df32) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd188db029e1d865086c1c5c48e9cf1df') in 0.0051513 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Characters/Warrior/Walk Forward.fbx
+  artifactKey: Guid(13765183c6f05ea469c5e02f78a71044) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/Walk Forward.fbx using Guid(13765183c6f05ea469c5e02f78a71044) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b963d99ee187d753f95384391229c1b6') in 0.005356 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Characters/Warrior/run (2).fbx
+  artifactKey: Guid(ff6bc3d1ce3947046a1516e4e8c3e062) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/run (2).fbx using Guid(ff6bc3d1ce3947046a1516e4e8c3e062) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a68cd4023f342906214487e91f52c125') in 0.0051029 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Characters/Warrior/idle (2).fbx
+  artifactKey: Guid(d8dab5f5aa25569459e301360a9bb245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/idle (2).fbx using Guid(d8dab5f5aa25569459e301360a9bb245) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2be40feb8e222d37299cce308be6d506') in 0.0048131 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Characters/Warrior/casting (2).fbx
+  artifactKey: Guid(97b4ca2cd7574d84787e036f17edff30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/casting (2).fbx using Guid(97b4ca2cd7574d84787e036f17edff30) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '812205ed301085e06d1a38bcff5709cb') in 0.0051951 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Characters/Warrior/sword and shield slash (2).fbx
+  artifactKey: Guid(b42801b269c8e8d4aaf29a9e1913e557) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/sword and shield slash (2).fbx using Guid(b42801b269c8e8d4aaf29a9e1913e557) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0dd2f2ab6eb1d23936d32400c71eb63b') in 0.0059221 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Characters/Warrior/impact.fbx
+  artifactKey: Guid(09dc83336828dae408036e4a84cb7748) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/impact.fbx using Guid(09dc83336828dae408036e4a84cb7748) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a15b8ded95f6f10ad84f4a8921ffd229') in 0.0047932 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

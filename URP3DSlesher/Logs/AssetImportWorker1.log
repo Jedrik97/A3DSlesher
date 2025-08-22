@@ -15,7 +15,7 @@ C:/Users/User794/Documents/My Games/A3DSlesher/URP3DSlesher
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-60527
+62768
 -job-worker-count
 7
 -background-job-worker-count
@@ -59,12 +59,12 @@ C:/Users/User794/Documents/My Games/A3DSlesher/URP3DSlesher
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [24336]  Target information:
+Player connection [5192]  Target information:
 
-Player connection [24336]  * "[IP] 192.168.200.232 [Port] 0 [Flags] 2 [Guid] 577415837 [EditorId] 577415837 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-FPB70SL) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [5192]  * "[IP] 192.168.200.232 [Port] 0 [Flags] 2 [Guid] 3158322405 [EditorId] 3158322405 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-FPB70SL) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [24336] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [24336] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [5192] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [5192] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -76,7 +76,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 1.89 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 3.89 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.42f1 (feb9a7235030)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.42f1-x86_64/Editor/Data/Resources/UnitySubsystems
@@ -92,45 +92,45 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.42f1-x86_64/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.42f1-x86_64/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.42f1-x86_64/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56300
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56064
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.42f1-x86_64/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Trying to register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.42f1-x86_64/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll (that doesn't exist). Retrying without overrides.
 Platform support module is not available: C:/Program Files/Unity/Hub/Editor/6000.0.42f1-x86_64/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Registered in 0.003372 seconds.
-- Loaded All Assemblies, in  0.591 seconds
+Registered in 0.003693 seconds.
+- Loaded All Assemblies, in  0.501 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.484 seconds
-Domain Reload Profiling: 1073ms
-	BeginReloadAssembly (196ms)
+- Finished resetting the current domain, in  0.329 seconds
+Domain Reload Profiling: 829ms
+	BeginReloadAssembly (192ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (52ms)
-	RebuildNativeTypeToScriptingClass (17ms)
-	initialDomainReloadingComplete (69ms)
-	LoadAllAssembliesAndSetupDomain (254ms)
-		LoadAssemblies (191ms)
+	RebuildCommonClasses (37ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (59ms)
+	LoadAllAssembliesAndSetupDomain (200ms)
+		LoadAssemblies (189ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (250ms)
-			TypeCache.Refresh (248ms)
-				TypeCache.ScanAssembly (202ms)
+		AnalyzeDomain (194ms)
+			TypeCache.Refresh (193ms)
+				TypeCache.ScanAssembly (159ms)
 			BuildScriptInfoCaches (0ms)
-			ResolveRequiredComponents (1ms)
-	FinalizeReload (485ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (330ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (414ms)
+		SetupLoadedEditorAssemblies (283ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (33ms)
-			SetLoadedEditorAssemblies (8ms)
-			BeforeProcessingInitializeOnLoad (80ms)
-			ProcessInitializeOnLoadAttributes (218ms)
-			ProcessInitializeOnLoadMethodAttributes (75ms)
+			InitializePlatformSupportModulesInManaged (23ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (56ms)
+			ProcessInitializeOnLoadAttributes (151ms)
+			ProcessInitializeOnLoadMethodAttributes (48ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -140,56 +140,405 @@ Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  1.431 seconds
-Refreshing native plugins compatible for Editor in 0.95 ms, found 3 plugins.
+- Loaded All Assemblies, in  1.147 seconds
+Refreshing native plugins compatible for Editor in 0.77 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.101 seconds
-Domain Reload Profiling: 2526ms
-	BeginReloadAssembly (265ms)
+- Finished resetting the current domain, in  0.890 seconds
+Domain Reload Profiling: 2033ms
+	BeginReloadAssembly (213ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (8ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (60ms)
-	RebuildCommonClasses (61ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (47ms)
-	LoadAllAssembliesAndSetupDomain (1037ms)
-		LoadAssemblies (656ms)
+		CreateAndSetChildDomain (42ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (36ms)
+	LoadAllAssembliesAndSetupDomain (849ms)
+		LoadAssemblies (566ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (535ms)
-			TypeCache.Refresh (418ms)
-				TypeCache.ScanAssembly (325ms)
-			BuildScriptInfoCaches (96ms)
-			ResolveRequiredComponents (16ms)
-	FinalizeReload (1101ms)
+		AnalyzeDomain (418ms)
+			TypeCache.Refresh (319ms)
+				TypeCache.ScanAssembly (252ms)
+			BuildScriptInfoCaches (83ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (891ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (883ms)
+		SetupLoadedEditorAssemblies (716ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (7ms)
-			SetLoadedEditorAssemblies (7ms)
-			BeforeProcessingInitializeOnLoad (186ms)
-			ProcessInitializeOnLoadAttributes (561ms)
-			ProcessInitializeOnLoadMethodAttributes (116ms)
-			AfterProcessingInitializeOnLoad (5ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (142ms)
+			ProcessInitializeOnLoadAttributes (456ms)
+			ProcessInitializeOnLoadMethodAttributes (106ms)
+			AfterProcessingInitializeOnLoad (4ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 1.46 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (5ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 2.10 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 243 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7512 unused Assets / (5.4 MB). Loaded Objects now: 8245.
-Memory consumption went from 177.2 MB to 171.8 MB.
-Total: 23.282900 ms (FindLiveObjects: 3.358000 ms CreateObjectMapping: 2.467100 ms MarkObjects: 11.164400 ms  DeleteObjects: 6.291400 ms)
+Unloading 7512 unused Assets / (5.3 MB). Loaded Objects now: 8245.
+Memory consumption went from 175.3 MB to 170.0 MB.
+Total: 15.608600 ms (FindLiveObjects: 1.511300 ms CreateObjectMapping: 0.625400 ms MarkObjects: 9.113700 ms  DeleteObjects: 4.356600 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 373603.192206 seconds.
-  path: Assets/Characters/Pro Melee Axe Pack/untitled 1.fbx
-  artifactKey: Guid(53352fea150bce843a9749e972d18bef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Pro Melee Axe Pack/untitled 1.fbx using Guid(53352fea150bce843a9749e972d18bef) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fc8cf23b85530a2a6636783f90c36ea8') in 0.7437943 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 103
+  Time since last request: 257886.043213 seconds.
+  path: Assets/Characters/Warrior/power up.fbx
+  artifactKey: Guid(e0160e99fb9b3bb4f82d23b0a83479e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/power up.fbx using Guid(e0160e99fb9b3bb4f82d23b0a83479e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'aab143c996f08ac35ef143cc5b9f3fbd') in 0.0522006 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Characters/Warrior/Walk Back.fbx
+  artifactKey: Guid(05ecc8c440fe4cf4a8f91db1e8aa4177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/Walk Back.fbx using Guid(05ecc8c440fe4cf4a8f91db1e8aa4177) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1724a1572f5a79244783e5130598572f') in 0.0058846 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Characters/Warrior/idle (3).fbx
+  artifactKey: Guid(07ed81267291dec49a32f430a3552749) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/idle (3).fbx using Guid(07ed81267291dec49a32f430a3552749) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '584c728cc19b537d322855fedab6909e') in 0.0063068 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Characters/Warrior/jump (2).fbx
+  artifactKey: Guid(5deead51e5ada914a822433f1c4c04ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/jump (2).fbx using Guid(5deead51e5ada914a822433f1c4c04ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd4f9dffadbcbd46f9d66b76f33b9ca8e') in 0.0048193 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Characters/Warrior/impact (2).fbx
+  artifactKey: Guid(e14aa9db01db50c47b596be598cd10c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/impact (2).fbx using Guid(e14aa9db01db50c47b596be598cd10c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8b739760b7b82a520d8fb6851aad2a45') in 0.005281 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Characters/Warrior/turn (2).fbx
+  artifactKey: Guid(771fa4c6529e5264db734a38ed280fdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/turn (2).fbx using Guid(771fa4c6529e5264db734a38ed280fdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '85041acf0fc38f21018869e9d7e2bba6') in 0.0048043 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Characters/Warrior/kick.fbx
+  artifactKey: Guid(f7b4845d928be9540b5052af46754920) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/kick.fbx using Guid(f7b4845d928be9540b5052af46754920) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3f0663b3fec5551ab5a44d0d616248e4') in 0.0051305 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Characters/Warrior/death.fbx
+  artifactKey: Guid(d7d7660c08930254aaee9e3e91d52cf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/death.fbx using Guid(d7d7660c08930254aaee9e3e91d52cf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '21cac6874ec27bf2f607952e5d290c63') in 0.0052043 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Characters/Warrior/Walk Right.fbx
+  artifactKey: Guid(d734ded1fcd94674391077fa2dc0e0b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/Walk Right.fbx using Guid(d734ded1fcd94674391077fa2dc0e0b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '634c0a664f3ec761573d112453cb71bf') in 0.0044279 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Characters/Warrior/Walk Left.fbx
+  artifactKey: Guid(7a1720978d1901c49ab53c27ae3e6a84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/Walk Left.fbx using Guid(7a1720978d1901c49ab53c27ae3e6a84) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8f20d366d37a7d67248de1a06e8cc723') in 0.0057498 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Characters/Warrior/180 turn.fbx
+  artifactKey: Guid(b51367f84ad1d6448ba2c1d5447dcfd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/180 turn.fbx using Guid(b51367f84ad1d6448ba2c1d5447dcfd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c6869c776deaf6519a36a2149ccf7b77') in 0.0047708 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Characters/Warrior/turn.fbx
+  artifactKey: Guid(2f8b795874d28994fa1dbe32fd9f9b30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/turn.fbx using Guid(2f8b795874d28994fa1dbe32fd9f9b30) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a06bf73ef96ac0bf1fb390a5c53495e4') in 0.0050392 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 161.796923 seconds.
+  path: Assets/Characters/Warrior/Materials/Paladin_MAT.mat
+  artifactKey: Guid(5fc38a0cb8877bf438a459316b3a20c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/Materials/Paladin_MAT.mat using Guid(5fc38a0cb8877bf438a459316b3a20c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ad46814047935ac3dbe055df8544be84') in 0.5047816 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 416.215348 seconds.
+  path: Assets/Characters/Warrior/Hero.fbm/Paladin_normal.png
+  artifactKey: Guid(fdfd9caf30acd8a49a1fb6219a2dbac9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/Hero.fbm/Paladin_normal.png using Guid(fdfd9caf30acd8a49a1fb6219a2dbac9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3054dce0e376c03822f546e29c41c424') in 0.0500727 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.043264 seconds.
+  path: Assets/Characters/Warrior/Materials/Paladin_MAT.mat
+  artifactKey: Guid(5fc38a0cb8877bf438a459316b3a20c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/Materials/Paladin_MAT.mat using Guid(5fc38a0cb8877bf438a459316b3a20c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cbffe13dfc58791af04c143aa399df6d') in 0.0484827 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Characters/Warrior/Materials/Prozrachniy.mat
+  artifactKey: Guid(c38d8f543749fa246a159d0b08bb6020) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/Materials/Prozrachniy.mat using Guid(c38d8f543749fa246a159d0b08bb6020) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd55d66ee17ef3feb211db834ff857406') in 0.0281502 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.499039 seconds.
+  path: Assets/Characters/Warrior/Paladin WProp J Nordstrom.fbm/Paladin_normal.png
+  artifactKey: Guid(866bb0d12c9f73e4dbdeab4451b28732) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/Paladin WProp J Nordstrom.fbm/Paladin_normal.png using Guid(866bb0d12c9f73e4dbdeab4451b28732) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'babab6f5487f91e3b76967136f12e83e') in 0.0261903 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 9340.038413 seconds.
+  path: Assets/Characters/Knight/source/Dwarf Idle.fbx
+  artifactKey: Guid(395a1a731da9fc24c99d12c09cbfc280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Knight/source/Dwarf Idle.fbx using Guid(395a1a731da9fc24c99d12c09cbfc280) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3249a0c0a42813aacb22e89ccfbcb7ab') in 1.684461 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 302
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.785832 seconds.
+  path: Assets/Characters/Knight/textures/ID01_Metallic.png
+  artifactKey: Guid(90ac062c302ddd347a614d6b8e7d36a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Knight/textures/ID01_Metallic.png using Guid(90ac062c302ddd347a614d6b8e7d36a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '78119675d922a127db5fd89e9db16ff6') in 0.0672518 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.091604 seconds.
+  path: Assets/Characters/Knight/textures/ID01_Normal_DirectX.png
+  artifactKey: Guid(1e36fbe5e90a23c4eb0c436f4551e9a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Knight/textures/ID01_Normal_DirectX.png using Guid(1e36fbe5e90a23c4eb0c436f4551e9a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '559574154576ff616ca4bb692d07f8cd') in 0.0268648 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Characters/Knight/textures/ID02_Metallic.png
+  artifactKey: Guid(a0b33b4d459376743a75371502a17bac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Knight/textures/ID02_Metallic.png using Guid(a0b33b4d459376743a75371502a17bac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5c80c8916ffad2f5555464fa3c6aaf2e') in 0.0795226 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Characters/Knight/textures/ID03_Metallic.png
+  artifactKey: Guid(44a68d279720b45428951486427e53e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Knight/textures/ID03_Metallic.png using Guid(44a68d279720b45428951486427e53e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9e5fdd8a2d32d43163993b744ebc7d61') in 0.0364823 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Characters/Knight/textures/ID02_Mixed_AO.png
+  artifactKey: Guid(5fdd4aa2309113c45bef9565f7e64213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Knight/textures/ID02_Mixed_AO.png using Guid(5fdd4aa2309113c45bef9565f7e64213) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b46248f5af0a330488156c527af9062c') in 0.0267218 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Characters/Knight/textures/ID03_Roughness.png
+  artifactKey: Guid(6d21aeba541e3ab4ba32575652c12e7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Knight/textures/ID03_Roughness.png using Guid(6d21aeba541e3ab4ba32575652c12e7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '303e38cab6dd60560086d64f78c44942') in 0.0340919 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000116 seconds.
+  path: Assets/Characters/Knight/textures/ID03_Base_color.png
+  artifactKey: Guid(759cb2030e406a148a674ef7506ea8cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Knight/textures/ID03_Base_color.png using Guid(759cb2030e406a148a674ef7506ea8cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b309d8f1aad7ca5d071b79306899918c') in 0.0315467 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000100 seconds.
+  path: Assets/Characters/Knight/textures/ID02_alpha.png
+  artifactKey: Guid(04fe988b7fbf19546983686d4d5be9e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Knight/textures/ID02_alpha.png using Guid(04fe988b7fbf19546983686d4d5be9e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '82c671b43755acede5c84b5464050734') in 0.0309349 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.924900 seconds.
+  path: Assets/Characters/Knight/source/Materials/blinn2.mat
+  artifactKey: Guid(7e1c2ca58eb30a74d991ed756720b557) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Knight/source/Materials/blinn2.mat using Guid(7e1c2ca58eb30a74d991ed756720b557) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3d0b282e9eb1750cea3c2644f20d6dd4') in 0.031216 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000084 seconds.
+  path: Assets/Characters/Knight/source/Materials/blinn3.mat
+  artifactKey: Guid(34a74601d73d7154aaed11edd20f12c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Knight/source/Materials/blinn3.mat using Guid(34a74601d73d7154aaed11edd20f12c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '06ba9a72c655458381d8c2c0aa257226') in 0.0281628 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 1928.961652 seconds.
+  path: Assets/Characters/Knight/source/Materials/blinn2.mat
+  artifactKey: Guid(7e1c2ca58eb30a74d991ed756720b557) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Knight/source/Materials/blinn2.mat using Guid(7e1c2ca58eb30a74d991ed756720b557) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3149ec98d68bdb39f3d937b66489fac7') in 0.0866463 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 134.905960 seconds.
+  path: Assets/Characters/Knight/source/Materials/blinn2.mat
+  artifactKey: Guid(7e1c2ca58eb30a74d991ed756720b557) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Knight/source/Materials/blinn2.mat using Guid(7e1c2ca58eb30a74d991ed756720b557) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '285de271a2ccf771a7da87520b77fb91') in 0.0496265 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 39.754623 seconds.
+  path: Assets/Characters/Knight/source/Materials/blinn2.mat
+  artifactKey: Guid(7e1c2ca58eb30a74d991ed756720b557) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Knight/source/Materials/blinn2.mat using Guid(7e1c2ca58eb30a74d991ed756720b557) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '22e556542a7c8dc07b6c6a6b299bd070') in 0.0340598 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 1935.881842 seconds.
+  path: Assets/Characters/Knight/source/Materials/blinn2.mat
+  artifactKey: Guid(7e1c2ca58eb30a74d991ed756720b557) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Knight/source/Materials/blinn2.mat using Guid(7e1c2ca58eb30a74d991ed756720b557) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1dd9487735b235e9d1d29ab101a8b5e2') in 0.1723653 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000136 seconds.
+  path: Assets/Characters/Knight/source/Materials/blinn3.mat
+  artifactKey: Guid(34a74601d73d7154aaed11edd20f12c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Knight/source/Materials/blinn3.mat using Guid(34a74601d73d7154aaed11edd20f12c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '19238a243f44e2bddb387935e110fccd') in 0.0350791 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 53.762097 seconds.
+  path: Assets/Characters/Knight/source/attack.fbx
+  artifactKey: Guid(6a441492137da4144818d5a2f634957e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Knight/source/attack.fbx using Guid(6a441492137da4144818d5a2f634957e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a5b8e77c3a6a578267c77193dfa413d9') in 0.0418818 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.19 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7502 unused Assets / (4.6 MB). Loaded Objects now: 8438.
+Memory consumption went from 165.2 MB to 160.6 MB.
+Total: 244.370400 ms (FindLiveObjects: 3.118900 ms CreateObjectMapping: 0.876700 ms MarkObjects: 235.611800 ms  DeleteObjects: 4.761900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 82.087389 seconds.
+  path: Assets/Characters/Knight/source/NewMonoBehaviourScript.cs
+  artifactKey: Guid(79d6e08071c0eee409bad132028e04c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Knight/source/NewMonoBehaviourScript.cs using Guid(79d6e08071c0eee409bad132028e04c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b13692058d339859eb83198089b1a50d') in 0.0012293 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.90 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7500 unused Assets / (5.3 MB). Loaded Objects now: 8437.
+Memory consumption went from 165.2 MB to 159.9 MB.
+Total: 16.065600 ms (FindLiveObjects: 1.388600 ms CreateObjectMapping: 1.246900 ms MarkObjects: 9.954500 ms  DeleteObjects: 3.474900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  2.721 seconds
+Refreshing native plugins compatible for Editor in 2.08 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.965 seconds
+Domain Reload Profiling: 3688ms
+	BeginReloadAssembly (1423ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (183ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (1ms)
+		CreateAndSetChildDomain (763ms)
+	RebuildCommonClasses (44ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (35ms)
+	LoadAllAssembliesAndSetupDomain (1208ms)
+		LoadAssemblies (1157ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (346ms)
+			TypeCache.Refresh (47ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (267ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (966ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (740ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (121ms)
+			ProcessInitializeOnLoadAttributes (552ms)
+			ProcessInitializeOnLoadMethodAttributes (51ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (11ms)
+Refreshing native plugins compatible for Editor in 1.16 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 23 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7508 unused Assets / (5.3 MB). Loaded Objects now: 8334.
+Memory consumption went from 176.5 MB to 171.2 MB.
+Total: 15.710800 ms (FindLiveObjects: 1.458200 ms CreateObjectMapping: 0.929500 ms MarkObjects: 7.434700 ms  DeleteObjects: 5.887300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 84.909988 seconds.
+  path: Assets/Characters/Knight/source/180 turn (2).fbx
+  artifactKey: Guid(f5bca4480a6b49843bf211cac2b427ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Knight/source/180 turn (2).fbx using Guid(f5bca4480a6b49843bf211cac2b427ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5043695545e302d55f0798e527ed15b1') in 0.0509045 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
 
