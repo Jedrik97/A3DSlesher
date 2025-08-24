@@ -1,3 +1,4 @@
+/*
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -37,3 +38,4 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(currentVelocity * Time.deltaTime);
     }
 }
+*/

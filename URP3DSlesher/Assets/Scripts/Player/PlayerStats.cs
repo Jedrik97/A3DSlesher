@@ -1,3 +1,4 @@
+/*
 using UnityEngine;
 
 [System.Serializable]
@@ -7,3 +8,4 @@ public class PlayerStats : MonoBehaviour
     public int Vitality = 10;
     public int Agility = 10;
 }
+*/

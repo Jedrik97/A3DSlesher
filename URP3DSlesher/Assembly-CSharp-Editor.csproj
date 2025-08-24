@@ -866,6 +866,9 @@
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Cinemachine.Editor">
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Cinemachine.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.ResourceManager">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
     </Reference>
@@ -896,6 +899,9 @@
     <Reference Include="Unity.Multiplayer.Center.Editor">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Multiplayer.Center.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Splines">
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Splines.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.ScriptableBuildPipeline.Editor">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
     </Reference>
@@ -904,6 +910,9 @@
     </Reference>
     <Reference Include="Unity.RenderPipelines.GPUDriven.Runtime">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.GPUDriven.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Cinemachine">
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ScriptableBuildPipeline">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
@@ -925,6 +934,9 @@
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Splines.Editor">
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Splines.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
       <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
