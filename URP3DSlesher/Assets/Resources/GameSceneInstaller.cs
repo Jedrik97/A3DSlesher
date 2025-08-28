@@ -7,7 +7,7 @@ public class GameSceneInstaller : MonoInstaller
     [SerializeField] private GameObject playerPrefab;
 
     [Header("References")]
-    [SerializeField] private GameObject gameManager; // висит в сцене
+    [SerializeField] private GameManager gameManager; // компонент GameManager, висит в сцене
 
     public override void InstallBindings()
     {

@@ -74,12 +74,7 @@ public class HealthPlayerController : MonoBehaviour
     public void UseHealthPotion(float healAmount)
     {
         if (isDead) return;
-
-        bool used = _inventory.UseHealthPotion(healAmount, this);
-        if (used)
-            Heal(healAmount);
-        else
-            Debug.Log("⚠ Нет зелий!");
+        Heal(healAmount);
     }
 
     private IEnumerator RegenerateHealth()

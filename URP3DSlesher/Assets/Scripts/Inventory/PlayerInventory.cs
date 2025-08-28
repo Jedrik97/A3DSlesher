@@ -52,7 +52,10 @@ public class PlayerInventory
         {
             HealthPotions--;
             OnPotionsChanged?.Invoke(HealthPotions);
+
+            // 💊 применяем хил
             healthController.UseHealthPotion(PotionHealAmount);
+
             return true;
         }
         return false;
@@ -68,6 +71,23 @@ public class PlayerInventory
     public void SetHealthPotions(int count)
     {
         HealthPotions = Mathf.Clamp(count, 0, MaxPotions);
+        OnPotionsChanged?.Invoke(HealthPotions);
+    }
+
+    // === Saving / Loading ===
+    public void SaveToDisk()
+    {
+        PlayerPrefs.SetInt("Gold", Gold);
+        PlayerPrefs.SetInt("Potions", HealthPotions);
+        PlayerPrefs.Save();
+    }
+
+    public void LoadFromSave()
+    {
+        Gold = PlayerPrefs.GetInt("Gold", 10);
+        HealthPotions = PlayerPrefs.GetInt("Potions", 0);
+
+        OnGoldChanged?.Invoke(Gold);
         OnPotionsChanged?.Invoke(HealthPotions);
     }
 }
