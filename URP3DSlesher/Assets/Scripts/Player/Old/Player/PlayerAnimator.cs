@@ -1,5 +1,6 @@
-/*using UnityEngine;
+using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class PlayerAnimator : MonoBehaviour
 {
     private Animator animator;
@@ -8,6 +9,7 @@ public class PlayerAnimator : MonoBehaviour
     {
         PlayerMovement.OnMove += HandleMovement;
         PlayerMovement.OnJump += HandleJump;
+        PlayerMovement.OnDodge += HandleDodge;
     }
 
     private void Start()
@@ -15,27 +17,11 @@ public class PlayerAnimator : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void HandleMovement(float x, float z, bool running)
+    private void HandleMovement(float x, float z, bool isMoving)
     {
-        const float deadZone = 0.1f;
-        Vector2 input = new Vector2(x, z);
-
-        if (input.magnitude < deadZone)
-        {
-            animator.SetFloat("MoveX", 0f);
-            animator.SetFloat("MoveZ", 0f);
-        }
-        else
-        {
-            float moveZ = Mathf.Sign(z);
-
-            float moveX = running ? 1f : -1f;
-
-            animator.SetFloat("MoveX", moveX);
-            animator.SetFloat("MoveZ", moveZ);
-        }
-
-        animator.SetBool("IsJumping", false);
+        animator.SetFloat("MoveX", x);
+        animator.SetFloat("MoveZ", z);
+        animator.SetBool("IsRunning", isMoving);
     }
 
     private void HandleJump(bool isJumping)
@@ -45,11 +31,21 @@ public class PlayerAnimator : MonoBehaviour
             animator.SetBool("IsJumping", true);
             animator.SetTrigger("Jump");
         }
+        else
+        {
+            animator.SetBool("IsJumping", false);
+        }
+    }
+
+    private void HandleDodge()
+    {
+        animator.SetTrigger("Dodge");
     }
 
     private void OnDisable()
     {
         PlayerMovement.OnMove -= HandleMovement;
         PlayerMovement.OnJump -= HandleJump;
+        PlayerMovement.OnDodge -= HandleDodge;
     }
-}*/
+}
