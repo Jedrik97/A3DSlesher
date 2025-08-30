@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 306}
   m_MaxSize: {x: 10000, y: 10000}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 102
+  controlID: 129
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 103
+  controlID: 130
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 48
+  controlID: 74
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -298,8 +298,8 @@ MonoBehaviour:
     y: 0
     width: 470
     height: 941
-  m_MinSize: {x: 276, y: 76}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -329,7 +329,7 @@ MonoBehaviour:
     x: 294
     y: 79
     width: 1154
-    height: 458
+    height: 459
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -996,9 +996,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 45.839153, y: 1.3198935, z: 23.203194}
+    m_Target: {x: 43.8264, y: -0.37719858, z: 18.859644}
     speed: 2
-    m_Value: {x: 45.839153, y: 1.3198935, z: 23.203194}
+    m_Value: {x: -0.011633337, y: 1.2427571, z: -0.018740535}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1044,13 +1044,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.21521626, y: 0.5276004, z: -0.14031965, w: -0.8098081}
+    m_Target: {x: 0.085840926, y: -0.87511367, z: 0.16913784, w: 0.4454068}
     speed: 2
-    m_Value: {x: -0.21519917, y: 0.5275585, z: -0.1403085, w: -0.80974376}
+    m_Value: {x: 0.08583289, y: -0.87503165, z: 0.169122, w: 0.44536507}
   m_Size:
     m_Target: 2.7081907
     speed: 2
-    m_Value: 2.7081907
+    m_Value: 2.143131
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1123,9 +1123,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 50cd0000
       m_LastClickedID: 0
-      m_ExpandedIDs: fcfaffff
+      m_ExpandedIDs: 16fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1389,7 +1389,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/JoyStick
+    - Assets/Characters/Knight/source
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1399,16 +1399,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 62
   m_LastFolders:
-  - Assets/Scripts/JoyStick
+  - Assets/Characters/Knight/source
   m_LastFoldersGridSize: 62
   m_LastProjectPath: C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 53}
-    m_SelectedIDs: b0cd0000
-    m_LastClickedID: 52656
-    m_ExpandedIDs: 000000009ccc00009ecc0000a0cc0000a2cc0000a4cc0000a6cc0000a8cc0000accc00009ecd000000ca9a3b
+    m_SelectedIDs: 9acc0000
+    m_LastClickedID: 52378
+    m_ExpandedIDs: 0000000092cc000094cc000096cc000098cc00009acc00009ccc00009ecc0000a0cc0000a2cc000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1437,7 +1437,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009ccc00009ecc0000a0cc0000a2cc0000a4cc0000a6cc0000a8cc0000aacc0000accc0000
+    m_ExpandedIDs: 0000000092cc000094cc000096cc000098cc00009acc00009ccc00009ecc0000a0cc0000a2cc0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

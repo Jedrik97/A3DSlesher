@@ -12,9 +12,9 @@ public class GameManager : MonoBehaviour
         _inventory = inventory;
     }
 
-    private void Awake()
+    private void Start()
     {
-        // Загружаем данные
+        // к этому моменту Zenject уже сделал инъекцию
         _inventory.LoadFromSave();
     }
 
@@ -33,6 +33,6 @@ public class GameManager : MonoBehaviour
     public void ShowDeathUI()
     {
         Debug.Log("☠️ Game Over UI");
-        // Тут можно включать панель смерти
+        // тут можно включать панель смерти
     }
 }
