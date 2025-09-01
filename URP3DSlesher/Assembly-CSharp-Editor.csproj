@@ -410,62 +410,56 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.42f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.UWP.Extensions">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.42f1\Editor\Data\PlaybackEngines\MetroSupport\UnityEditor.UWP.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.Android.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.42f1\Editor\Data\PlaybackEngines\AndroidPlayer\UnityEditor.Android.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Zenject-usage">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Assets\Plugins\Zenject\Source\Usage\Zenject-usage.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Assets\Plugins\Zenject\Source\Usage\Zenject-usage.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.visualscripting@1b53f46e931b\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.visualscripting@1b53f46e931b\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.collections@56bff8827a7e\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.collections@56bff8827a7e\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.ext.nunit@60ef35ffd3cd\net40\unity-custom\nunit.framework.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.ext.nunit@60ef35ffd3cd\net40\unity-custom\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="unityplastic">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.collab-proxy@c854d1f7d97f\Lib\Editor\unityplastic.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.collab-proxy@c854d1f7d97f\Lib\Editor\unityplastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.collab-proxy@c854d1f7d97f\Lib\Editor\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.collab-proxy@c854d1f7d97f\Lib\Editor\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.collab-proxy@c854d1f7d97f\Lib\Editor\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.collab-proxy@c854d1f7d97f\Lib\Editor\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="log4netPlastic">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.collab-proxy@c854d1f7d97f\Lib\Editor\log4netPlastic.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.collab-proxy@c854d1f7d97f\Lib\Editor\log4netPlastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.IonicZip">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.visualscripting@1b53f46e931b\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.visualscripting@1b53f46e931b\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
     </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.visualscripting@1b53f46e931b\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.visualscripting@1b53f46e931b\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.nuget.newtonsoft-json@74deb55db2a0\Runtime\Newtonsoft.Json.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.visualscripting@1b53f46e931b\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.visualscripting@1b53f46e931b\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.nuget.mono-cecil@d6f9955a5d5f\Mono.Cecil.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.nuget.mono-cecil@d6f9955a5d5f\Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.42f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -849,196 +843,172 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.42f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InputSystem.ForUI">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Addressables.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Searcher.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.AI.Navigation">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Cinemachine.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Cinemachine.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ResourceManager">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Cinemachine.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime.Shared">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.Shared.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.Shared.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor.Shared">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.Shared.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.Shared.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Multiplayer.Center.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Multiplayer.Center.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Multiplayer.Center.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Splines">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Splines.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Splines.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.GPUDriven.Runtime">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.GPUDriven.Runtime.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.GPUDriven.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Cinemachine">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Cinemachine.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ScriptableBuildPipeline">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Collections">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
     </Reference>
     <Reference Include="PPv2URPConverters">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Addressables">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rendering.LightTransport.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Rendering.LightTransport.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Rendering.LightTransport.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Splines.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Splines.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Splines.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Collections.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Collections.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Profiling.Core">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Profiling.Core.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Collections.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Multiplayer.Center.Common">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Multiplayer.Center.Common.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Multiplayer.Center.Common.dll</HintPath>
     </Reference>
     <Reference Include="Unity.AI.Navigation.Updater">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.AI.Navigation.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Localization.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Localization.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow">
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rendering.LightTransport.Runtime">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Rendering.LightTransport.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Localization">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Localization.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.Rendering.LightTransport.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InputSystem">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.2D.Runtime">
-      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.2D.Runtime.dll</HintPath>
+      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.2D.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

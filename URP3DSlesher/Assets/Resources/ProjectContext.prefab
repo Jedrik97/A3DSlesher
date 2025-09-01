@@ -75,7 +75,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec3d979768af7e4f981243c0c8e9a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingCanvasPref: {fileID: 1433377220257069248, guid: 28a83f6415b9ce5488ac7bb9dab2308d, type: 3}
+  loadingCanvasPrefab: {fileID: 7641514035842913702, guid: 28a83f6415b9ce5488ac7bb9dab2308d, type: 3}
+  gameObjectBindId: LoadingCanvas
 --- !u!1 &8353023744252352946
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,4 +121,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec3d979768af7e4f981243c0c8e9a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingCanvasPref: {fileID: 1433377220257069248, guid: 28a83f6415b9ce5488ac7bb9dab2308d, type: 3}
+  loadingCanvasPrefab: {fileID: 0}
+  gameObjectBindId: LoadingCanvas

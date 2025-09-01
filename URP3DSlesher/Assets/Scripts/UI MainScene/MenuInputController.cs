@@ -1,6 +1,12 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
+// =====================================
+// Menu Input Controller (Touch-friendly)
+// Routes Button taps to UnityEvents
+// Adds optional haptics & click SFX
+// =====================================
 public class MenuInputController : MonoBehaviour
 {
     [Header("Events")]
@@ -10,11 +16,31 @@ public class MenuInputController : MonoBehaviour
     public UnityEvent onScoreClicked;
     public UnityEvent onCreatorsClicked;
     public UnityEvent onExitClicked;
+    public UnityEvent onBackClicked;
+
+    [Header("Mobile Feedback")]
+    [SerializeField] bool enableHaptics = true;
+    [SerializeField] AudioSource clickSfx;
     
-    public void StartButtonPressed() => onStartClicked?.Invoke();
-    public void LoadButtonPressed() => onLoadClicked?.Invoke();
-    public void TrainingButtonPressed() => onTrainingClicked?.Invoke();
-    public void ScoreButtonPressed() => onScoreClicked?.Invoke();
-    public void CreatorsButtonPressed() => onCreatorsClicked?.Invoke();
-    public void ExitButtonPressed() => onExitClicked?.Invoke();
+    public void StartButtonPressed()    => InvokeWithFeedback(onStartClicked);
+    public void LoadButtonPressed()     => InvokeWithFeedback(onLoadClicked);
+    public void TrainingButtonPressed() => InvokeWithFeedback(onTrainingClicked);
+    public void ScoreButtonPressed()    => InvokeWithFeedback(onScoreClicked);
+    public void CreatorsButtonPressed() => InvokeWithFeedback(onCreatorsClicked);
+    public void ExitButtonPressed()     => InvokeWithFeedback(onExitClicked);
+    public void BackButtonPressed()     => InvokeWithFeedback(onBackClicked);
+
+    void InvokeWithFeedback(UnityEvent evt)
+    {
+        if (EventSystem.current && !EventSystem.current.IsPointerOverGameObject())
+            return;
+
+        if (clickSfx && clickSfx.enabled)
+            clickSfx.Play();
+
+        if (enableHaptics)
+            Handheld.Vibrate();
+
+        evt?.Invoke();
+    }
 }

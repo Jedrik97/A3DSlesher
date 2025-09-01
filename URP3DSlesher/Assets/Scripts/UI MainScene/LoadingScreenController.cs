@@ -1,53 +1,108 @@
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LoadingScreenController : MonoBehaviour
 {
-    [Header("UI Elements")]
-    [Tooltip("Root panel of the loading screen")]
-    public GameObject panel;
-    [Tooltip("Progress bar slider (0..1)")]
-    public Slider progressBar;
-    [Tooltip("Hint text UI (optional)")]
-    public Text hintText;
+    [Header("Root")]
+    [SerializeField] GameObject loadingPanel;
+
+    [Header("UI")]
+    [SerializeField] Slider progressBar;
+    [SerializeField] Text progressText;
+    [SerializeField] Text hintText;
 
     [Header("Hints")]
-    [TextArea(1, 3)]
-    public string[] hints = {
+    [TextArea(2, 5)]
+    [SerializeField] string[] hints = {
         "Совет: Используй уклонения, чтобы избежать критического удара!",
         "Совет: После босса не забудь прокачать навыки у NPC.",
         "Совет: Ловкость увеличивает скорость атаки и шанс крита!"
     };
+    [SerializeField] bool randomHintOnShow = true;
 
-    private void Awake()
+    [Header("Timing")]
+    [Tooltip("Минимальное время показа экрана загрузки, чтобы избежать моргания")]
+    [SerializeField] float minShowTime = 1.0f;
+
+    AsyncOperation currentOp;
+    bool isLoading;
+
+    void Awake()
     {
         Hide();
     }
 
+    public bool IsLoading() => isLoading;
+
     public void Show()
     {
-        if (panel != null) panel.SetActive(true);
-        if (progressBar != null) progressBar.value = 0f;
-        if (hintText != null && hints != null && hints.Length > 0)
-            hintText.text = hints[Random.Range(0, hints.Length)];
-    }
+        if (loadingPanel) loadingPanel.SetActive(true);
+        if (progressBar) progressBar.value = 0f;
 
-    public void SetProgress(float value)
-    {
-        if (progressBar != null)
-            progressBar.value = Mathf.Clamp01(value);
+        if (hintText && randomHintOnShow && hints.Length > 0)
+            hintText.text = hints[Random.Range(0, hints.Length)];
+
+        if (progressText) progressText.text = "0%";
     }
 
     public void Hide()
     {
-        if (panel != null) panel.SetActive(false);
+        if (loadingPanel) loadingPanel.SetActive(false);
     }
 
-    public IEnumerator ShowForSeconds(float seconds)
+    public void SetHint(string text)
     {
+        if (hintText) hintText.text = text;
+    }
+
+    public void ShowAndLoad(string sceneName)
+    {
+        if (string.IsNullOrEmpty(sceneName))
+        {
+            Debug.LogWarning("[LoadingScreenController] Scene name is empty.");
+            return;
+        }
+
+        if (isLoading)
+            return;
+
         Show();
-        yield return new WaitForSeconds(seconds);
-        Hide();
+        StartCoroutine(LoadSceneAsync(sceneName));
+    }
+
+    IEnumerator LoadSceneAsync(string sceneName)
+    {
+        isLoading = true;
+
+        currentOp = SceneManager.LoadSceneAsync(sceneName);
+        if (currentOp == null)
+        {
+            isLoading = false;
+            yield break;
+        }
+
+        currentOp.allowSceneActivation = false;
+
+        float timer = 0f;
+        while (!currentOp.isDone)
+        {
+            timer += Time.deltaTime;
+            
+            float progress = Mathf.Clamp01(currentOp.progress / 0.9f);
+
+            if (progressBar)  progressBar.value = progress;
+            if (progressText) progressText.text = Mathf.RoundToInt(progress * 100f) + "%";
+
+            if (progress >= 1f && timer >= minShowTime)
+                currentOp.allowSceneActivation = true;
+
+            yield return null;
+        }
+
+        isLoading = false;
+        currentOp = null;
+        
     }
 }
