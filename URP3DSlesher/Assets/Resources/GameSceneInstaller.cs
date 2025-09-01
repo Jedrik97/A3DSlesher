@@ -11,12 +11,12 @@ public class GameSceneInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
-        // GameManager как singleton
-        Container.Bind<GameManager>().FromInstance(gameManager).AsSingle();
+        // === Inventory как сервис ===
+        Container.Bind<PlayerInventory>().AsSingle();
 
-        // Inventory берём из GameManager
-        Container.Bind<PlayerInventory>()
-            .FromMethod(ctx => gameManager.Inventory)
+        // GameManager как singleton (берём из сцены)
+        Container.Bind<GameManager>()
+            .FromInstance(gameManager)
             .AsSingle();
 
         // Player создаётся из префаба

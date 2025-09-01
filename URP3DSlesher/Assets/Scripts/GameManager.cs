@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        // к этому моменту Zenject уже сделал инъекцию
         _inventory.LoadFromSave();
     }
 

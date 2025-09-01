@@ -15,7 +15,7 @@ C:/Users/User794/Documents/My Games/A3DSlesher/URP3DSlesher
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-57452
+49390
 -job-worker-count
 7
 -background-job-worker-count
@@ -59,12 +59,12 @@ C:/Users/User794/Documents/My Games/A3DSlesher/URP3DSlesher
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [28592]  Target information:
+Player connection [12972]  Target information:
 
-Player connection [28592]  * "[IP] 192.168.200.232 [Port] 0 [Flags] 2 [Guid] 603337959 [EditorId] 603337959 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-FPB70SL) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [12972]  * "[IP] 192.168.200.232 [Port] 0 [Flags] 2 [Guid] 1791724485 [EditorId] 1791724485 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-FPB70SL) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [28592] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [28592] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [12972] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [12972] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -76,7 +76,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 1.91 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 3.70 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.42f1 (feb9a7235030)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.42f1/Editor/Data/Resources/UnitySubsystems
@@ -92,50 +92,50 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.42f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.42f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.42f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56232
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56936
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.42f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.42f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.42f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.42f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Registered in 0.010993 seconds.
-- Loaded All Assemblies, in  0.706 seconds
+Registered in 0.006290 seconds.
+- Loaded All Assemblies, in  0.974 seconds
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 376 ms
+Android Extension - Scanning For ADB Devices 333 ms
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.892 seconds
-Domain Reload Profiling: 1596ms
-	BeginReloadAssembly (262ms)
+- Finished resetting the current domain, in  0.807 seconds
+Domain Reload Profiling: 1779ms
+	BeginReloadAssembly (533ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (2ms)
+		CreateAndSetChildDomain (1ms)
 	RebuildCommonClasses (55ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (77ms)
-	LoadAllAssembliesAndSetupDomain (296ms)
-		LoadAssemblies (260ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (74ms)
+	LoadAllAssembliesAndSetupDomain (294ms)
+		LoadAssemblies (531ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
 		AnalyzeDomain (288ms)
-			TypeCache.Refresh (285ms)
-				TypeCache.ScanAssembly (239ms)
+			TypeCache.Refresh (286ms)
+				TypeCache.ScanAssembly (238ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (894ms)
+	FinalizeReload (808ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (828ms)
+		SetupLoadedEditorAssemblies (765ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (547ms)
-			SetLoadedEditorAssemblies (8ms)
-			BeforeProcessingInitializeOnLoad (60ms)
-			ProcessInitializeOnLoadAttributes (141ms)
-			ProcessInitializeOnLoadMethodAttributes (72ms)
+			InitializePlatformSupportModulesInManaged (502ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (62ms)
+			ProcessInitializeOnLoadAttributes (133ms)
+			ProcessInitializeOnLoadMethodAttributes (63ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -148,11 +148,11 @@ Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInter
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  1.314 seconds
+- Loaded All Assemblies, in  0.958 seconds
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
 'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
 'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 1.01 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.83 ms, found 3 plugins.
 Native extension for Android target not found
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
@@ -163,149 +163,328 @@ Package Manager log level set to [2]
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.054 seconds
-Domain Reload Profiling: 2363ms
-	BeginReloadAssembly (282ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (8ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (69ms)
-	RebuildCommonClasses (48ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (48ms)
-	LoadAllAssembliesAndSetupDomain (919ms)
-		LoadAssemblies (594ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (489ms)
-			TypeCache.Refresh (378ms)
-				TypeCache.ScanAssembly (294ms)
-			BuildScriptInfoCaches (91ms)
-			ResolveRequiredComponents (15ms)
-	FinalizeReload (1055ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (816ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (25ms)
-			SetLoadedEditorAssemblies (5ms)
-			BeforeProcessingInitializeOnLoad (176ms)
-			ProcessInitializeOnLoadAttributes (510ms)
-			ProcessInitializeOnLoadMethodAttributes (94ms)
-			AfterProcessingInitializeOnLoad (6ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 1.76 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 246 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7969 unused Assets / (5.5 MB). Loaded Objects now: 8724.
-Memory consumption went from 183.3 MB to 177.8 MB.
-Total: 14.392300 ms (FindLiveObjects: 1.485800 ms CreateObjectMapping: 0.993700 ms MarkObjects: 7.924200 ms  DeleteObjects: 3.987600 ms)
-
-========================================================================
-Received Prepare
-'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 2.14 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7957 unused Assets / (5.5 MB). Loaded Objects now: 8724.
-Memory consumption went from 146.6 MB to 141.1 MB.
-Total: 30.084000 ms (FindLiveObjects: 3.579500 ms CreateObjectMapping: 2.545500 ms MarkObjects: 15.023200 ms  DeleteObjects: 8.934400 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 806919.675930 seconds.
-  path: Assets/Scripts/Inventory/PlayerInventory.cs
-  artifactKey: Guid(b8cf8c6c5693a274bbd0b0fbb63eb581) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Inventory/PlayerInventory.cs using Guid(b8cf8c6c5693a274bbd0b0fbb63eb581) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '489d68883af36a7e5c90578bbdd91a21') in 0.019972 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Prepare
-'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 1.07 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7957 unused Assets / (4.9 MB). Loaded Objects now: 8726.
-Memory consumption went from 147.2 MB to 142.2 MB.
-Total: 15.782600 ms (FindLiveObjects: 1.798900 ms CreateObjectMapping: 0.973900 ms MarkObjects: 8.973500 ms  DeleteObjects: 4.035000 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 1.15 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7957 unused Assets / (5.7 MB). Loaded Objects now: 8726.
-Memory consumption went from 147.2 MB to 141.5 MB.
-Total: 17.543700 ms (FindLiveObjects: 3.102000 ms CreateObjectMapping: 1.298200 ms MarkObjects: 7.626300 ms  DeleteObjects: 5.515800 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  0.827 seconds
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
-Native extension for Android target not found
-Native extension for UWP target not found
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.693 seconds
-Domain Reload Profiling: 1519ms
+- Finished resetting the current domain, in  0.843 seconds
+Domain Reload Profiling: 1796ms
 	BeginReloadAssembly (214ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
+		DisableScriptedObjects (7ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (72ms)
-	RebuildCommonClasses (32ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (29ms)
-	LoadAllAssembliesAndSetupDomain (540ms)
-		LoadAssemblies (403ms)
+		CreateAndSetChildDomain (53ms)
+	RebuildCommonClasses (48ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (49ms)
+	LoadAllAssembliesAndSetupDomain (627ms)
+		LoadAssemblies (443ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (226ms)
-			TypeCache.Refresh (37ms)
-				TypeCache.ScanAssembly (1ms)
-			BuildScriptInfoCaches (173ms)
-			ResolveRequiredComponents (12ms)
-	FinalizeReload (694ms)
+		AnalyzeDomain (305ms)
+			TypeCache.Refresh (234ms)
+				TypeCache.ScanAssembly (184ms)
+			BuildScriptInfoCaches (57ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (844ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (494ms)
+		SetupLoadedEditorAssemblies (670ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (21ms)
-			SetLoadedEditorAssemblies (5ms)
-			BeforeProcessingInitializeOnLoad (123ms)
-			ProcessInitializeOnLoadAttributes (297ms)
-			ProcessInitializeOnLoadMethodAttributes (43ms)
-			AfterProcessingInitializeOnLoad (5ms)
+			InitializePlatformSupportModulesInManaged (18ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (125ms)
+			ProcessInitializeOnLoadAttributes (436ms)
+			ProcessInitializeOnLoadMethodAttributes (80ms)
+			AfterProcessingInitializeOnLoad (4ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (13ms)
-Refreshing native plugins compatible for Editor in 1.01 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (4ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 0.76 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 23 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7965 unused Assets / (5.2 MB). Loaded Objects now: 8743.
-Memory consumption went from 162.2 MB to 157.0 MB.
-Total: 12.123600 ms (FindLiveObjects: 1.570000 ms CreateObjectMapping: 0.926200 ms MarkObjects: 6.199200 ms  DeleteObjects: 3.427600 ms)
+Unloading 246 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7969 unused Assets / (5.9 MB). Loaded Objects now: 8724.
+Memory consumption went from 185.3 MB to 179.4 MB.
+Total: 12.468100 ms (FindLiveObjects: 1.408900 ms CreateObjectMapping: 0.767000 ms MarkObjects: 6.100300 ms  DeleteObjects: 4.190900 ms)
 
-Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 1118930.868641 seconds.
+  path: Assets/Characters/Warrior/180 turn (2).fbx
+  artifactKey: Guid(62755f53abd2d144f9e65c3f9ec5df32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/180 turn (2).fbx using Guid(62755f53abd2d144f9e65c3f9ec5df32) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '73b66783ca1594920b922a1c36ba180c') in 0.0367242 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Characters/Warrior/crouch block.fbx
+  artifactKey: Guid(a294be920e679a54e816f7720864e6c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/crouch block.fbx using Guid(a294be920e679a54e816f7720864e6c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '823676fe7c89d819257e88ad856bd002') in 0.0037714 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Characters/Warrior/power up.fbx
+  artifactKey: Guid(e0160e99fb9b3bb4f82d23b0a83479e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/power up.fbx using Guid(e0160e99fb9b3bb4f82d23b0a83479e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c15256364f4731babcd36c2c73716bd9') in 0.0041387 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Characters/Warrior/sheath sword 1.fbx
+  artifactKey: Guid(315f4c6eab1435948b648c11ea156aae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/sheath sword 1.fbx using Guid(315f4c6eab1435948b648c11ea156aae) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5cb4a2524c7047975d226b72b5059b5d') in 0.0039146 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Characters/Warrior/slash (2).fbx
+  artifactKey: Guid(0d618d9ee3e6513469b5eb01a925a9dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/slash (2).fbx using Guid(0d618d9ee3e6513469b5eb01a925a9dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8d7d77874efbc5bdcb4b33b5ac58a15d') in 0.0044187 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Characters/Warrior/attack (2).fbx
+  artifactKey: Guid(82871121dbf72434cade3547cb2d4d1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/attack (2).fbx using Guid(82871121dbf72434cade3547cb2d4d1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fbc4341fd300e000a9e8e33ef4bc5698') in 0.005471 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Characters/Warrior/sheath sword 2.fbx
+  artifactKey: Guid(b30204029a4070a47b3e1a58c37d3157) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/sheath sword 2.fbx using Guid(b30204029a4070a47b3e1a58c37d3157) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6dffd4f4f7fdd03c4aa94c6f3cd1b257') in 0.0045542 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Characters/Warrior/idle (3).fbx
+  artifactKey: Guid(07ed81267291dec49a32f430a3552749) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/idle (3).fbx using Guid(07ed81267291dec49a32f430a3552749) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3f10aba7f19881eb2e918f7daf8fd998') in 0.0037741 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Characters/Warrior/slash.fbx
+  artifactKey: Guid(18b5f5082dcbc194eb2eb16fe8a9c4d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/slash.fbx using Guid(18b5f5082dcbc194eb2eb16fe8a9c4d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd269b0cd7985632abfc6306265a17acb') in 0.0034619 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Characters/Warrior/strafe (4).fbx
+  artifactKey: Guid(eac10fb498f0eef4eb683d2e8748e9e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/strafe (4).fbx using Guid(eac10fb498f0eef4eb683d2e8748e9e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '52c3718c864dcba332a83cfa6aa59871') in 0.0038776 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Characters/Warrior/block (2).fbx
+  artifactKey: Guid(209fe520874ad0e4f88f3f746ea234c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/block (2).fbx using Guid(209fe520874ad0e4f88f3f746ea234c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f26ebecfd7abdad1499dd08c9e921c7d') in 0.0031949 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Characters/Warrior/attack.fbx
+  artifactKey: Guid(88c0c6469557ec646ab5b850638cfdd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/attack.fbx using Guid(88c0c6469557ec646ab5b850638cfdd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6f9a7b008a97be472dcd64ef7c4ba286') in 0.0033338 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Characters/Warrior/impact (2).fbx
+  artifactKey: Guid(e14aa9db01db50c47b596be598cd10c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/impact (2).fbx using Guid(e14aa9db01db50c47b596be598cd10c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8b739760b7b82a520d8fb6851aad2a45') in 0.0037342 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Characters/Warrior/slash (3).fbx
+  artifactKey: Guid(74082fa4461fe9347970698942aadb8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/slash (3).fbx using Guid(74082fa4461fe9347970698942aadb8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '755aba1c441b85f20124f47929941606') in 0.0038544 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Characters/Warrior/turn (2).fbx
+  artifactKey: Guid(771fa4c6529e5264db734a38ed280fdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/turn (2).fbx using Guid(771fa4c6529e5264db734a38ed280fdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c6744f0d3a8d4ce7d3c35a3db182570c') in 0.0046756 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Characters/Warrior/kick.fbx
+  artifactKey: Guid(f7b4845d928be9540b5052af46754920) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/kick.fbx using Guid(f7b4845d928be9540b5052af46754920) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1a15a2a4ba211ea8bcb01aa52a60243d') in 0.0039356 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Characters/Warrior/attack (3).fbx
+  artifactKey: Guid(595d400e554acbd4086f3f27e64ab4bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/attack (3).fbx using Guid(595d400e554acbd4086f3f27e64ab4bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ab407d994f495887dec5ca89be69e70f') in 0.0038899 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Characters/Warrior/crouching (2).fbx
+  artifactKey: Guid(c13539f3df417b240a6121aae3e6c2ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/crouching (2).fbx using Guid(c13539f3df417b240a6121aae3e6c2ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4fa379421d916ea14cf6025abdadb5de') in 0.0037053 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Characters/Warrior/walk.fbx
+  artifactKey: Guid(13765183c6f05ea469c5e02f78a71044) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/walk.fbx using Guid(13765183c6f05ea469c5e02f78a71044) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '03154f6da066acf0f3f2ff59d7a860c1') in 0.003512 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Characters/Warrior/slash (5).fbx
+  artifactKey: Guid(1217a5686bc32e94994f31edba97d79c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/slash (5).fbx using Guid(1217a5686bc32e94994f31edba97d79c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd4cec675aa4a00a5c335f5252193bd22') in 0.0036333 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Characters/Warrior/death.fbx
+  artifactKey: Guid(d7d7660c08930254aaee9e3e91d52cf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/death.fbx using Guid(d7d7660c08930254aaee9e3e91d52cf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e75e97a22713b48841a8c89dc175df01') in 0.0033033 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Characters/Warrior/jump.fbx
+  artifactKey: Guid(e6b41688656b96149b19e39f5fddad40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/jump.fbx using Guid(e6b41688656b96149b19e39f5fddad40) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '623cb98ad2180780c96ae8a398f79131') in 0.0031241 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Characters/Warrior/run (2).fbx
+  artifactKey: Guid(ff6bc3d1ce3947046a1516e4e8c3e062) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/run (2).fbx using Guid(ff6bc3d1ce3947046a1516e4e8c3e062) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '677d93f4eb78be795267444769892d6f') in 0.0045287 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Characters/Warrior/idle (2).fbx
+  artifactKey: Guid(d8dab5f5aa25569459e301360a9bb245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/idle (2).fbx using Guid(d8dab5f5aa25569459e301360a9bb245) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2be40feb8e222d37299cce308be6d506') in 0.0058234 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Characters/Warrior/run.fbx
+  artifactKey: Guid(e91a9826bf681564c908ba5ce2d15044) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/run.fbx using Guid(e91a9826bf681564c908ba5ce2d15044) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '48f8cec6bc70b56e8eadf9dea4b0720c') in 0.0043395 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Characters/Warrior/strafe.fbx
+  artifactKey: Guid(d734ded1fcd94674391077fa2dc0e0b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/strafe.fbx using Guid(d734ded1fcd94674391077fa2dc0e0b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '18f5a0b78d499abccd50cee810d0506d') in 0.0043568 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Characters/Warrior/crouch.fbx
+  artifactKey: Guid(8107fb86c2d9f344a969f5753a3c5380) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/crouch.fbx using Guid(8107fb86c2d9f344a969f5753a3c5380) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8bc9f2a8d5aecfe8fbfccd59e3304083') in 0.0031536 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Characters/Warrior/casting.fbx
+  artifactKey: Guid(3d780513215a8ab41b0aca35212ba9e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/casting.fbx using Guid(3d780513215a8ab41b0aca35212ba9e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0827015cd059e2f53ac19a970d429c80') in 0.0041724 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Characters/Warrior/casting (2).fbx
+  artifactKey: Guid(97b4ca2cd7574d84787e036f17edff30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/casting (2).fbx using Guid(97b4ca2cd7574d84787e036f17edff30) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9d859c9f0b7247a546510516005ec0ec') in 0.0036215 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Characters/Warrior/crouch block (2).fbx
+  artifactKey: Guid(727b259f2667f5f439cdaf328f7af9fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/crouch block (2).fbx using Guid(727b259f2667f5f439cdaf328f7af9fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b82ce94dada7b2634b90d83cfefb2bf4') in 0.0036392 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Characters/Warrior/strafe (2).fbx
+  artifactKey: Guid(7a1720978d1901c49ab53c27ae3e6a84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/strafe (2).fbx using Guid(7a1720978d1901c49ab53c27ae3e6a84) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '57a0293732e127f68b7b0019d7c92311') in 0.0039514 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Characters/Warrior/impact (3).fbx
+  artifactKey: Guid(324c2b224125bed46ad7557f2d1e62ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/impact (3).fbx using Guid(324c2b224125bed46ad7557f2d1e62ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4a5dd988eb4d42184b3d73481147ed87') in 0.0032349 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Characters/Warrior/crouching (3).fbx
+  artifactKey: Guid(730f40ed890459c4db8bcb9aed422553) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/crouching (3).fbx using Guid(730f40ed890459c4db8bcb9aed422553) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '15445a2894e72deb378cb92c10c30c27') in 0.0045837 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Characters/Warrior/impact.fbx
+  artifactKey: Guid(09dc83336828dae408036e4a84cb7748) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/impact.fbx using Guid(09dc83336828dae408036e4a84cb7748) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '20fce11599e149811987839aa0bc75d4') in 0.0037865 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.451606 seconds.
+  path: Assets/Characters/Warrior/Materials/Paladin_normal.png
+  artifactKey: Guid(159732dbb1ef0cb4e9e71a40a8260007) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior/Materials/Paladin_normal.png using Guid(159732dbb1ef0cb4e9e71a40a8260007) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2a7d60a0487afe78f52f37c10f0a43f9') in 0.0588674 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
