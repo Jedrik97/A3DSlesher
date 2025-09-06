@@ -54,6 +54,7 @@
     <Compile Include="Assets\Scripts\JoyStick\CustomJoystick.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\Player\KeyPressButtonUI.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraLineOfSight.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyPathFollower.cs" />
     <Compile Include="Assets\Resources\GlobalInstaller.cs" />
