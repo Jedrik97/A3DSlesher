@@ -15,12 +15,10 @@ public class InventoryUI : MonoBehaviour
     public void Construct(PlayerInventory inventory)
     {
         _inventory = inventory;
-
-        // Инициализация UI
+        
         UpdateGold(_inventory.Gold);
         UpdatePotions(_inventory.HealthPotions);
-
-        // Подписки на события
+        
         _inventory.OnGoldChanged += UpdateGold;
         _inventory.OnPotionsChanged += UpdatePotions;
     }
@@ -36,13 +34,13 @@ public class InventoryUI : MonoBehaviour
 
     private void UpdateGold(int value)
     {
-        if (goldText != null)
+        if (goldText)
             goldText.text = $"Gold: {value}";
     }
 
     private void UpdatePotions(int value)
     {
-        if (potionText != null)
+        if (potionText)
             potionText.text = $"Potions: {value}/{MaxPotions}";
     }
 }

@@ -12,8 +12,6 @@ public class PlayerInventory
 
     public event Action<int> OnGoldChanged;
     public event Action<int> OnPotionsChanged;
-
-    // === Gold ===
     public void AddGold(int amount)
     {
         Gold += amount;
@@ -30,8 +28,7 @@ public class PlayerInventory
         }
         return false;
     }
-
-    // === Potions ===
+    
     public bool BuyHealthPotion(int cost = 2)
     {
         if (HealthPotions >= MaxPotions)
@@ -52,16 +49,14 @@ public class PlayerInventory
         {
             HealthPotions--;
             OnPotionsChanged?.Invoke(HealthPotions);
-
-            // 💊 применяем хил
+            
             healthController.UseHealthPotion(PotionHealAmount);
 
             return true;
         }
         return false;
     }
-
-    // === Direct setters (например для загрузки сохранений) ===
+    
     public void SetGold(int amount)
     {
         Gold = amount;
@@ -73,8 +68,7 @@ public class PlayerInventory
         HealthPotions = Mathf.Clamp(count, 0, MaxPotions);
         OnPotionsChanged?.Invoke(HealthPotions);
     }
-
-    // === Saving / Loading ===
+    
     public void SaveToDisk()
     {
         PlayerPrefs.SetInt("Gold", Gold);

@@ -2,11 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-// =====================================
-// Menu Input Controller (Touch-friendly)
-// Routes Button taps to UnityEvents
-// Adds optional haptics & click SFX
-// =====================================
+
 public class MenuInputController : MonoBehaviour
 {
     [Header("Events")]

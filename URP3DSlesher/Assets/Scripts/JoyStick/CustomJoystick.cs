@@ -6,9 +6,7 @@ public class CustomJoystick : MonoBehaviour, IDragHandler, IPointerDownHandler, 
     public RectTransform background;
     public RectTransform handle;
     public Vector2 InputDirection { get; private set; }
-
     private Vector2 center;
-
     private void Start()
     {
         center = background.position;
@@ -27,7 +25,6 @@ public class CustomJoystick : MonoBehaviour, IDragHandler, IPointerDownHandler, 
     {
         OnDrag(eventData);
     }
-
     public void OnPointerUp(PointerEventData eventData)
     {
         InputDirection = Vector2.zero;

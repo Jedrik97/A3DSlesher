@@ -7,20 +7,21 @@ public class FieldOfView : MonoBehaviour
     private Transform player = null;
     private Coroutine fovCheckCoroutine = null;
 
-    [Header("Field of View")] [SerializeField]
-    private float viewRadius = 15f;
+    [Header("Field of View")] 
+    [SerializeField] private float viewRadius = 15f;
 
     [SerializeField, Range(0, 360)] private float viewAngle = 180f;
 
-    [Header("Eye Heights")] [SerializeField]
-    private float eyeHeight = 1.6f;
+    [Header("Eye Heights")] 
+    [SerializeField] private float eyeHeight = 1.6f;
 
     [SerializeField] private float playerEyeHeight = 1.0f;
 
-    [Header("Check Interval")] [SerializeField]
-    private float checkInterval = 0.5f;
+    [Header("Check Interval")]
+    [SerializeField] private float checkInterval = 0.5f;
 
-    [Header("Layers")] [SerializeField] private LayerMask obstacleMask;
+    [Header("Layers")] 
+    [SerializeField] private LayerMask obstacleMask;
 
     public event Action<bool> OnPlayerVisibilityChanged;
     public Transform Player => player;
