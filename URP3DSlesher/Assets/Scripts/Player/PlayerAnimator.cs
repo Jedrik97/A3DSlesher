@@ -16,13 +16,23 @@ public class PlayerAnimator : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void HandleMovement(float x, float z, bool isMoving)
+    private void HandleMovement(float moveX, float moveZ, bool isRunning)
     {
-        animator.SetFloat("MoveX", x);
-        animator.SetFloat("MoveZ", z);
-        animator.SetBool("IsRunning", isMoving);
+        bool moving = Mathf.Abs(moveZ) > 0.001f || Mathf.Abs(moveX) > 0.001f;
+
+        if (!moving)
+        {
+            animator.SetFloat("MoveX", 0f);
+            animator.SetFloat("MoveZ", 0f);
+            animator.SetBool("IsRunning", false);
+            return;
+        }
+
+        float mx = Mathf.Clamp(moveX, -1f, 1f);
+        animator.SetFloat("MoveX", mx);
+        animator.SetFloat("MoveZ", 1f);
+        animator.SetBool("IsRunning", isRunning);
     }
-    
 
     private void HandleDodge()
     {

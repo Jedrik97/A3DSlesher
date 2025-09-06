@@ -5,13 +5,28 @@ using System;
 public class PlayerMovement : MonoBehaviour
 {
     public static event Action<float, float, bool> OnMove;
-    public static event Action OnDodge;                  
+    public static event Action OnDodge;
 
     [SerializeField] private CustomJoystick joystick;
     [SerializeField] private PlayerStats stats;
-    [SerializeField] private float acceleration = 10f;
-    [SerializeField] private float deceleration = 8f;
-    [SerializeField] private float rotationSpeed = 10f;
+
+    [Header("Acceleration")]
+    [SerializeField] private float acceleration = 12f;
+    [SerializeField] private float rotationSmoothTime = 0.1f;
+
+    [Header("Walk Settings")]
+    [SerializeField] private float walkSpeed = 3f;
+
+    [Header("Run Settings")]
+    [SerializeField] private float runThreshold = 0.5f;
+    [SerializeField] private float runMultiplier = 1.6f;
+    [SerializeField] private float runLerpSpeed = 6f;
+
+    [Header("Speed Limit")]
+    [SerializeField] private float maxRunSpeed = 10f;
+
+    [Header("Velocity Direction Settings")]
+    [SerializeField] private float velocityTurnRateDeg = 720f;
 
     [Header("Dodge Settings")]
     [SerializeField] private float dodgeDistance = 3f;
@@ -23,70 +38,106 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float groundedOffset = -0.1f;
 
     private CharacterController controller;
-    private Vector3 currentVelocity;
+    private Transform cam;
+
+    private Vector3 currentDir;
+    private float currentSpeed;
+    private float verticalVelocity;
     private float lastDodgeTime;
     private bool isDodging;
-    private float verticalVelocity;
+    private float rotationVelocity;
+    private float runBlend;
+    private bool wasMoving;
+
+    private const float deadZone = 0.1f;
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
+        cam = Camera.main.transform;
     }
 
     private void Update()
     {
-        if (!isDodging)
-            HandleMovement();
+        if (!isDodging) HandleMovement();
         ApplyGravity();
     }
 
     private void HandleMovement()
     {
         Vector2 input = joystick.InputDirection;
-        Vector3 inputDir = new Vector3(input.x, 0f, input.y);
+        float m = input.magnitude;
 
-        float targetSpeed = stats.MoveSpeed * inputDir.magnitude;
-        Vector3 desiredVelocity = inputDir.normalized * targetSpeed;
-
-        if (inputDir.magnitude > 0.01f)
+        if (m < deadZone)
         {
-            currentVelocity = Vector3.MoveTowards(currentVelocity, desiredVelocity, acceleration * Time.deltaTime);
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(inputDir), rotationSpeed * Time.deltaTime);
+            currentSpeed = 0f;
+            Vector3 idle = new Vector3(0f, verticalVelocity, 0f);
+            controller.Move(idle * Time.deltaTime);
+            runBlend = Mathf.MoveTowards(runBlend, 0f, runLerpSpeed * Time.deltaTime);
+            wasMoving = false;
+            OnMove?.Invoke(0f, 0f, false);
+            return;
+        }
+
+        Vector3 f = cam.forward; f.y = 0f; f.Normalize();
+        Vector3 r = cam.right;   r.y = 0f; r.Normalize();
+        Vector3 desiredDir = (f * input.y + r * input.x).normalized;
+
+        if (currentDir.sqrMagnitude < 0.0001f) currentDir = desiredDir;
+        else currentDir = Vector3.RotateTowards(currentDir, desiredDir, Mathf.Deg2Rad * velocityTurnRateDeg * Time.deltaTime, float.PositiveInfinity);
+
+        float targetRunBlend = Mathf.InverseLerp(runThreshold, 1f, m);
+        runBlend = Mathf.MoveTowards(runBlend, targetRunBlend, runLerpSpeed * Time.deltaTime);
+
+        float targetSpeed;
+        if (runBlend <= 0f)
+        {
+            targetSpeed = walkSpeed;
         }
         else
         {
-            currentVelocity = Vector3.MoveTowards(currentVelocity, Vector3.zero, deceleration * Time.deltaTime);
+            float baseSpeed = walkSpeed;
+            float runSpeed = Mathf.Min(stats.MoveSpeed * runMultiplier, maxRunSpeed);
+            targetSpeed = Mathf.Lerp(baseSpeed, runSpeed, runBlend);
         }
 
-        Vector3 move = currentVelocity;
-        move.y = verticalVelocity;
+        if (!wasMoving)
+        {
+            currentSpeed = walkSpeed;
+            wasMoving = true;
+        }
+        else
+        {
+            currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, acceleration * Time.deltaTime);
+        }
 
+        float targetAngle = Mathf.Atan2(desiredDir.x, desiredDir.z) * Mathf.Rad2Deg;
+        float smoothAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref rotationVelocity, rotationSmoothTime);
+        transform.rotation = Quaternion.Euler(0f, smoothAngle, 0f);
+
+        Vector3 move = currentDir * currentSpeed;
+        move.y = verticalVelocity;
         controller.Move(move * Time.deltaTime);
-        
-        OnMove?.Invoke(input.x, input.y, inputDir.magnitude > 0.1f);
+
+        float moveX = Mathf.Lerp(-1f, 1f, runBlend);
+        bool isRunning = m >= runThreshold;
+        OnMove?.Invoke(moveX, 1f, isRunning);
     }
 
     private void ApplyGravity()
     {
-        if (controller.isGrounded && verticalVelocity < 0f)
-        {
-            verticalVelocity = groundedOffset; 
-        }
-        else
-        {
-            verticalVelocity += gravity * Time.deltaTime;
-        }
+        if (controller.isGrounded && verticalVelocity < 0f) verticalVelocity = groundedOffset;
+        else verticalVelocity += gravity * Time.deltaTime;
     }
 
-    public void DodgeLeft() => TryDodge(-transform.right);
+    public void DodgeLeft()  => TryDodge(-transform.right);
     public void DodgeRight() => TryDodge(transform.right);
-    public void DodgeBack() => TryDodge(-transform.forward);
+    public void DodgeBack()  => TryDodge(-transform.forward);
 
     private void TryDodge(Vector3 direction)
     {
         if (isDodging) return;
         if (Time.time - lastDodgeTime < dodgeCooldown) return;
-
         StartCoroutine(DodgeRoutine(direction));
     }
 
@@ -101,10 +152,8 @@ public class PlayerMovement : MonoBehaviour
 
         while (elapsed < dodgeDuration)
         {
-            Vector3 move = dodgeVelocity;
-            move.y = verticalVelocity;
+            Vector3 move = dodgeVelocity; move.y = verticalVelocity;
             controller.Move(move * Time.deltaTime);
-
             elapsed += Time.deltaTime;
             yield return null;
         }
