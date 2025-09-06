@@ -5,7 +5,7 @@ public class PlayerDodge : MonoBehaviour
 {
     [SerializeField] private CharacterController controller;
     [SerializeField] private float dodgeDistance = 3f;
-    [SerializeField] private float dodgeDuration = 0.25f; // время рывка
+    [SerializeField] private float dodgeDuration = 0.25f;
     [SerializeField] private float dodgeCooldown = 1f;
 
     private float lastDodgeTime;

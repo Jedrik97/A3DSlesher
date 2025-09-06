@@ -4,9 +4,8 @@ using System;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
-    public static event Action<float, float, bool> OnMove; // x, z, isMoving
-    public static event Action<bool> OnJump;               // isJumping
-    public static event Action OnDodge;                    // уклонение
+    public static event Action<float, float, bool> OnMove;
+    public static event Action OnDodge;                  
 
     [SerializeField] private CustomJoystick joystick;
     [SerializeField] private PlayerStats stats;
@@ -18,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dodgeDistance = 3f;
     [SerializeField] private float dodgeDuration = 0.25f;
     [SerializeField] private float dodgeCooldown = 1f;
-
+    
     private CharacterController controller;
     private Vector3 currentVelocity;
     private float lastDodgeTime;
@@ -54,12 +53,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         controller.Move(currentVelocity * Time.deltaTime);
-
-        // отправляем событие для анимации
+        
         OnMove?.Invoke(input.x, input.y, inputDir.magnitude > 0.1f);
     }
 
-    // === Уклонения ===
     public void DodgeLeft() => TryDodge(-transform.right);
     public void DodgeRight() => TryDodge(transform.right);
     public void DodgeBack() => TryDodge(-transform.forward);
@@ -90,11 +87,5 @@ public class PlayerMovement : MonoBehaviour
 
         isDodging = false;
     }
-
-    // === Прыжок (если нужен) ===
-    public void Jump()
-    {
-        // тут будет твоя логика прыжка (CharacterController не имеет встроенного прыжка)
-        OnJump?.Invoke(true);
-    }
+    
 }

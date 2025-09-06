@@ -32,6 +32,5 @@ public class GameManager : MonoBehaviour
     public void ShowDeathUI()
     {
         Debug.Log("☠️ Game Over UI");
-        // тут можно включать панель смерти
     }
 }

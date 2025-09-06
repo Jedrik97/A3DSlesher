@@ -1,4 +1,5 @@
-/*using System.Collections;
+/*
+using System.Collections;
 using UnityEngine;
 using Zenject;
 
@@ -85,4 +86,5 @@ public class EnemyBase : MonoBehaviour
         yield return new WaitForSeconds(10f);
         _pool?.ReturnToPool(this);
     }
-}*/
+}
+*/
