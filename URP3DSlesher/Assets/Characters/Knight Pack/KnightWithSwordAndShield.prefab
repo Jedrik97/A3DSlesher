@@ -662,6 +662,9 @@ GameObject:
   - component: {fileID: 5191907302379840155}
   - component: {fileID: -5819413716234178423}
   - component: {fileID: 1894069179993520537}
+  - component: {fileID: 1832165383111130831}
+  - component: {fileID: 3676934273354974512}
+  - component: {fileID: 8759778611185731719}
   m_Layer: 0
   m_Name: KnightWithSwordAndShield
   m_TagString: Untagged
@@ -788,6 +791,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1d8297de9576447b9c75e1f7bd2fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1832165383111130831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969268875455467597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380df55bc03c58f4db48da4b49581a12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: -5819413716234178423}
+  dodgeDistance: 3
+  dodgeDuration: 0.25
+  dodgeCooldown: 1
+--- !u!114 &3676934273354974512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969268875455467597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8cbf5dde3d3bf458df34bef5a4af5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
+  stats: {fileID: 0}
+  acceleration: 10
+  deceleration: 8
+  rotationSpeed: 10
+  dodgeDistance: 3
+  dodgeDuration: 0.25
+  dodgeCooldown: 1
+  gravity: -9.81
+  groundedOffset: -0.1
+--- !u!114 &8759778611185731719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969268875455467597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4693a837af76ca4bbeebaec8fced7db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  currentExp: 0
+  expToNextLevel: 100
+  strength: 10
+  agility: 10
+  vitality: 10
+  availableStatPoints: 0
+  expBarFill: {fileID: 0}
+  expText: {fileID: 0}
 --- !u!1 &999340004726400383
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,11 +17,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dodgeDistance = 3f;
     [SerializeField] private float dodgeDuration = 0.25f;
     [SerializeField] private float dodgeCooldown = 1f;
-    
+
+    [Header("Gravity Settings")]
+    [SerializeField] private float gravity = -9.81f;
+    [SerializeField] private float groundedOffset = -0.1f;
+
     private CharacterController controller;
     private Vector3 currentVelocity;
     private float lastDodgeTime;
     private bool isDodging;
+    private float verticalVelocity;
 
     private void Start()
     {
@@ -32,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isDodging)
             HandleMovement();
+        ApplyGravity();
     }
 
     private void HandleMovement()
@@ -52,9 +58,24 @@ public class PlayerMovement : MonoBehaviour
             currentVelocity = Vector3.MoveTowards(currentVelocity, Vector3.zero, deceleration * Time.deltaTime);
         }
 
-        controller.Move(currentVelocity * Time.deltaTime);
+        Vector3 move = currentVelocity;
+        move.y = verticalVelocity;
+
+        controller.Move(move * Time.deltaTime);
         
         OnMove?.Invoke(input.x, input.y, inputDir.magnitude > 0.1f);
+    }
+
+    private void ApplyGravity()
+    {
+        if (controller.isGrounded && verticalVelocity < 0f)
+        {
+            verticalVelocity = groundedOffset; 
+        }
+        else
+        {
+            verticalVelocity += gravity * Time.deltaTime;
+        }
     }
 
     public void DodgeLeft() => TryDodge(-transform.right);
@@ -80,12 +101,14 @@ public class PlayerMovement : MonoBehaviour
 
         while (elapsed < dodgeDuration)
         {
-            controller.Move(dodgeVelocity * Time.deltaTime);
+            Vector3 move = dodgeVelocity;
+            move.y = verticalVelocity;
+            controller.Move(move * Time.deltaTime);
+
             elapsed += Time.deltaTime;
             yield return null;
         }
 
         isDodging = false;
     }
-    
 }
