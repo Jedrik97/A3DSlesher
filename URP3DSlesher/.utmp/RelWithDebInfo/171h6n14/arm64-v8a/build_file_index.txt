@@ -1,0 +1,2 @@
+D:\Slesher\3DSlesher\URP3DSlesher\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+D:\Slesher\3DSlesher\URP3DSlesher\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

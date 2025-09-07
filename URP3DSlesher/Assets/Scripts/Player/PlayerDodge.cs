@@ -16,13 +16,14 @@ public class PlayerDodge : MonoBehaviour
     [SerializeField] private RectTransform leftZone;
     [SerializeField] private RectTransform rightZone;
     [SerializeField] private RectTransform backZone;
+    [SerializeField] private RectTransform forwardZone;
 
     private float lastDodgeTime;
     private bool isDodging;
     private Vector3 additiveVelocity;
 
     private bool pressed;
-    private bool inLeft, inRight, inBack;
+    private bool inLeft, inRight, inBack, inForward;
 
     public Vector3 AdditiveVelocity => additiveVelocity;
 
@@ -36,32 +37,34 @@ public class PlayerDodge : MonoBehaviour
         joystick.OnPointerStream -= OnPointerStream;
     }
 
-    public void DodgeLeft()  => TryDodge(-transform.right);
-    public void DodgeRight() => TryDodge( transform.right);
-    public void DodgeBack()  => TryDodge(-transform.forward);
+    public void DodgeLeft()    => TryDodge(-transform.right);
+    public void DodgeRight()   => TryDodge( transform.right);
+    public void DodgeBack()    => TryDodge(-transform.forward);
+    public void DodgeForward() => TryDodge( transform.forward);
 
     private void OnPointerStream(Vector2 screenPos, bool isPressed)
     {
         pressed = isPressed;
         if (!pressed)
         {
-            inLeft = false;
-            inRight = false;
-            inBack = false;
+            inLeft = inRight = inBack = inForward = false;
             return;
         }
 
-        bool nowLeft  = leftZone  && RectTransformUtility.RectangleContainsScreenPoint(leftZone,  screenPos);
-        bool nowRight = rightZone && RectTransformUtility.RectangleContainsScreenPoint(rightZone, screenPos);
-        bool nowBack  = backZone  && RectTransformUtility.RectangleContainsScreenPoint(backZone,  screenPos);
+        bool nowLeft    = leftZone    && RectTransformUtility.RectangleContainsScreenPoint(leftZone,    screenPos);
+        bool nowRight   = rightZone   && RectTransformUtility.RectangleContainsScreenPoint(rightZone,   screenPos);
+        bool nowBack    = backZone    && RectTransformUtility.RectangleContainsScreenPoint(backZone,    screenPos);
+        bool nowForward = forwardZone && RectTransformUtility.RectangleContainsScreenPoint(forwardZone, screenPos);
 
-        if (nowLeft  && !inLeft)  DodgeLeft();
-        if (nowRight && !inRight) DodgeRight();
-        if (nowBack  && !inBack)  DodgeBack();
+        if (nowLeft    && !inLeft)    DodgeLeft();
+        if (nowRight   && !inRight)   DodgeRight();
+        if (nowBack    && !inBack)    DodgeBack();
+        if (nowForward && !inForward) DodgeForward();
 
-        inLeft  = nowLeft;
-        inRight = nowRight;
-        inBack  = nowBack;
+        inLeft    = nowLeft;
+        inRight   = nowRight;
+        inBack    = nowBack;
+        inForward = nowForward;
     }
 
     private void TryDodge(Vector3 direction)

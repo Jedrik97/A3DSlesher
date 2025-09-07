@@ -5,14 +5,19 @@ public class PlayerAnimator : MonoBehaviour
 {
     private Animator animator;
 
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     private void OnEnable()
     {
         PlayerMovement.OnMove += HandleMovement;
     }
 
-    private void Start()
+    private void OnDisable()
     {
-        animator = GetComponent<Animator>();
+        PlayerMovement.OnMove -= HandleMovement;
     }
 
     private void HandleMovement(float moveX, float moveZ, bool isRunning)
@@ -27,15 +32,8 @@ public class PlayerAnimator : MonoBehaviour
             return;
         }
 
-        float mx = Mathf.Clamp(moveX, -1f, 1f);
-        animator.SetFloat("MoveX", mx);
-        animator.SetFloat("MoveZ", 1f);
+        animator.SetFloat("MoveX", Mathf.Clamp(moveX, -1f, 1f));
+        animator.SetFloat("MoveZ", Mathf.Clamp(moveZ, -1f, 1f));
         animator.SetBool("IsRunning", isRunning);
-    }
-    
-
-    private void OnDisable()
-    {
-        PlayerMovement.OnMove -= HandleMovement;
     }
 }

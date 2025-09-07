@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private CustomJoystick joystick;
     [SerializeField] private PlayerStats stats;
     [SerializeField] private PlayerDodge dodge;
+    [SerializeField] private Transform cam;
 
     [Header("Acceleration")]
     [SerializeField] private float acceleration = 12f;
@@ -28,12 +29,15 @@ public class PlayerMovement : MonoBehaviour
     [Header("Velocity Direction Settings")]
     [SerializeField] private float velocityTurnRateDeg = 720f;
 
+    [Header("Backpedal")]
+    [SerializeField] private bool faceForwardWhileBackpedaling = true;
+    [SerializeField, Range(0.3f, 1f)] private float backpedalSpeedMultiplier = 0.75f;
+
     [Header("Gravity Settings")]
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float groundedOffset = -0.1f;
 
     private CharacterController controller;
-    private Transform cam;
 
     private Vector3 currentDir;
     private float currentSpeed;
@@ -49,7 +53,11 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         controller = GetComponent<CharacterController>();
-        cam = Camera.main.transform;
+        if (!cam)
+        {
+            var mainCam = Camera.main;
+            if (mainCam) cam = mainCam.transform;
+        }
     }
 
     private void Update()
@@ -69,7 +77,8 @@ public class PlayerMovement : MonoBehaviour
             runBlend = Mathf.MoveTowards(runBlend, 0f, runLerpSpeed * Time.deltaTime);
             wasMoving = false;
 
-            Vector3 idle = new Vector3(dodge.AdditiveVelocity.x, verticalVelocity, dodge.AdditiveVelocity.z);
+            Vector3 dodgeVel = dodge ? dodge.AdditiveVelocity : Vector3.zero;
+            Vector3 idle = new Vector3(dodgeVel.x, verticalVelocity, dodgeVel.z);
             controller.Move(idle * Time.deltaTime);
 
             OnMove?.Invoke(0f, 0f, false);
@@ -78,21 +87,26 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 f = cam.forward; f.y = 0f; f.Normalize();
         Vector3 r = cam.right;   r.y = 0f; r.Normalize();
-        Vector3 desiredDir = (f * input.y + r * input.x).normalized;
 
-        if (currentDir.sqrMagnitude < 0.0001f) currentDir = desiredDir;
-        else currentDir = Vector3.RotateTowards(currentDir, desiredDir, Mathf.Deg2Rad * velocityTurnRateDeg * Time.deltaTime, float.PositiveInfinity);
+        bool isBack = input.y < 0f;
+
+        Vector3 desiredMoveDir = ((isBack ? -f * Mathf.Abs(input.y) : f * input.y) + r * input.x).normalized;
+
+        if (currentDir.sqrMagnitude < 0.0001f) currentDir = desiredMoveDir;
+        else currentDir = Vector3.RotateTowards(currentDir, desiredMoveDir, Mathf.Deg2Rad * velocityTurnRateDeg * Time.deltaTime, float.PositiveInfinity);
 
         float targetRunBlend = Mathf.InverseLerp(runThreshold, 1f, m);
         runBlend = Mathf.MoveTowards(runBlend, targetRunBlend, runLerpSpeed * Time.deltaTime);
 
-        float targetSpeed = runBlend <= 0f
+        float baseTarget = runBlend <= 0f
             ? walkSpeed
             : Mathf.Lerp(walkSpeed, Mathf.Min(stats.MoveSpeed * runMultiplier, maxRunSpeed), runBlend);
 
+        float targetSpeed = isBack ? baseTarget * backpedalSpeedMultiplier : baseTarget;
+
         if (!wasMoving)
         {
-            currentSpeed = walkSpeed;
+            currentSpeed = walkSpeed * (isBack ? backpedalSpeedMultiplier : 1f);
             wasMoving = true;
         }
         else
@@ -100,17 +114,20 @@ public class PlayerMovement : MonoBehaviour
             currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, acceleration * Time.deltaTime);
         }
 
-        float targetAngle = Mathf.Atan2(desiredDir.x, desiredDir.z) * Mathf.Rad2Deg;
+        Vector3 rotDir = isBack && faceForwardWhileBackpedaling ? f : currentDir;
+        float targetAngle = Mathf.Atan2(rotDir.x, rotDir.z) * Mathf.Rad2Deg;
         float smoothAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref rotationVelocity, rotationSmoothTime);
         transform.rotation = Quaternion.Euler(0f, smoothAngle, 0f);
 
-        Vector3 planar = currentDir * currentSpeed + dodge.AdditiveVelocity;
+        Vector3 planar = currentDir * currentSpeed + (dodge ? dodge.AdditiveVelocity : Vector3.zero);
         Vector3 move = new Vector3(planar.x, verticalVelocity, planar.z);
         controller.Move(move * Time.deltaTime);
 
-        float moveX = Mathf.Lerp(-1f, 1f, runBlend);
         bool isRunning = m >= runThreshold;
-        OnMove?.Invoke(moveX, 1f, isRunning);
+        float animMoveZ = isBack ? -1f : 1f;
+        float animMoveX = isBack ? (isRunning ? 1f : -1f) : Mathf.Lerp(-1f, 1f, runBlend);
+
+        OnMove?.Invoke(animMoveX, animMoveZ, isRunning && !isBack);
     }
 
     private void ApplyGravity()
