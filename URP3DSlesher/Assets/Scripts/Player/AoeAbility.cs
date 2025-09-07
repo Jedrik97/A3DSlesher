@@ -1,96 +1,62 @@
-/*
 using System.Collections;
 using UnityEngine;
 
 public class AoeAbility : MonoBehaviour
 {
-    [Header("AOE Settings")] 
+    [Header("AOE Settings")]
     [SerializeField] private float aoeRadius = 3f;
     [SerializeField] private int aoeDamagePerSecond = 10;
-    [SerializeField] private float aoeDuration = 10f;
+    [SerializeField] private float aoeDuration = 3f;
     [SerializeField] private float aoeCooldown = 6f;
     [SerializeField] private GameObject magicEffect;
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private Animator animator;
 
-    /*[SerializeField] private PlayerStats playerStats;#1#
+    private bool isAoeActive;
+    private float lastCastTime = -999f;
 
-    private bool isAoeActive = false;
-
-    void OnEnable()
-    {
-        PlayerCombat.OnAoeTriggered += StartAoeAttack;
-    }
-
-    void OnDisable()
-    {
-        PlayerCombat.OnAoeTriggered -= StartAoeAttack;
-    }
-
-    private void StartAoeAttack()
+    public void OnAoeButton()
     {
         if (isAoeActive) return;
+        if (Time.time < lastCastTime + aoeCooldown) return;
         StartCoroutine(AoeRoutine());
     }
 
     private IEnumerator AoeRoutine()
     {
         isAoeActive = true;
+        lastCastTime = Time.time;
 
-        if (animator != null)
-        {
-            animator.SetTrigger("AoeAttack");
-        }
+        if (animator) animator.SetTrigger("AoeAttack");
+        if (magicEffect) magicEffect.SetActive(true);
 
-        if (magicEffect)
-        {
-            magicEffect.SetActive(true);
-            StartCoroutine(DisableMagicEffectAfterDelay(aoeDuration));
-        }
-
-        float elapsedTime = 0f;
-        /*UpdateAoeStats();#1#
-
-        while (elapsedTime < aoeDuration)
+        float elapsed = 0f;
+        while (elapsed < aoeDuration)
         {
             PerformAoeDamage();
             yield return new WaitForSeconds(1f);
-            elapsedTime += 1f;
+            elapsed += 1f;
         }
 
-        yield return new WaitForSeconds(aoeCooldown);
+        if (magicEffect) magicEffect.SetActive(false);
         isAoeActive = false;
     }
 
     private void PerformAoeDamage()
     {
-        Collider[] hitEnemies = Physics.OverlapSphere(transform.position, aoeRadius, enemyLayer);
-        foreach (Collider enemy in hitEnemies)
+        var hits = Physics.OverlapSphere(transform.position, aoeRadius, enemyLayer, QueryTriggerInteraction.Collide);
+        for (int i = 0; i < hits.Length; i++)
         {
-            if (!enemy.CompareTag("Enemy") && !enemy.CompareTag("Boss")) 
-                continue;
-
-            if (enemy.TryGetComponent<EnemyBase>(out EnemyBase enemyBase))
+            if (hits[i].TryGetComponent<EnemyBase>(out var enemy))
             {
-                enemyBase.TakeDamage(aoeDamagePerSecond);
+                enemy.TakeDamage(aoeDamagePerSecond);
             }
         }
     }
 
-    /*private void UpdateAoeStats()
+    private void OnDrawGizmosSelected()
     {
-        aoeDamagePerSecond = 10 + (int)(playerStats.intelligence * 2);
-        aoeRadius = 3f + (playerStats.wisdom * 0.1f);
-        aoeCooldown = Mathf.Max(0.1f, 6f - (playerStats.wisdom * 0.1f));
-        aoeDuration = 10f + (playerStats.intelligence * 0.1f);
-    }#1#
-
-    private IEnumerator DisableMagicEffectAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        if (magicEffect)
-            magicEffect.SetActive(false);
+        Gizmos.color = new Color(1f, 0.3f, 0f, 0.35f);
+        Gizmos.DrawWireSphere(transform.position, aoeRadius);
     }
-    
 }
-*/

@@ -1,11 +1,11 @@
-/*
 using System.Collections;
 using UnityEngine;
 using Zenject;
 
 public class EnemyBase : MonoBehaviour
 {
-    [Header("Enemy Stats")] public string enemyName;
+    [Header("Enemy Stats")] 
+    public string enemyName;
     public float maxHealth = 100f;
     public float currentHealth;
     public float attackDamage = 10f;
@@ -16,7 +16,6 @@ public class EnemyBase : MonoBehaviour
     public event System.Action<GameObject> OnDeath;
 
     private ObjectPool<EnemyBase> _pool;
-
     protected Animator animator;
 
     [Inject]
@@ -29,23 +28,12 @@ public class EnemyBase : MonoBehaviour
     {
         currentHealth = maxHealth;
         OnHealthChanged?.Invoke(currentHealth);
-        if (gameManager)
-        {
-            ApplyLevelBasedStats(gameManager.GetPlayerLevel());
-        }
-
         animator = GetComponent<Animator>();
     }
 
     public void SetPool(ObjectPool<EnemyBase> pool)
     {
-        this._pool = pool;
-    }
-
-    public void ApplyLevelBasedStats(int playerLevel)
-    {
-        attackDamage = 10f + (playerLevel * 5f);
-        maxHealth = 100f + (playerLevel * 10f);
+        _pool = pool;
     }
 
     public void ReturnHeal()
@@ -74,9 +62,7 @@ public class EnemyBase : MonoBehaviour
 
     private void Die()
     {
-        if (animator)
-            animator.SetTrigger("Die");
-
+        if (animator) animator.SetTrigger("Die");
         OnDeath?.Invoke(gameObject);
         StartCoroutine(WaitAndReturnToPool());
     }
@@ -87,4 +73,3 @@ public class EnemyBase : MonoBehaviour
         _pool?.ReturnToPool(this);
     }
 }
-*/

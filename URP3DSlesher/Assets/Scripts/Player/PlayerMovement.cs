@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private CustomJoystick joystick;
     [SerializeField] private PlayerStats stats;
     [SerializeField] private PlayerDodge dodge;
-    [SerializeField] private Transform cam;
 
     [Header("Acceleration")]
     [SerializeField] private float acceleration = 12f;
@@ -38,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float groundedOffset = -0.1f;
 
     private CharacterController controller;
+    private Transform cam;
 
     private Vector3 currentDir;
     private float currentSpeed;
@@ -53,11 +53,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         controller = GetComponent<CharacterController>();
-        if (!cam)
-        {
-            var mainCam = Camera.main;
-            if (mainCam) cam = mainCam.transform;
-        }
+        cam = Camera.main.transform; // всегда берём основную камеру
     }
 
     private void Update()
@@ -89,19 +85,17 @@ public class PlayerMovement : MonoBehaviour
         Vector3 r = cam.right;   r.y = 0f; r.Normalize();
 
         bool isBack = input.y < 0f;
-
         Vector3 desiredMoveDir = ((isBack ? -f * Mathf.Abs(input.y) : f * input.y) + r * input.x).normalized;
 
         if (currentDir.sqrMagnitude < 0.0001f) currentDir = desiredMoveDir;
         else currentDir = Vector3.RotateTowards(currentDir, desiredMoveDir, Mathf.Deg2Rad * velocityTurnRateDeg * Time.deltaTime, float.PositiveInfinity);
 
-        float targetRunBlend = Mathf.InverseLerp(runThreshold, 1f, m);
+        bool shouldRun = m >= runThreshold;
+        float targetRunBlend = shouldRun ? 1f : 0f;
         runBlend = Mathf.MoveTowards(runBlend, targetRunBlend, runLerpSpeed * Time.deltaTime);
 
-        float baseTarget = runBlend <= 0f
-            ? walkSpeed
-            : Mathf.Lerp(walkSpeed, Mathf.Min(stats.MoveSpeed * runMultiplier, maxRunSpeed), runBlend);
-
+        float runSpeed = Mathf.Min(stats.MoveSpeed * runMultiplier, maxRunSpeed);
+        float baseTarget = Mathf.Lerp(walkSpeed, runSpeed, runBlend);
         float targetSpeed = isBack ? baseTarget * backpedalSpeedMultiplier : baseTarget;
 
         if (!wasMoving)
@@ -123,11 +117,11 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = new Vector3(planar.x, verticalVelocity, planar.z);
         controller.Move(move * Time.deltaTime);
 
-        bool isRunning = m >= runThreshold;
+        bool isRunning = runBlend >= 0.5f;
         float animMoveZ = isBack ? -1f : 1f;
         float animMoveX = isBack ? (isRunning ? 1f : -1f) : Mathf.Lerp(-1f, 1f, runBlend);
 
-        OnMove?.Invoke(animMoveX, animMoveZ, isRunning && !isBack);
+        OnMove?.Invoke(animMoveX, animMoveZ, isRunning);
     }
 
     private void ApplyGravity()
