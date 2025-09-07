@@ -8,7 +8,6 @@ public class PlayerAnimator : MonoBehaviour
     private void OnEnable()
     {
         PlayerMovement.OnMove += HandleMovement;
-        PlayerMovement.OnDodge += HandleDodge;
     }
 
     private void Start()
@@ -33,15 +32,10 @@ public class PlayerAnimator : MonoBehaviour
         animator.SetFloat("MoveZ", 1f);
         animator.SetBool("IsRunning", isRunning);
     }
-
-    private void HandleDodge()
-    {
-        animator.SetTrigger("Dodge");
-    }
+    
 
     private void OnDisable()
     {
         PlayerMovement.OnMove -= HandleMovement;
-        PlayerMovement.OnDodge -= HandleDodge;
     }
 }

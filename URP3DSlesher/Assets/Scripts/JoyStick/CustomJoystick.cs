@@ -1,26 +1,34 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System;
 
 public class CustomJoystick : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
-    [SerializeField] public RectTransform background;
-    [SerializeField] public RectTransform handle;
+    [SerializeField] private RectTransform background;
+    [SerializeField] private RectTransform handle;
+    [SerializeField, Range(0f, 1f)] private float handleRange = 0.6f;
+
     public Vector2 InputDirection { get; private set; }
+    public event Action<Vector2, bool> OnPointerStream;
 
-    private Vector2 center;
-    private float radius;
+    float radius;
 
-    private void Start()
+    void Start()
     {
-        center = background.position;
         radius = background.sizeDelta.x * 0.5f;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        Vector2 delta = eventData.position - center;
-        InputDirection = Vector2.ClampMagnitude(delta / radius, 1f);
-        handle.localPosition = InputDirection * radius;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            background, eventData.position, eventData.pressEventCamera, out var localPoint);
+
+        float maxRange = radius * handleRange;
+        Vector2 clamped = Vector2.ClampMagnitude(localPoint, maxRange);
+        handle.localPosition = clamped;
+        InputDirection = clamped / maxRange;
+
+        OnPointerStream?.Invoke(eventData.position, true);
     }
 
     public void OnPointerDown(PointerEventData eventData) => OnDrag(eventData);
@@ -29,5 +37,6 @@ public class CustomJoystick : MonoBehaviour, IDragHandler, IPointerDownHandler, 
     {
         InputDirection = Vector2.zero;
         handle.localPosition = Vector2.zero;
+        OnPointerStream?.Invoke(eventData.position, false);
     }
 }

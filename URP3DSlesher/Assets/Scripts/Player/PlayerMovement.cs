@@ -5,10 +5,10 @@ using System;
 public class PlayerMovement : MonoBehaviour
 {
     public static event Action<float, float, bool> OnMove;
-    public static event Action OnDodge;
 
     [SerializeField] private CustomJoystick joystick;
     [SerializeField] private PlayerStats stats;
+    [SerializeField] private PlayerDodge dodge;
 
     [Header("Acceleration")]
     [SerializeField] private float acceleration = 12f;
@@ -28,11 +28,6 @@ public class PlayerMovement : MonoBehaviour
     [Header("Velocity Direction Settings")]
     [SerializeField] private float velocityTurnRateDeg = 720f;
 
-    [Header("Dodge Settings")]
-    [SerializeField] private float dodgeDistance = 3f;
-    [SerializeField] private float dodgeDuration = 0.25f;
-    [SerializeField] private float dodgeCooldown = 1f;
-
     [Header("Gravity Settings")]
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float groundedOffset = -0.1f;
@@ -43,13 +38,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 currentDir;
     private float currentSpeed;
     private float verticalVelocity;
-    private float lastDodgeTime;
-    private bool isDodging;
     private float rotationVelocity;
     private float runBlend;
     private bool wasMoving;
 
     private const float deadZone = 0.1f;
+
+    public float VerticalVelocity => verticalVelocity;
 
     private void Start()
     {
@@ -59,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!isDodging) HandleMovement();
+        HandleMovement();
         ApplyGravity();
     }
 
@@ -71,10 +66,12 @@ public class PlayerMovement : MonoBehaviour
         if (m < deadZone)
         {
             currentSpeed = 0f;
-            Vector3 idle = new Vector3(0f, verticalVelocity, 0f);
-            controller.Move(idle * Time.deltaTime);
             runBlend = Mathf.MoveTowards(runBlend, 0f, runLerpSpeed * Time.deltaTime);
             wasMoving = false;
+
+            Vector3 idle = new Vector3(dodge.AdditiveVelocity.x, verticalVelocity, dodge.AdditiveVelocity.z);
+            controller.Move(idle * Time.deltaTime);
+
             OnMove?.Invoke(0f, 0f, false);
             return;
         }
@@ -89,17 +86,9 @@ public class PlayerMovement : MonoBehaviour
         float targetRunBlend = Mathf.InverseLerp(runThreshold, 1f, m);
         runBlend = Mathf.MoveTowards(runBlend, targetRunBlend, runLerpSpeed * Time.deltaTime);
 
-        float targetSpeed;
-        if (runBlend <= 0f)
-        {
-            targetSpeed = walkSpeed;
-        }
-        else
-        {
-            float baseSpeed = walkSpeed;
-            float runSpeed = Mathf.Min(stats.MoveSpeed * runMultiplier, maxRunSpeed);
-            targetSpeed = Mathf.Lerp(baseSpeed, runSpeed, runBlend);
-        }
+        float targetSpeed = runBlend <= 0f
+            ? walkSpeed
+            : Mathf.Lerp(walkSpeed, Mathf.Min(stats.MoveSpeed * runMultiplier, maxRunSpeed), runBlend);
 
         if (!wasMoving)
         {
@@ -115,8 +104,8 @@ public class PlayerMovement : MonoBehaviour
         float smoothAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref rotationVelocity, rotationSmoothTime);
         transform.rotation = Quaternion.Euler(0f, smoothAngle, 0f);
 
-        Vector3 move = currentDir * currentSpeed;
-        move.y = verticalVelocity;
+        Vector3 planar = currentDir * currentSpeed + dodge.AdditiveVelocity;
+        Vector3 move = new Vector3(planar.x, verticalVelocity, planar.z);
         controller.Move(move * Time.deltaTime);
 
         float moveX = Mathf.Lerp(-1f, 1f, runBlend);
@@ -128,36 +117,5 @@ public class PlayerMovement : MonoBehaviour
     {
         if (controller.isGrounded && verticalVelocity < 0f) verticalVelocity = groundedOffset;
         else verticalVelocity += gravity * Time.deltaTime;
-    }
-
-    public void DodgeLeft()  => TryDodge(-transform.right);
-    public void DodgeRight() => TryDodge(transform.right);
-    public void DodgeBack()  => TryDodge(-transform.forward);
-
-    private void TryDodge(Vector3 direction)
-    {
-        if (isDodging) return;
-        if (Time.time - lastDodgeTime < dodgeCooldown) return;
-        StartCoroutine(DodgeRoutine(direction));
-    }
-
-    private System.Collections.IEnumerator DodgeRoutine(Vector3 direction)
-    {
-        isDodging = true;
-        lastDodgeTime = Time.time;
-        OnDodge?.Invoke();
-
-        float elapsed = 0f;
-        Vector3 dodgeVelocity = direction.normalized * (dodgeDistance / dodgeDuration);
-
-        while (elapsed < dodgeDuration)
-        {
-            Vector3 move = dodgeVelocity; move.y = verticalVelocity;
-            controller.Move(move * Time.deltaTime);
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-
-        isDodging = false;
     }
 }
