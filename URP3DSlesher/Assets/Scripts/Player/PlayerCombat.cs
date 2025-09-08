@@ -1,93 +1,115 @@
 using System;
 using UnityEngine;
+using Zenject;
 
 public class PlayerCombat : MonoBehaviour
 {
     public static event Action<bool> OnAttackStateChanged;
+    public static event Action OnAoeTriggered;
     public static event Action<int> OnComboStepChanged;
 
-    [Header("Animator/Weapon")]
+    [Header("Attack Settings")]
     [SerializeField] private Animator animator;
     [SerializeField] private Weapon weapon;
-
-    [Header("Combo")]
     [SerializeField] private int maxComboSteps = 5;
 
     private bool isAttacking;
     private bool canComboWindow;
     private bool bufferedPress;
-    private int currentComboStep;   // фактический шаг (обновляется, когда Animator вошёл в состояние шага)
-    private int queuedComboStep;    // какой шаг мы запросили триггером
+    private bool consumedThisWindow;
+    private int currentComboStep;
 
-    // Кнопка атаки (одна)
+    private PlayerStats playerStats;
+    private GameManager gameManager;
+
+    [Inject]
+    public void Construct(PlayerStats ps, GameManager gm)
+    {
+        playerStats = ps;
+        gameManager = gm;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            OnAoeTriggered?.Invoke();
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            OnAttackButton();
+    }
+
     public void OnAttackButton()
     {
         if (!isAttacking)
         {
             isAttacking = true;
+            currentComboStep = 1;
             OnAttackStateChanged?.Invoke(true);
-            animator.SetTrigger("Attack1"); // даём старт, дальше аниматор сам
+            OnComboStepChanged?.Invoke(1);
+            animator.ResetTrigger("Attack");
+            animator.SetTrigger("Attack");
             return;
         }
 
-        // Уже идёт удар
         if (canComboWindow && currentComboStep < maxComboSteps)
         {
-            queuedComboStep = currentComboStep + 1;
-            animator.SetTrigger($"Attack{queuedComboStep}"); // ставим триггер, переход сделает Animator (мягко)
-            canComboWindow = false;
-            bufferedPress = false;
+            if (!consumedThisWindow)
+            {
+                animator.ResetTrigger("Attack");
+                animator.SetTrigger("Attack");
+                consumedThisWindow = true;
+                bufferedPress = false;
+            }
         }
         else
         {
-            // нажали рано — буферим до открытия окна
             bufferedPress = true;
         }
     }
 
-    // ========= Методы, вызываемые ИЗ АНИМАЦИЙ (Animation Events) =========
-
-    // Ставь событие в начале каждого клипа Attack1..Attack5
     public void Anim_EnterStep(int step)
     {
         currentComboStep = Mathf.Clamp(step, 1, maxComboSteps);
         OnComboStepChanged?.Invoke(currentComboStep);
     }
 
-    // Открытие окна комбо — ставь событие в клипе, где должен приниматься следующий тап
     public void EnableComboWindow()
     {
         canComboWindow = true;
+        animator.SetBool("CanCombo", true);
 
-        // Если игрок нажал раньше — дожидаемся окна и сразу ставим триггер следующего шага
-        if (bufferedPress && currentComboStep < maxComboSteps)
+        if (bufferedPress && currentComboStep < maxComboSteps && !consumedThisWindow)
         {
-            queuedComboStep = currentComboStep + 1;
-            animator.SetTrigger($"Attack{queuedComboStep}"); // мягкий переход по настройкам Animator
+            animator.ResetTrigger("Attack");
+            animator.SetTrigger("Attack");
+            consumedThisWindow = true;
             bufferedPress = false;
-            canComboWindow = false;
         }
     }
 
-    // Закрытие окна комбо — ставь событие там, где окно заканчивается
     public void DisableComboWindow()
     {
         canComboWindow = false;
+        animator.SetBool("CanCombo", false);
+        consumedThisWindow = false;
     }
 
-    // Конец всей цепочки (последний клип) — ставь событие в конце
     public void EndAttack()
     {
         isAttacking = false;
         currentComboStep = 0;
-        queuedComboStep = 0;
         bufferedPress = false;
         canComboWindow = false;
+        consumedThisWindow = false;
+        animator.SetBool("CanCombo", false);
         OnAttackStateChanged?.Invoke(false);
         weapon?.DisableCollider();
+        animator.ResetTrigger("Attack");
     }
 
-    // Окно урона — по событиям в клипах
     public void EnableWeaponHitbox()  => weapon?.EnableCollider(true);
-    public void DisableWeaponHitbox() => weapon?.DisableCollider();
+    public void DisableWeaponHitbox() => weapon?.EnableCollider(false);
 }
