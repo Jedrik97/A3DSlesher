@@ -11,9 +11,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Attack
     m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: CanCombo
-    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: ComboStep
+    m_EventTreshold: 5
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3443035377424207011}
   m_Solo: 0
@@ -267,6 +267,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Attack
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: ComboStep
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5779160189137293016}
   m_Solo: 0
@@ -356,8 +359,8 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: CanCombo
-    m_Type: 4
+  - m_Name: ComboStep
+    m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -446,6 +449,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Attack
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: ComboStep
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 25352729320691581}
   m_Solo: 0
@@ -471,9 +477,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Attack
     m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: CanCombo
-    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: ComboStep
+    m_EventTreshold: 4
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1747405343904614260}
   m_Solo: 0
@@ -521,9 +527,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Attack
     m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: CanCombo
-    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: ComboStep
+    m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5151402476493921972}
   m_Solo: 0

@@ -17,8 +17,7 @@ ModelImporter:
     removeConstantScaleCurves: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: Event EndAttack has a time (1.666667) outside the clip's
-      valid range (0.000000..1.566667). It will never be fired
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -84,7 +83,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 1
+      - time: 0.93333334
         functionName: EndAttack
         data: 
         objectReferenceParameter: {instanceID: 0}

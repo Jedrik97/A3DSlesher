@@ -8,16 +8,22 @@ public class PlayerCombat : MonoBehaviour
     public static event Action OnAoeTriggered;
     public static event Action<int> OnComboStepChanged;
 
-    [Header("Attack Settings")]
+    [Header("Animator")]
     [SerializeField] private Animator animator;
+    [SerializeField] private string comboParam = "ComboStep";
+    [SerializeField] private string attackTrigger = "Attack";
+
+    [Header("Combat")]
+    [SerializeField, Range(1, 10)] private int maxComboSteps = 5;
     [SerializeField] private Weapon weapon;
-    [SerializeField] private int maxComboSteps = 5;
 
     private bool isAttacking;
     private bool canComboWindow;
-    private bool bufferedPress;
-    private bool consumedThisWindow;
     private int currentComboStep;
+    private int queuedComboStep;
+
+    private bool hasComboParam;
+    private bool hasAttackTrigger;
 
     private PlayerStats playerStats;
     private GameManager gameManager;
@@ -29,87 +35,94 @@ public class PlayerCombat : MonoBehaviour
         gameManager = gm;
     }
 
-    private void Update()
+    private void Awake()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (!animator) animator = GetComponent<Animator>();
+        if (!animator || animator.runtimeAnimatorController == null) return;
+        foreach (var p in animator.parameters)
         {
-            OnAoeTriggered?.Invoke();
-            return;
+            if (p.type == AnimatorControllerParameterType.Int && p.name == comboParam) hasComboParam = true;
+            if (p.type == AnimatorControllerParameterType.Trigger && p.name == attackTrigger) hasAttackTrigger = true;
         }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-            OnAttackButton();
     }
 
-    public void OnAttackButton()
+    public void AttackPressed()
     {
         if (!isAttacking)
         {
-            isAttacking = true;
-            currentComboStep = 1;
-            OnAttackStateChanged?.Invoke(true);
-            OnComboStepChanged?.Invoke(1);
-            animator.ResetTrigger("Attack");
-            animator.SetTrigger("Attack");
-            return;
+            TriggerAttack(1);
         }
-
-        if (canComboWindow && currentComboStep < maxComboSteps)
+        else if (canComboWindow)
         {
-            if (!consumedThisWindow)
-            {
-                animator.ResetTrigger("Attack");
-                animator.SetTrigger("Attack");
-                consumedThisWindow = true;
-                bufferedPress = false;
-            }
-        }
-        else
-        {
-            bufferedPress = true;
+            int next = Mathf.Min(currentComboStep + 1, maxComboSteps);
+            if (next > currentComboStep) queuedComboStep = next;
+            canComboWindow = false;
         }
     }
 
-    public void Anim_EnterStep(int step)
+    public void AoePressed()
     {
-        currentComboStep = Mathf.Clamp(step, 1, maxComboSteps);
-        OnComboStepChanged?.Invoke(currentComboStep);
+        OnAoeTriggered?.Invoke();
+    }
+
+    private void TriggerAttack(int step)
+    {
+        if (hasComboParam) animator.SetInteger(comboParam, step);
+        if (hasAttackTrigger)
+        {
+            animator.ResetTrigger(attackTrigger);
+            animator.SetTrigger(attackTrigger);
+        }
+        else
+        {
+            animator.Play($"Attack{step}", 0, 0f);
+        }
+
+        if (queuedComboStep == step)
+        {
+            isAttacking = false;
+            OnAttackStateChanged?.Invoke(false);
+        }
+
+        currentComboStep = step;
+        queuedComboStep = 0;
+        canComboWindow = false;
+        isAttacking = true;
+        OnAttackStateChanged?.Invoke(true);
+        OnComboStepChanged?.Invoke(step);
     }
 
     public void EnableComboWindow()
     {
         canComboWindow = true;
-        animator.SetBool("CanCombo", true);
-
-        if (bufferedPress && currentComboStep < maxComboSteps && !consumedThisWindow)
-        {
-            animator.ResetTrigger("Attack");
-            animator.SetTrigger("Attack");
-            consumedThisWindow = true;
-            bufferedPress = false;
-        }
+        if (queuedComboStep == currentComboStep + 1 && queuedComboStep <= maxComboSteps)
+            TriggerAttack(queuedComboStep);
     }
 
     public void DisableComboWindow()
     {
         canComboWindow = false;
-        animator.SetBool("CanCombo", false);
-        consumedThisWindow = false;
+        if (queuedComboStep == currentComboStep + 1 && queuedComboStep <= maxComboSteps)
+            TriggerAttack(queuedComboStep);
     }
 
     public void EndAttack()
     {
         isAttacking = false;
         currentComboStep = 0;
-        bufferedPress = false;
+        queuedComboStep = 0;
         canComboWindow = false;
-        consumedThisWindow = false;
-        animator.SetBool("CanCombo", false);
+        if (hasComboParam) animator.SetInteger(comboParam, 0);
         OnAttackStateChanged?.Invoke(false);
-        weapon?.DisableCollider();
-        animator.ResetTrigger("Attack");
     }
 
-    public void EnableWeaponHitbox()  => weapon?.EnableCollider(true);
-    public void DisableWeaponHitbox() => weapon?.EnableCollider(false);
+    public void EnableWeaponHitbox()
+    {
+        weapon?.EnableCollider(true);
+    }
+
+    public void DisableWeaponHitbox()
+    {
+        weapon?.EnableCollider(false);
+    }
 }
