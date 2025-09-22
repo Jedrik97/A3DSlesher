@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, IInitializable
 {
     private PlayerInventory _inventory;
     public PlayerInventory Inventory => _inventory;
@@ -12,9 +12,11 @@ public class GameManager : MonoBehaviour
         _inventory = inventory;
     }
 
-    private void Start()
+    // Called by Zenject after all bindings are set, before any Start()
+    public void Initialize()
     {
         _inventory.LoadFromSave();
+        Debug.Log("📂 Save loaded (Initialize).");
     }
 
     public void SaveGame()
@@ -32,5 +34,17 @@ public class GameManager : MonoBehaviour
     public void ShowDeathUI()
     {
         Debug.Log("☠️ Game Over UI");
+        // тут только сигнал/вызов UI-контроллера, без Find... и CanvasGroup
+    }
+
+    // Mobile-friendly autosave
+    private void OnApplicationPause(bool paused)
+    {
+        if (paused) SaveGame();
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveGame();
     }
 }

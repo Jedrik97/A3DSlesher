@@ -58,6 +58,7 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyPathFollower.cs" />
     <Compile Include="Assets\Resources\GlobalInstaller.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMeleeAI.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerXpController.cs" />
     <Compile Include="Assets\Scripts\Player\TooltipTrigger.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCombat.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyWeapon.cs" />

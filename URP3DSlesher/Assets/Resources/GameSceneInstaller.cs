@@ -7,22 +7,26 @@ public class GameSceneInstaller : MonoInstaller
     [SerializeField] private GameObject playerPrefab;
 
     [Header("References")]
-    [SerializeField] private GameManager gameManager; // компонент GameManager, висит в сцене
+    [SerializeField] private GameManager gameManager;
 
     public override void InstallBindings()
     {
-        // === Inventory как сервис ===
+        SignalBusInstaller.Install(Container);
+        Container.DeclareSignal<EnemyDiedSignal>();
+
         Container.Bind<PlayerInventory>().AsSingle();
 
-        // GameManager как singleton (берём из сцены)
-        Container.Bind<GameManager>()
+        // Bind interfaces too, so Zenject calls Initialize()
+        Container.BindInterfacesAndSelfTo<GameManager>()
             .FromInstance(gameManager)
             .AsSingle();
 
-        // Player создаётся из префаба
-        Container.Bind<PlayerStats>()
-            .FromComponentInNewPrefab(playerPrefab)
-            .AsSingle()
-            .NonLazy(); // сразу создаём
+        var playerGO = Container.InstantiatePrefab(playerPrefab);
+
+        var playerStats = playerGO.GetComponent<PlayerStats>();
+        var xpController = playerGO.GetComponent<PlayerXpController>();
+
+        Container.Bind<PlayerStats>().FromInstance(playerStats).AsSingle();
+        Container.Bind<PlayerXpController>().FromInstance(xpController).AsSingle();
     }
 }
