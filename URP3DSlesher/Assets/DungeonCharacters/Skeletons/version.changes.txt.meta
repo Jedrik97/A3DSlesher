@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f0f8179653546e94aa3b36e6f20c21ed
+timeCreated: 1500144743
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 50675
+  packageName: Dungeon Skeletons Pack
+  packageVersion: 1.3
+  assetPath: Assets/DungeonCharacters/Skeletons/version.changes.txt
+  uploadId: 190122

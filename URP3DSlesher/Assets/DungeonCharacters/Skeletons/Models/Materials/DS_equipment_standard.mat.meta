@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b4a832eac190e404c8b9b2ca3775f755
+timeCreated: 1470809533
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 50675
+  packageName: Dungeon Skeletons Pack
+  packageVersion: 1.3
+  assetPath: Assets/DungeonCharacters/Skeletons/Models/Materials/DS_equipment_standard.mat
+  uploadId: 190122

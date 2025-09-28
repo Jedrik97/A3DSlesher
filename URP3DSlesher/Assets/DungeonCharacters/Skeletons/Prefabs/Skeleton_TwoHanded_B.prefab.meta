@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 77ad0facb2a27504ab8edf68c35a1346
+timeCreated: 1471244818
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 50675
+  packageName: Dungeon Skeletons Pack
+  packageVersion: 1.3
+  assetPath: Assets/DungeonCharacters/Skeletons/Prefabs/Skeleton_TwoHanded_B.prefab
+  uploadId: 190122

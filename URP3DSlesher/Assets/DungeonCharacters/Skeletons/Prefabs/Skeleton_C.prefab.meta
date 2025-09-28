@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d86c716d338a1a04d89b6ee52d44933c
+timeCreated: 1471243287
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 50675
+  packageName: Dungeon Skeletons Pack
+  packageVersion: 1.3
+  assetPath: Assets/DungeonCharacters/Skeletons/Prefabs/Skeleton_C.prefab
+  uploadId: 190122
