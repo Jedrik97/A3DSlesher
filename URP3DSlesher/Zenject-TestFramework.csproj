@@ -429,7 +429,7 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.2.2f1\Editor\Data\PlaybackEngines\AndroidPlayer\UnityEditor.Android.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.ext.nunit@031a54704bff\net40\unity-custom\nunit.framework.dll</HintPath>
+      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\PackageCache\com.unity.ext.nunit@031a54704bff\net40\unity-custom\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.2.2f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -813,16 +813,16 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.2.2f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:\Slesher\3DSlesher\URP3DSlesher\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <HintPath>C:\Users\User794\Documents\My Games\A3DSlesher\URP3DSlesher\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
