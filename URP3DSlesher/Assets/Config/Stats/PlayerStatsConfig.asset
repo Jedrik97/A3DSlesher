@@ -17,9 +17,14 @@ MonoBehaviour:
   hpPerVit: 20
   damagePerStr: 0.02
   attackSpeedPerAgi: 0.03
-  xpToNextLevelCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  xpFormula: 3
+  linearBase: 100
+  linearStep: 50
+  quadBase: 50
+  quadA: 8
+  quadB: 30
+  expBaseValue: 120
+  expMultiplier: 1.18
+  hybridBaseValue: 120
+  hybridMultiplier: 1.18
+  hybridLinearStep: 25
