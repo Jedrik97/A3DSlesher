@@ -640,6 +640,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton_TwoHanded_B
       objectReference: {fileID: 0}
+    - target: {fileID: 159544, guid: 77ad0facb2a27504ab8edf68c35a1346, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 463548, guid: 77ad0facb2a27504ab8edf68c35a1346, type: 3}
       propertyPath: m_LocalPosition.x
       value: 55.989594
@@ -696,6 +700,10 @@ PrefabInstance:
     - target: {fileID: 108450, guid: cf1f48d2327ff8640a3ed8e9673685ac, type: 3}
       propertyPath: m_Name
       value: Skeleton_archer_B
+      objectReference: {fileID: 0}
+    - target: {fileID: 108450, guid: cf1f48d2327ff8640a3ed8e9673685ac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 402856, guid: cf1f48d2327ff8640a3ed8e9673685ac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2498,6 +2506,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton_B
       objectReference: {fileID: 0}
+    - target: {fileID: 165576, guid: 37030c5c7c1b6674dac293a85cc7d5a6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 477336, guid: 37030c5c7c1b6674dac293a85cc7d5a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 51.329178
@@ -2796,6 +2808,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton_F
       objectReference: {fileID: 0}
+    - target: {fileID: 185486, guid: 3a367ca1b4f5a1a47bda6e98e7ba1f43, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 403846, guid: 3a367ca1b4f5a1a47bda6e98e7ba1f43, type: 3}
       propertyPath: m_LocalPosition.x
       value: 54.412598
@@ -2990,6 +3006,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton_D
       objectReference: {fileID: 0}
+    - target: {fileID: 197444, guid: b2951f8d32af933468dd00c41bb3f7d8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 456290, guid: b2951f8d32af933468dd00c41bb3f7d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 52.81136
@@ -3077,6 +3097,10 @@ PrefabInstance:
     - target: {fileID: 133616, guid: b806d07906e3ec2418b856b830337dcf, type: 3}
       propertyPath: m_Name
       value: Skeleton_archer_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 133616, guid: b806d07906e3ec2418b856b830337dcf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 438824, guid: b806d07906e3ec2418b856b830337dcf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3717,6 +3741,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton_TwoHanded_A
       objectReference: {fileID: 0}
+    - target: {fileID: 154340, guid: 95af6d03dc5e07142b1a349a829d8b30, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 428858, guid: 95af6d03dc5e07142b1a349a829d8b30, type: 3}
       propertyPath: m_LocalPosition.x
       value: 55.310017
@@ -3955,6 +3983,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton_C
       objectReference: {fileID: 0}
+    - target: {fileID: 188982, guid: d86c716d338a1a04d89b6ee52d44933c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 449256, guid: d86c716d338a1a04d89b6ee52d44933c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 52.076355
@@ -4117,6 +4149,10 @@ PrefabInstance:
     - target: {fileID: 123184, guid: e967c42ede832ae4d964d682b25ec538, type: 3}
       propertyPath: m_Name
       value: Skeleton_E
+      objectReference: {fileID: 0}
+    - target: {fileID: 123184, guid: e967c42ede832ae4d964d682b25ec538, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 424036, guid: e967c42ede832ae4d964d682b25ec538, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4318,7 +4354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 405068, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.40771
+      value: 48.24
       objectReference: {fileID: 0}
     - target: {fileID: 405068, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4348,6 +4384,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9554932, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c2929097e368e1e4d81ca33cfee145ba, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

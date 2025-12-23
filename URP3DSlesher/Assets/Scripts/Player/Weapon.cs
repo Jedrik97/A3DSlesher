@@ -69,7 +69,7 @@ public class Weapon : MonoBehaviour
         if (hitIds.Contains(id)) return;
         hitIds.Add(id);
 
-        if (other.TryGetComponent<EnemyBase>(out var enemy))
+        if (other.TryGetComponent<EnemyHealth>(out var enemy))
         {
             enemy.TakeDamage(weaponDamage);
         }

@@ -12,6 +12,10 @@ public class GlobalInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
+        SignalBusInstaller.Install(Container);
+
+        Container.DeclareSignal<EnemyDiedSignal>();
+        
         if (!loadingCanvasPrefab)
         {
             Debug.LogError("[GlobalInstaller] Loading Canvas Prefab is not assigned.");

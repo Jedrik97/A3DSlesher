@@ -1,95 +1,38 @@
-using System.Collections;
 using UnityEngine;
-using Zenject;
+using System;
 
 public class EnemyBase : MonoBehaviour
 {
-    [Header("Enemy Stats")]
-    public string enemyName;
-    public float maxHealth = 100f;
-    public float currentHealth;
-    public float attackDamage = 10f;
+    [SerializeField] private EnemyStatsConfig statsConfig;
+    [SerializeField] private Transform playerTransform;
+    [SerializeField] private MonoBehaviour playerDamageReceiver;
 
-    [Header("Rewards")]
-    [SerializeField] private int xpReward = 25;
+    [field: SerializeField] public EnemyHealth Health { get; private set; }
+    [field: SerializeField] public EnemyMover Mover { get; private set; }
+    [field: SerializeField] public EnemyMeleeBrain Brain { get; private set; }
+    [field: SerializeField] public EnemyMeleeCombat Combat { get; private set; }
 
-    private GameManager gameManager;
-    private ObjectPool<EnemyBase> _pool;
-    protected Animator animator;
-    private SignalBus _signalBus;
+    public EnemyStatsConfig StatsConfig => statsConfig;
+    public Transform PlayerTransform => playerTransform;
+    public Component PlayerDamageComponent => playerDamageReceiver as Component;
 
-    public event System.Action<float> OnHealthChanged;
-    public event System.Action<GameObject> OnDeath;
-
-    [Inject]
-    public void Construct(GameManager gameManager, SignalBus signalBus)
+    private void Reset()
     {
-        this.gameManager = gameManager;
-        _signalBus = signalBus;
+        Health = GetComponent<EnemyHealth>();
+        Mover = GetComponent<EnemyMover>();
+        Brain = GetComponent<EnemyMeleeBrain>();
+        Combat = GetComponent<EnemyMeleeCombat>();
     }
 
-    protected virtual void OnEnable()
+    public void Initialize(EnemyStatsConfig config, Transform player, Component playerDamageComp)
     {
-        currentHealth = maxHealth;
-        OnHealthChanged?.Invoke(currentHealth);
-        animator = GetComponent<Animator>();
+        statsConfig = config;
+        playerTransform = player;
+        playerDamageReceiver = playerDamageComp as MonoBehaviour;
+
+        if (Health) Health.Setup(statsConfig.maxHP);
+        if (Mover) Mover.Setup(playerTransform, statsConfig.moveSpeed);
+        if (Brain) Brain.Setup(this, statsConfig.weaponConfig);
+        if (Combat) Combat.Setup(this, statsConfig.weaponConfig);
     }
-
-    public void SetPool(ObjectPool<EnemyBase> pool)
-    {
-        _pool = pool;
-    }
-
-    public void ReturnHeal()
-    {
-        currentHealth = maxHealth;
-        OnHealthChanged?.Invoke(currentHealth);
-    }
-
-    public void TakeDamage(float damage)
-    {
-        if (!gameObject.activeSelf) return;
-
-        currentHealth -= damage;
-        OnHealthChanged?.Invoke(currentHealth);
-
-        if (currentHealth > 0f)
-        {
-            if (animator)
-            {
-                animator.ResetTrigger("TakeDamage");
-                animator.SetTrigger("TakeDamage");
-            }
-        }
-        else
-        {
-            Die();
-        }
-    }
-
-    private void Die()
-    {
-        if (animator) animator.SetTrigger("Die");
-
-        _signalBus?.Fire(new EnemyDiedSignal
-        {
-            Enemy = this,
-            Xp = xpReward
-        });
-
-        OnDeath?.Invoke(gameObject);
-        StartCoroutine(WaitAndReturnToPool());
-    }
-
-    private IEnumerator WaitAndReturnToPool()
-    {
-        yield return new WaitForSeconds(10f);
-        _pool?.ReturnToPool(this);
-    }
-}
-
-public struct EnemyDiedSignal
-{
-    public EnemyBase Enemy;
-    public int Xp;
 }

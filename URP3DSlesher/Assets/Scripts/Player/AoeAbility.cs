@@ -47,7 +47,7 @@ public class AoeAbility : MonoBehaviour
         var hits = Physics.OverlapSphere(transform.position, aoeRadius, enemyLayer, QueryTriggerInteraction.Collide);
         for (int i = 0; i < hits.Length; i++)
         {
-            if (hits[i].TryGetComponent<EnemyBase>(out var enemy))
+            if (hits[i].TryGetComponent<EnemyHealth>(out var enemy))
             {
                 enemy.TakeDamage(aoeDamagePerSecond);
             }
