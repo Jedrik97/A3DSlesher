@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using System.Collections;
 
 public class EnemyRangedCombat : MonoBehaviour
@@ -65,4 +65,4 @@ public class EnemyRangedCombat : MonoBehaviour
 
         p.Arm();
     }
-}
+}*/

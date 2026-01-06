@@ -3,54 +3,46 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class EnemyWeaponHitbox : MonoBehaviour
 {
-    [SerializeField] private EnemyBase owner;
-    [SerializeField] private float damage = 10f;
-    private Collider col;
-    private bool active = true;
+    [SerializeField] private Collider col;
+
+    private EnemyBase owner;
+    private float damage;
+    private bool active;
+    private bool didHit;
 
     private void Awake()
     {
-        col = GetComponent<Collider>();
+        if (!col) col = GetComponent<Collider>();
         col.isTrigger = true;
+        col.enabled = false;
     }
 
-    public void Initialize(EnemyBase enemyBase, float dmg)
+    public void Bind(EnemyBase enemyBase, float dmg)
     {
         owner = enemyBase;
         damage = dmg;
-        active = true;
-        gameObject.SetActive(true);
     }
 
-    public void DisableHit()
+    public void SetActive(bool value)
     {
-        active = false;
-        gameObject.SetActive(false);
+        active = value;
+        didHit = false;
+
+        if (col) col.enabled = value;
+        if (gameObject.activeSelf != value) gameObject.SetActive(value);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!active) return;
-        if (!owner) return;
+        if (!active || didHit || !owner) return;
 
-        Component damageComp = owner.PlayerDamageComponent;
-        if (damageComp && other.gameObject == owner.PlayerTransform.gameObject)
-        {
-            var method = damageComp.GetType().GetMethod("ReceiveDamage");
-            if (method != null)
-            {
-                method.Invoke(damageComp, new object[] { damage, owner.gameObject });
-                active = false;
-            }
-            else
-            {
-                var alt = damageComp.GetType().GetMethod("TakeDamage");
-                if (alt != null)
-                {
-                    alt.Invoke(damageComp, new object[] { damage, owner.gameObject });
-                    active = false;
-                }
-            }
-        }
+        Transform player = owner.PlayerTransform;
+        if (!player || other.transform != player) return;
+
+        IDamageReceiver receiver = owner.PlayerDamageReceiver;
+        if (receiver == null) return;
+
+        receiver.ReceiveDamage(damage, owner.gameObject);
+        didHit = true;
     }
 }

@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 
 public class EnemyRangedBrain : MonoBehaviour
 {
@@ -40,4 +40,4 @@ public class EnemyRangedBrain : MonoBehaviour
             if (owner.Combat) owner.Combat.RequestShot();
         }
     }
-}
+}*/

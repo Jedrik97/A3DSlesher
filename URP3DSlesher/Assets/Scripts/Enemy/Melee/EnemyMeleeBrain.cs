@@ -21,16 +21,10 @@ public class EnemyMeleeBrain : MonoBehaviour
     {
         if (!owner) return;
         Transform player = owner.PlayerTransform;
-        if (!player) return;
+        if (!player || !weapon) return;
 
         float dist = Vector3.Distance(transform.position, player.position);
-        if (dist <= (weapon.attackRange + attackDistanceBuffer))
-        {
-            if (owner.Combat) owner.Combat.RequestAttack();
-        }
-        else
-        {
-            // movement handled by EnemyMover
-        }
+        if (dist <= weapon.attackRange + attackDistanceBuffer)
+            owner.Combat?.RequestAttack();
     }
 }

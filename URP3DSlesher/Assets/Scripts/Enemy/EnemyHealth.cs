@@ -1,38 +1,27 @@
 using UnityEngine;
-using Zenject;
-using System;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private float currentHP;
-    [SerializeField] private float xpReward = 10f;
+    [SerializeField] private float maxHp = 100f;
+    [SerializeField] private float hp;
 
-    private SignalBus _signalBus;
+    private EnemyBase owner;
 
-    public event Action<EnemyHealth> OnDied;
-
-    [Inject]
-    public void Construct(SignalBus signalBus)
+    public void Setup(EnemyBase enemyBase, float max)
     {
-        _signalBus = signalBus;
-    }
-
-    public void Setup(float maxHP)
-    {
-        currentHP = maxHP;
+        owner = enemyBase;
+        maxHp = Mathf.Max(1f, max);
+        hp = maxHp;
     }
 
     public void TakeDamage(float amount)
     {
-        currentHP -= amount;
-        if (currentHP <= 0)
-            Die();
+        hp -= Mathf.Max(0f, amount);
+        if (hp <= 0f) Die();
     }
 
     private void Die()
     {
-        _signalBus.Fire(new EnemyDiedSignal(xpReward));
-        OnDied?.Invoke(this);
         gameObject.SetActive(false);
     }
 }

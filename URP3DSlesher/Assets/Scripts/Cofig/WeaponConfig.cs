@@ -10,7 +10,7 @@ public class WeaponConfig : ScriptableObject
     public float attackRange = 1.6f;
     public float attackCooldown = 1.2f;
     
-    public GameObject hitboxPrefab; // optional: prefab with EnemyWeaponHitbox
+    public GameObject hitboxPrefab;
     public Vector3 hitboxLocalPosition = Vector3.zero;
     
     public GameObject projectilePrefab;

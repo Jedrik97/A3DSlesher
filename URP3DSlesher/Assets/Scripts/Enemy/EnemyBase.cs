@@ -1,38 +1,38 @@
 using UnityEngine;
-using System;
 
 public class EnemyBase : MonoBehaviour
 {
-    [SerializeField] private EnemyStatsConfig statsConfig;
-    [SerializeField] private Transform playerTransform;
-    [SerializeField] private MonoBehaviour playerDamageReceiver;
+    [Header("Runtime")]
+    [SerializeField] private EnemyStatsConfig stats;
 
-    [field: SerializeField] public EnemyHealth Health { get; private set; }
-    [field: SerializeField] public EnemyMover Mover { get; private set; }
-    [field: SerializeField] public EnemyMeleeBrain Brain { get; private set; }
-    [field: SerializeField] public EnemyMeleeCombat Combat { get; private set; }
+    [Header("Links")]
+    [SerializeField] private EnemyHealth health;
+    [SerializeField] private EnemyMover mover;
+    [SerializeField] private EnemyMeleeBrain brain;
+    [SerializeField] private EnemyMeleeCombat combat;
 
-    public EnemyStatsConfig StatsConfig => statsConfig;
-    public Transform PlayerTransform => playerTransform;
-    public Component PlayerDamageComponent => playerDamageReceiver as Component;
+    public Transform PlayerTransform { get; private set; }
+    public IDamageReceiver PlayerDamageReceiver { get; private set; }
+    public EnemyMeleeCombat Combat => combat;
+    public WeaponConfig Weapon => stats ? stats.weaponConfig : null;
 
-    private void Reset()
+    private void Awake()
     {
-        Health = GetComponent<EnemyHealth>();
-        Mover = GetComponent<EnemyMover>();
-        Brain = GetComponent<EnemyMeleeBrain>();
-        Combat = GetComponent<EnemyMeleeCombat>();
+        if (!health) health = GetComponent<EnemyHealth>();
+        if (!mover) mover = GetComponent<EnemyMover>();
+        if (!brain) brain = GetComponent<EnemyMeleeBrain>();
+        if (!combat) combat = GetComponent<EnemyMeleeCombat>();
     }
 
-    public void Initialize(EnemyStatsConfig config, Transform player, Component playerDamageComp)
+    public void Initialize(EnemyStatsConfig cfg, Transform playerTransform, IDamageReceiver playerDamageReceiver)
     {
-        statsConfig = config;
-        playerTransform = player;
-        playerDamageReceiver = playerDamageComp as MonoBehaviour;
+        stats = cfg;
+        PlayerTransform = playerTransform;
+        PlayerDamageReceiver = playerDamageReceiver;
 
-        if (Health) Health.Setup(statsConfig.maxHP);
-        if (Mover) Mover.Setup(playerTransform, statsConfig.moveSpeed);
-        if (Brain) Brain.Setup(this, statsConfig.weaponConfig);
-        if (Combat) Combat.Setup(this, statsConfig.weaponConfig);
+        if (health) health.Setup(this, cfg.maxHP);
+        if (mover) mover.Setup(playerTransform, cfg.moveSpeed, cfg.weaponConfig ? cfg.weaponConfig.attackRange : 1.6f);
+        if (brain) brain.Setup(this, cfg.weaponConfig);
+        if (combat) combat.Setup(this, cfg.weaponConfig);
     }
 }

@@ -1,3 +1,4 @@
+/*
 using System.Collections;
 using UnityEngine;
 
@@ -136,3 +137,4 @@ public class EnemySpawner : MonoBehaviour
         if (alive < 0) alive = 0;
     }
 }
+*/

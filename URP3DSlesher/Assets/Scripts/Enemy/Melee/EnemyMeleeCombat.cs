@@ -8,64 +8,74 @@ public class EnemyMeleeCombat : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private string attackTrigger = "Attack";
 
+    [Header("Hit Window")]
+    [SerializeField] private float hitOnNormalized = 0.25f;
+    [SerializeField] private float hitOffNormalized = 0.45f;
+
+    [Header("Refs")]
+    [SerializeField] private EnemyWeaponHitbox hitbox;
+
     private bool canAttack = true;
-    private GameObject spawnedHitbox;
+    private Coroutine attackRoutine;
+
+    private void Awake()
+    {
+        if (!owner) owner = GetComponent<EnemyBase>();
+        if (!animator) animator = GetComponentInChildren<Animator>();
+        if (!hitbox) hitbox = GetComponentInChildren<EnemyWeaponHitbox>(true);
+    }
 
     public void Setup(EnemyBase enemyBase, WeaponConfig cfg)
     {
         owner = enemyBase;
         weapon = cfg;
+
+        if (hitbox && weapon)
+            hitbox.Bind(owner, weapon.damage);
     }
 
     public void RequestAttack()
     {
-        if (!canAttack) return;
-        StartCoroutine(DoAttack());
+        if (!canAttack || !weapon) return;
+        if (attackRoutine != null) return;
+
+        attackRoutine = StartCoroutine(DoAttack());
     }
 
     private IEnumerator DoAttack()
     {
         canAttack = false;
-        if (animator && attackTrigger.Length > 0) animator.SetTrigger(attackTrigger);
 
-        yield return new WaitForSeconds(weapon.attackCooldown * 0.25f);
+        if (animator && !string.IsNullOrEmpty(attackTrigger))
+            animator.SetTrigger(attackTrigger);
 
-        ActivateHitWindow();
+        float cd = Mathf.Max(0.05f, weapon.attackCooldown);
 
-        float activeWindow = weapon.attackCooldown * 0.2f;
-        yield return new WaitForSeconds(activeWindow);
+        float tOn = Mathf.Clamp01(hitOnNormalized) * cd;
+        float tOff = Mathf.Clamp01(hitOffNormalized) * cd;
+        if (tOff < tOn) tOff = tOn;
 
-        DeactivateHitWindow();
+        if (tOn > 0) yield return new WaitForSeconds(tOn);
+        HitOn();
 
-        float remaining = weapon.attackCooldown - weapon.attackCooldown * 0.25f - activeWindow;
-        if (remaining > 0) yield return new WaitForSeconds(remaining);
+        float activeTime = tOff - tOn;
+        if (activeTime > 0) yield return new WaitForSeconds(activeTime);
+        HitOff();
 
+        float remain = cd - tOff;
+        if (remain > 0) yield return new WaitForSeconds(remain);
+
+        attackRoutine = null;
         canAttack = true;
     }
 
-    private void ActivateHitWindow()
+    public void HitOn()
     {
-        if (weapon.hitboxPrefab)
-        {
-            spawnedHitbox = Instantiate(weapon.hitboxPrefab, transform);
-            spawnedHitbox.transform.localPosition = weapon.hitboxLocalPosition;
-            EnemyWeaponHitbox hb = spawnedHitbox.GetComponent<EnemyWeaponHitbox>();
-            if (hb) hb.Initialize(owner, weapon.damage);
-        }
-        else
-        {
-            EnemyWeaponHitbox hb = GetComponentInChildren<EnemyWeaponHitbox>();
-            if (hb) hb.Initialize(owner, weapon.damage);
-        }
+        if (hitbox) hitbox.SetActive(true);
     }
 
-    private void DeactivateHitWindow()
+    public void HitOff()
     {
-        if (spawnedHitbox) Destroy(spawnedHitbox);
-        else
-        {
-            EnemyWeaponHitbox hb = GetComponentInChildren<EnemyWeaponHitbox>();
-            if (hb) hb.DisableHit();
-        }
+        if (hitbox) hitbox.SetActive(false);
     }
 }

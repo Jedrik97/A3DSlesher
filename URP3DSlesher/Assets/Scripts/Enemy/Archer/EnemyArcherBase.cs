@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 
 public class EnemyArcherBase : MonoBehaviour
 {
@@ -34,4 +34,4 @@ public class EnemyArcherBase : MonoBehaviour
         if (Brain) Brain.Setup(this, statsConfig.weaponConfig);
         if (Combat) Combat.Setup(this, statsConfig.weaponConfig);
     }
-}
+}*/

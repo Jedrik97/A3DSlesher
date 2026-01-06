@@ -206,8 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa756017a18ccf40945ec6bebb2ba16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyWeaponHitbox
-  owner: {fileID: 1949668321}
-  damage: 10
+  col: {fileID: 92264671}
 --- !u!54 &92264670
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -252,7 +251,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.032802638
   m_Height: 0.847856
@@ -2752,6 +2751,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077487796}
   m_CullTransparentMesh: 1
+--- !u!95 &1198888195 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9554932, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
+  m_PrefabInstance: {fileID: 1949668317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1345803434
 GameObject:
   m_ObjectHideFlags: 0
@@ -4640,6 +4644,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2316400, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9554932, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
       propertyPath: m_Controller
       value: 
@@ -4716,13 +4724,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa131eb5bd0d464eb970f7e8930e488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBase
-  statsConfig: {fileID: 0}
-  playerTransform: {fileID: 0}
-  playerDamageReceiver: {fileID: 0}
-  <Health>k__BackingField: {fileID: 0}
-  <Mover>k__BackingField: {fileID: 0}
-  <Brain>k__BackingField: {fileID: 1949668324}
-  <Combat>k__BackingField: {fileID: 0}
+  stats: {fileID: 0}
+  health: {fileID: 0}
+  mover: {fileID: 0}
+  brain: {fileID: 0}
+  combat: {fileID: 0}
 --- !u!114 &1949668322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4735,8 +4741,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84675d10fb2f93e42ba3af81201b97d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  currentHP: 0
-  xpReward: 10
+  maxHp: 100
+  hp: 0
 --- !u!114 &1949668323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4749,10 +4755,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9626ea20a8060444a3be452d2a4a44a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMeleeCombat
-  owner: {fileID: 1949668321}
+  owner: {fileID: 0}
   weapon: {fileID: 0}
-  animator: {fileID: 0}
+  animator: {fileID: 1198888195}
   attackTrigger: Attack
+  hitOnNormalized: 0.25
+  hitOffNormalized: 0.45
+  hitbox: {fileID: 0}
 --- !u!114 &1949668324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4765,7 +4774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ea43a52c1307143a9ca344135d01d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMeleeBrain
-  owner: {fileID: 1949668321}
+  owner: {fileID: 0}
   weapon: {fileID: 0}
   attackDistanceBuffer: 0.15
 --- !u!136 &1949668325
