@@ -2751,11 +2751,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077487796}
   m_CullTransparentMesh: 1
---- !u!95 &1198888195 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9554932, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
-  m_PrefabInstance: {fileID: 1949668317}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1345803434
 GameObject:
   m_ObjectHideFlags: 0
@@ -4662,21 +4657,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 146754, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1949668325}
-    - targetCorrespondingSourceObject: {fileID: 146754, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1949668324}
-    - targetCorrespondingSourceObject: {fileID: 146754, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1949668323}
-    - targetCorrespondingSourceObject: {fileID: 146754, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1949668322}
-    - targetCorrespondingSourceObject: {fileID: 146754, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1949668321}
-    - targetCorrespondingSourceObject: {fileID: 146754, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1949668320}
     - targetCorrespondingSourceObject: {fileID: 159632, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 92264671}
@@ -4697,86 +4677,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 159632, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
   m_PrefabInstance: {fileID: 1949668317}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1949668320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949668318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6b36fe51ff39ad4aa6923799d9533d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyMover
-  target: {fileID: 0}
-  moveSpeed: 3
-  stopDistance: 0.9
---- !u!114 &1949668321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949668318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afa131eb5bd0d464eb970f7e8930e488, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyBase
-  stats: {fileID: 0}
-  health: {fileID: 0}
-  mover: {fileID: 0}
-  brain: {fileID: 0}
-  combat: {fileID: 0}
---- !u!114 &1949668322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949668318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84675d10fb2f93e42ba3af81201b97d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHp: 100
-  hp: 0
---- !u!114 &1949668323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949668318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9626ea20a8060444a3be452d2a4a44a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyMeleeCombat
-  owner: {fileID: 0}
-  weapon: {fileID: 0}
-  animator: {fileID: 1198888195}
-  attackTrigger: Attack
-  hitOnNormalized: 0.25
-  hitOffNormalized: 0.45
-  hitbox: {fileID: 0}
---- !u!114 &1949668324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949668318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2ea43a52c1307143a9ca344135d01d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyMeleeBrain
-  owner: {fileID: 0}
-  weapon: {fileID: 0}
-  attackDistanceBuffer: 0.15
 --- !u!136 &1949668325
 CapsuleCollider:
   m_ObjectHideFlags: 0

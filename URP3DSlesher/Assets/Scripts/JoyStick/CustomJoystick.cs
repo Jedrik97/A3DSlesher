@@ -42,12 +42,10 @@ public class CustomJoystick : MonoBehaviour, IDragHandler, IPointerDownHandler, 
         handle.localPosition = clamped;
 
         Vector2 norm = clamped / maxRange;
-
-        // усиливаем вертикаль
+        
         if (norm.y > 0) norm.y *= forwardSector;
         else if (norm.y < 0) norm.y *= backwardSector;
-
-        // усиливаем горизонталь
+        
         if (norm.x > 0) norm.x *= rightSector;
         else if (norm.x < 0) norm.x *= leftSector;
 
@@ -75,14 +73,10 @@ public class CustomJoystick : MonoBehaviour, IDragHandler, IPointerDownHandler, 
         float r = radius > 0f ? radius : rect.width * 0.5f;
         float maxRange = r * handleRange;
         var centerWorld = rt.TransformPoint(centerLocal);
-
-        // вперёд
+        
         DrawSector(centerWorld, rt, maxRange, 90f, forwardSector, forwardColor);
-        // назад
         DrawSector(centerWorld, rt, maxRange, 270f, backwardSector, backwardColor);
-        // вправо
         DrawSector(centerWorld, rt, maxRange, 0f, rightSector, rightColor);
-        // влево
         DrawSector(centerWorld, rt, maxRange, 180f, leftSector, leftColor);
     }
 
