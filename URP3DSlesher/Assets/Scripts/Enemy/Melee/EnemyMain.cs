@@ -1,44 +1,89 @@
+using System.Collections;
 using UnityEngine;
 using Zenject;
 
 public class EnemyMain : MonoBehaviour
 {
-    [Header("Enemy Start Stats")]
+    [Header("Enemy Stats")] 
+    public string enemyName;
     public float maxHealth = 100f;
     public float currentHealth;
+    public float attackDamage = 10f;
 
-    [Header("Enemy Weapon Scrpt")]
-    [SerializeField] private EnemyWeapon _enemyWeapon;
+    private GameManager gameManager;
 
-    private float _attackDamage;
-    private GameManager _gameManager;
+    public event System.Action<float> OnHealthChanged;
+    public event System.Action<GameObject> OnDeath;
+
+    private ObjectPool<EnemyMain> _pool;
+
     protected Animator animator;
 
     [Inject]
     public void Construct(GameManager gameManager)
     {
-        _gameManager = gameManager;
+        this.gameManager = gameManager;
     }
 
     protected virtual void OnEnable()
     {
-        int playerLevel = _gameManager.GetPlayerLevel();
-
-        maxHealth = 100f + playerLevel * 10f;
         currentHealth = maxHealth;
-        
-        _attackDamage = 10f + playerLevel * 5f;
-
-        if (_enemyWeapon != null)
+        OnHealthChanged?.Invoke(currentHealth);
+        if (gameManager)
         {
-            _enemyWeapon.SetupDamage(_attackDamage, playerLevel);
+            ApplyLevelBasedStats(gameManager.GetPlayerLevel());
         }
 
         animator = GetComponent<Animator>();
     }
 
-    public float GetAttackDamage()
+    public void SetPool(ObjectPool<EnemyMain> pool)
     {
-        return _attackDamage;
+        this._pool = pool;
+    }
+
+    public void ApplyLevelBasedStats(int playerLevel)
+    {
+        attackDamage = 10f + (playerLevel * 5f);
+        maxHealth = 100f + (playerLevel * 10f);
+    }
+
+    public void ReturnHeal()
+    {
+        currentHealth = maxHealth;
+        OnHealthChanged?.Invoke(currentHealth);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        if (!gameObject.activeSelf) return;
+
+        currentHealth -= damage;
+        OnHealthChanged?.Invoke(currentHealth);
+
+        if (currentHealth > 0f)
+        {
+            animator.ResetTrigger("TakeDamage");
+            animator.SetTrigger("TakeDamage");
+        }
+        else
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        if (animator)
+            animator.SetTrigger("Die");
+
+        OnDeath?.Invoke(gameObject);
+        StartCoroutine(WaitAndReturnToPool());
+    }
+
+    private IEnumerator WaitAndReturnToPool()
+    {
+        yield return new WaitForSeconds(10f);
+        _pool?.ReturnToPool(this);
     }
 }
