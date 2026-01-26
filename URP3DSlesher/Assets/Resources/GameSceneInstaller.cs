@@ -12,7 +12,7 @@ public class GameSceneInstaller : MonoInstaller
     public override void InstallBindings()
     {
         SignalBusInstaller.Install(Container);
-        Container.DeclareSignal<EnemyDiedSignal>();
+        /*Container.DeclareSignal<EnemyDiedSignal>();*/
 
         Container.Bind<PlayerInventory>().AsSingle();
 

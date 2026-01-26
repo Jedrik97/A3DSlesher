@@ -1,12 +1,11 @@
 using UnityEngine;
 using System;
 
-[System.Serializable]
+[System.Serializable] 
 public class PlayerInventory
 {
     public int Gold { get; private set; } = 10;
     public int HealthPotions { get; private set; } = 0;
-
     private const int MaxPotions = 5;
     private const float PotionHealAmount = 50f;
 

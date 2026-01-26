@@ -14,7 +14,7 @@ public class GlobalInstaller : MonoInstaller
     {
         SignalBusInstaller.Install(Container);
 
-        Container.DeclareSignal<EnemyDiedSignal>();
+        /*Container.DeclareSignal<EnemyDiedSignal>();*/
         
         if (!loadingCanvasPrefab)
         {

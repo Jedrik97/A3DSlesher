@@ -5,19 +5,16 @@ public class EnemyWeapon : MonoBehaviour
     [SerializeField] private Collider weaponCollider;
 
     private float _cachedDamage;
-    private int _playerLevel;
 
     private void OnEnable()
     {
         if (weaponCollider)
             weaponCollider.enabled = false;
     }
-
-    // вызывается EnemyMain.OnEnable
-    public void SetupDamage(float damage, int playerLevel)
+    
+    public void SetupDamage(float damage)
     {
         _cachedDamage = damage;
-        _playerLevel = playerLevel;
     }
 
     public void EnableCollider()
@@ -38,8 +35,7 @@ public class EnemyWeapon : MonoBehaviour
 
         var health = other.GetComponent<HealthPlayerController>();
         if (health == null) return;
-
-        // ❗ никакой логики — только применение
+        
         health.TakeDamage(_cachedDamage);
     }
 }

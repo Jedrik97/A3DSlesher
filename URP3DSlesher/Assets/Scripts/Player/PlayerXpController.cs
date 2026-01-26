@@ -37,7 +37,7 @@ public class PlayerXpController : MonoBehaviour
 
     private void OnEnable()
     {
-        _signalBus.Subscribe<EnemyDiedSignal>(OnEnemyDied);
+        /*_signalBus.Subscribe<EnemyDiedSignal>(OnEnemyDied);*/
         OnLevelChanged += UpdateLevelUI;
         OnExpChanged += UpdateExpUI;
         OnLevelChanged?.Invoke(_level);
@@ -46,7 +46,7 @@ public class PlayerXpController : MonoBehaviour
 
     private void OnDisable()
     {
-        _signalBus.TryUnsubscribe<EnemyDiedSignal>(OnEnemyDied);
+        /*_signalBus.TryUnsubscribe<EnemyDiedSignal>(OnEnemyDied);*/
         OnLevelChanged -= UpdateLevelUI;
         OnExpChanged -= UpdateExpUI;
     }
@@ -81,10 +81,10 @@ public class PlayerXpController : MonoBehaviour
         OnExpChanged?.Invoke(currentExp, expToNextLevel);
     }
 
-    private void OnEnemyDied(EnemyDiedSignal s)
+    /*private void OnEnemyDied(EnemyDiedSignal s)
     {
         GrantExperience(s.Xp);
-    }
+    }*/
 
     private void UpdateLevelUI(int level)
     {

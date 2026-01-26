@@ -1,89 +1,67 @@
-using System.Collections;
 using UnityEngine;
-using Zenject;
 
 public class EnemyMain : MonoBehaviour
 {
-    [Header("Enemy Stats")] 
-    public string enemyName;
+    [Header("Enemy Stats")]
     public float maxHealth = 100f;
     public float currentHealth;
-    public float attackDamage = 10f;
-
-    private GameManager gameManager;
 
     public event System.Action<float> OnHealthChanged;
     public event System.Action<GameObject> OnDeath;
+    public event System.Action OnTakeDamageAnim;
+    public event System.Action OnDeathAnim;
 
-    private ObjectPool<EnemyMain> _pool;
+    [Header("Weapon")]
+    [SerializeField] private float baseWeaponDamage = 10f;
 
-    protected Animator animator;
-
-    [Inject]
-    public void Construct(GameManager gameManager)
-    {
-        this.gameManager = gameManager;
-    }
+    private EnemyWeapon _enemyWeapon;
 
     protected virtual void OnEnable()
     {
         currentHealth = maxHealth;
         OnHealthChanged?.Invoke(currentHealth);
-        if (gameManager)
-        {
-            ApplyLevelBasedStats(gameManager.GetPlayerLevel());
-        }
 
-        animator = GetComponent<Animator>();
+        CacheWeapon();
+        CalculateAndApplyWeaponDamage();
     }
 
-    public void SetPool(ObjectPool<EnemyMain> pool)
+    private void CacheWeapon()
     {
-        this._pool = pool;
+        if (!_enemyWeapon)
+            _enemyWeapon = GetComponentInChildren<EnemyWeapon>(true);
     }
 
-    public void ApplyLevelBasedStats(int playerLevel)
-    {
-        attackDamage = 10f + (playerLevel * 5f);
-        maxHealth = 100f + (playerLevel * 10f);
-    }
+    protected virtual float CalculateWeaponDamage() => baseWeaponDamage;
 
-    public void ReturnHeal()
+    private void CalculateAndApplyWeaponDamage()
     {
-        currentHealth = maxHealth;
-        OnHealthChanged?.Invoke(currentHealth);
+        if (!_enemyWeapon)
+            return;
+
+        _enemyWeapon.SetupDamage(CalculateWeaponDamage());
     }
 
     public void TakeDamage(float damage)
     {
-        if (!gameObject.activeSelf) return;
+        if (!gameObject.activeSelf)
+            return;
 
         currentHealth -= damage;
         OnHealthChanged?.Invoke(currentHealth);
 
         if (currentHealth > 0f)
         {
-            animator.ResetTrigger("TakeDamage");
-            animator.SetTrigger("TakeDamage");
+            OnTakeDamageAnim?.Invoke();
+            return;
         }
-        else
-        {
-            Die();
-        }
+
+        currentHealth = 0f;
+        Die();
     }
 
     private void Die()
     {
-        if (animator)
-            animator.SetTrigger("Die");
-
+        OnDeathAnim?.Invoke();
         OnDeath?.Invoke(gameObject);
-        StartCoroutine(WaitAndReturnToPool());
-    }
-
-    private IEnumerator WaitAndReturnToPool()
-    {
-        yield return new WaitForSeconds(10f);
-        _pool?.ReturnToPool(this);
     }
 }

@@ -194,19 +194,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41700551}
   m_CullTransparentMesh: 1
---- !u!114 &92264669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949668319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baa756017a18ccf40945ec6bebb2ba16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyWeaponHitbox
-  col: {fileID: 92264671}
 --- !u!54 &92264670
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -254,9 +241,9 @@ CapsuleCollider:
   m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.032802638
-  m_Height: 0.847856
+  m_Height: 0.60855913
   m_Direction: 2
-  m_Center: {x: 0.0025573722, y: -0.0005685806, z: 0.22653207}
+  m_Center: {x: 0.0025572702, y: -0.00056843116, z: 0.3461813}
 --- !u!1 &93190163
 GameObject:
   m_ObjectHideFlags: 0
@@ -4647,6 +4634,30 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c2929097e368e1e4d81ca33cfee145ba, type: 2}
+    - target: {fileID: 415881374605148915, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415881374605148915, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769214976267410085, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769214976267410085, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769214976267410085, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5855848113148147974, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
+      propertyPath: m_text
+      value: Sceleton
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4656,7 +4667,16 @@ PrefabInstance:
       addedObject: {fileID: 1949668326}
     - targetCorrespondingSourceObject: {fileID: 146754, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1949668329}
+    - targetCorrespondingSourceObject: {fileID: 146754, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1949668328}
+    - targetCorrespondingSourceObject: {fileID: 146754, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1949668325}
+    - targetCorrespondingSourceObject: {fileID: 146754, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1949668327}
     - targetCorrespondingSourceObject: {fileID: 159632, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 92264671}
@@ -4665,7 +4685,7 @@ PrefabInstance:
       addedObject: {fileID: 92264670}
     - targetCorrespondingSourceObject: {fileID: 159632, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 92264669}
+      addedObject: {fileID: 1949668321}
   m_SourcePrefab: {fileID: 100100000, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
 --- !u!1 &1949668318 stripped
 GameObject:
@@ -4677,6 +4697,57 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 159632, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
   m_PrefabInstance: {fileID: 1949668317}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1949668320 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9554932, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
+  m_PrefabInstance: {fileID: 1949668317}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1949668321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949668319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27f4ca11235248449d6f14d38d3c5ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyWeapon
+  weaponCollider: {fileID: 92264671}
+--- !u!114 &1949668322 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2499205699558741728, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
+  m_PrefabInstance: {fileID: 1949668317}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &1949668323 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6736141713128783735, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
+  m_PrefabInstance: {fileID: 1949668317}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!114 &1949668324 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5855848113148147974, guid: a27aaa9514020fa44bb6081abd5f14fc, type: 3}
+  m_PrefabInstance: {fileID: 1949668317}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!136 &1949668325
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4727,6 +4798,58 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1949668327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949668318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c674945514f7704abb52806b70f46ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMeleeAI
+  enemyName: 
+  maxHealth: 100
+  currentHealth: 0
+  baseWeaponDamage: 10
+  chaseSpeed: 2.5
+  maxChaseDistance: 25
+  attackRange: 3
+  attackCooldown: 1.2
+  player: {fileID: 0}
+--- !u!114 &1949668328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949668318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ec158778c5013240b9af23914f91bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimatorController
+  animator: {fileID: 1949668320}
+  maxMoveSpeed: 2.5
+  speedSmoothing: 12
+--- !u!114 &1949668329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949668318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c2a5b3a553df34bab607a4fc72184b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyUIController
+  enemyNameText: {fileID: 1949668324}
+  healthBar: {fileID: 1949668323}
+  enemyCircle: {fileID: 1949668322}
+  enemyMain: {fileID: 1949668327}
 --- !u!1 &1950242438 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8642763544335874191, guid: b3c1478f7a2d1004eb2105eae6afc94b, type: 3}
