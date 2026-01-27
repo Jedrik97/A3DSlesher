@@ -1,136 +1,179 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System;
+using ModestTree;
 
 public class EnemyMeleeAI : EnemyMain
 {
-    [Header("Movement & Detection")]
+    [Header("Movement")]
     [SerializeField] private float chaseSpeed = 2.5f;
     [SerializeField] private float attackRange = 3f;
 
     [Header("Attack")]
     [SerializeField] private float attackCooldown = 1.2f;
+    [SerializeField] private int attackVariants = 3;
 
     [Header("Refs")]
     [SerializeField] private Transform player;
+    [SerializeField] private EnemyWeapon weapon;
+    [SerializeField] private Animator animator;
+    [SerializeField] private EnemyAnimatorController animatorController;
 
-    public event System.Action OnAttackAnim;
+    public event Action<int> OnAttackAnim;
 
-    private NavMeshAgent agent;
+    private NavMeshAgent _agent;
     private float _nextAttackTime;
+    private bool _movementLocked;
+    private bool _rotationLocked;
+
+    private static readonly int AttackVariantHash =
+        Animator.StringToHash("AttackVariant");
 
     private enum EnemyState
     {
-        Patrolling,
         Chasing,
         Attacking,
-        Returning,
         Dead
     }
 
-    private EnemyState currentState = EnemyState.Patrolling;
+    private EnemyState _state;
 
     protected override void OnEnable()
     {
         base.OnEnable();
 
-        agent = GetComponent<NavMeshAgent>();
+        _agent = GetComponent<NavMeshAgent>();
+        _agent.speed = chaseSpeed;
+        _agent.updateRotation = false;
 
-        OnHealthChanged += HandleDamageInterrupt;
         OnDeath += HandleDeath;
 
-        currentState = EnemyState.Patrolling;
+        _state = EnemyState.Chasing;
         _nextAttackTime = 0f;
+        _movementLocked = false;
     }
 
     private void OnDisable()
     {
-        OnHealthChanged -= HandleDamageInterrupt;
         OnDeath -= HandleDeath;
     }
+    
+
+    public void Anim_LockMovement()
+    {
+        _movementLocked = true;
+        _rotationLocked = true;
+        if (_agent)
+            _agent.isStopped = true;
+    }
+
+    public void Anim_UnlockMovement()
+    {
+        _movementLocked = false;
+        _rotationLocked = false;
+    }
+
+    
+    public void Anim_EnableWeapon() => weapon?.EnableCollider();
+    public void Anim_DisableWeapon() => weapon?.DisableCollider();
+
+    // ============================
 
     private void Update()
     {
-        if (currentState == EnemyState.Dead)
+        if (_state == EnemyState.Dead || !player)
             return;
 
-        if (!player)
-            return;
+        float dist = Vector3.Distance(transform.position, player.position);
 
-        float distToPlayer = Vector3.Distance(transform.position, player.position);
-
-        switch (currentState)
+        switch (_state)
         {
             case EnemyState.Chasing:
             {
-                if (distToPlayer <= attackRange)
+                // 🔹 ещё далеко — подходим
+                if (dist > attackRange)
                 {
-                    currentState = EnemyState.Attacking;
-                    agent.isStopped = true;
-                    break;
+                    if (!_movementLocked)
+                    {
+                        _agent.isStopped = false;
+                        _agent.SetDestination(player.position);
+                    }
+
+                    RotateTowardsPlayer();
+                    return;
                 }
 
-                agent.isStopped = false;
-                agent.speed = chaseSpeed;
-                agent.SetDestination(player.position);
-                RotateTowardsPlayer();
-                break;
+                // 🔥 дошли — СТОП и ПЕРЕХОД В АТАКУ
+                _agent.isStopped = true;
+                _agent.ResetPath();
+                _state = EnemyState.Attacking;
+                return;
             }
 
             case EnemyState.Attacking:
             {
-                if (distToPlayer > attackRange)
-                {
-                    currentState = EnemyState.Chasing;
-                    agent.isStopped = false;
-                    break;
-                }
+                // ❌ В ЭТОМ СТЕЙТЕ МЫ ВООБЩЕ НЕ ДВИГАЕМСЯ
+                _agent.isStopped = true;
 
-                agent.isStopped = true;
                 RotateTowardsPlayer();
 
-                if (Time.time >= _nextAttackTime)
+                // 🔹 игрок убежал — выходим из атаки
+                if (dist > attackRange)
                 {
-                    _nextAttackTime = Time.time + attackCooldown;
-                    OnAttackAnim?.Invoke();
+                    animatorController.CancelAttack();
+                    _state = EnemyState.Chasing;
+                    return;
                 }
 
-                break;
+                // 🔥 игрок в радиусе — просто бьём по кулдауну
+                if (!_movementLocked && Time.time >= _nextAttackTime)
+                {
+                    PerformAttack();
+                }
+
+                return;
             }
         }
     }
 
+
+    private void PerformAttack()
+    {
+        _nextAttackTime = Time.time + attackCooldown;
+
+        int variant = UnityEngine.Random.Range(0, attackVariants);
+        animator.SetInteger(AttackVariantHash, variant);
+
+        OnAttackAnim?.Invoke(variant);
+    }
+
     private void RotateTowardsPlayer()
     {
-        Vector3 direction = player.position - transform.position;
-        direction.y = 0f;
+        if (_rotationLocked)
+            return;
 
-        if (direction.sqrMagnitude < 0.0001f)
+        Vector3 dir = player.position - transform.position;
+        dir.y = 0f;
+
+        if (dir.sqrMagnitude < 0.001f)
             return;
 
         transform.rotation = Quaternion.Slerp(
             transform.rotation,
-            Quaternion.LookRotation(direction),
-            Time.deltaTime * 5f
+            Quaternion.LookRotation(dir),
+            Time.deltaTime * 6f
         );
     }
 
-    private void HandleDamageInterrupt(float newHealth)
-    {
-        if (currentState != EnemyState.Attacking)
-            return;
-
-        currentState = EnemyState.Chasing;
-        agent.isStopped = false;
-    }
 
     private void HandleDeath(GameObject obj)
     {
-        currentState = EnemyState.Dead;
+        _state = EnemyState.Dead;
 
-        if (agent)
-            agent.enabled = false;
+        if (_agent)
+            _agent.enabled = false;
 
-        foreach (var col in GetComponents<Collider>())
-            col.enabled = false;
+        foreach (var c in GetComponents<Collider>())
+            c.enabled = false;
     }
 }

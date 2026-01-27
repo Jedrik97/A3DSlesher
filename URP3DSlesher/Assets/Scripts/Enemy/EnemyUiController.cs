@@ -4,15 +4,16 @@ using TMPro;
 
 public class EnemyUIController : MonoBehaviour
 {
-    [Header("UI Elements")]
-    [SerializeField] private TMP_Text enemyNameText;
+    [Header("UI Elements")] [SerializeField]
+    private TMP_Text enemyNameText;
+
     [SerializeField] private Slider healthBar;
     [SerializeField] private Image enemyCircle;
 
-    [Header("Enemy Base")]
+    [Header("Enemy Base")] 
     [SerializeField] private EnemyMain enemyMain;
 
-    [Header("Enemy Name")]
+    [Header("Enemy Name")] 
     [SerializeField] private string enemyDisplayName;
 
     private Transform playerCamera;
@@ -88,9 +89,9 @@ public class EnemyUIController : MonoBehaviour
 
         uiVisible = true;
 
-        if (enemyNameText) enemyNameText.enabled = true;
+        if (enemyNameText) enemyNameText.gameObject.SetActive(true);
         if (healthBar) healthBar.gameObject.SetActive(true);
-        if (enemyCircle) enemyCircle.enabled = true;
+        if (enemyCircle) enemyCircle.gameObject.SetActive(true);
     }
 
     private void HideUI()
@@ -100,8 +101,8 @@ public class EnemyUIController : MonoBehaviour
 
         uiVisible = false;
 
-        if (enemyNameText) enemyNameText.enabled = false;
+        if (enemyNameText) enemyNameText.gameObject.SetActive(false);
         if (healthBar) healthBar.gameObject.SetActive(false);
-        if (enemyCircle) enemyCircle.enabled = false;
+        if (enemyCircle) enemyCircle.gameObject.SetActive(false);
     }
 }

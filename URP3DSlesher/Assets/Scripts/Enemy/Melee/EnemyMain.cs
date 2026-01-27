@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class EnemyMain : MonoBehaviour
 {
@@ -6,13 +7,17 @@ public class EnemyMain : MonoBehaviour
     public float maxHealth = 100f;
     public float currentHealth;
 
-    public event System.Action<float> OnHealthChanged;
-    public event System.Action<GameObject> OnDeath;
-    public event System.Action OnTakeDamageAnim;
-    public event System.Action OnDeathAnim;
-
     [Header("Weapon")]
     [SerializeField] private float baseWeaponDamage = 10f;
+
+    [Header("Animation Variants")]
+    [SerializeField] private int hitVariants = 2;
+    [SerializeField] private int deathVariants = 2;
+    
+    public event Action<float> OnHealthChanged;
+    public event Action<int> OnHitAnim;
+    public event Action<int> OnDeathAnim;
+    public event Action<GameObject> OnDeath;
 
     private EnemyWeapon _enemyWeapon;
 
@@ -22,23 +27,13 @@ public class EnemyMain : MonoBehaviour
         OnHealthChanged?.Invoke(currentHealth);
 
         CacheWeapon();
-        CalculateAndApplyWeaponDamage();
+        _enemyWeapon?.SetupDamage(baseWeaponDamage);
     }
 
     private void CacheWeapon()
     {
         if (!_enemyWeapon)
             _enemyWeapon = GetComponentInChildren<EnemyWeapon>(true);
-    }
-
-    protected virtual float CalculateWeaponDamage() => baseWeaponDamage;
-
-    private void CalculateAndApplyWeaponDamage()
-    {
-        if (!_enemyWeapon)
-            return;
-
-        _enemyWeapon.SetupDamage(CalculateWeaponDamage());
     }
 
     public void TakeDamage(float damage)
@@ -51,7 +46,8 @@ public class EnemyMain : MonoBehaviour
 
         if (currentHealth > 0f)
         {
-            OnTakeDamageAnim?.Invoke();
+            int hitVariant = UnityEngine.Random.Range(0, hitVariants);
+            OnHitAnim?.Invoke(hitVariant);
             return;
         }
 
@@ -61,7 +57,8 @@ public class EnemyMain : MonoBehaviour
 
     private void Die()
     {
-        OnDeathAnim?.Invoke();
+        int deathVariant = UnityEngine.Random.Range(0, deathVariants);
+        OnDeathAnim?.Invoke(deathVariant);
         OnDeath?.Invoke(gameObject);
     }
 }
