@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System;
-using ModestTree;
 
 public class EnemyMeleeAI : EnemyMain
 {
@@ -23,6 +22,7 @@ public class EnemyMeleeAI : EnemyMain
 
     private NavMeshAgent _agent;
     private float _nextAttackTime;
+
     private bool _movementLocked;
     private bool _rotationLocked;
 
@@ -43,45 +43,69 @@ public class EnemyMeleeAI : EnemyMain
         base.OnEnable();
 
         _agent = GetComponent<NavMeshAgent>();
-        _agent.speed = chaseSpeed;
-        _agent.updateRotation = false;
 
-        OnDeath += HandleDeath;
+        if (_agent)
+        {
+            _agent.speed = chaseSpeed;
+            _agent.updateRotation = false;
+            _agent.isStopped = false;
+        }
 
         _state = EnemyState.Chasing;
         _nextAttackTime = 0f;
         _movementLocked = false;
+        _rotationLocked = false;
+
+        OnDeath += HandleDeath;
+        OnHitAnim += HandleHitInterrupt;
     }
 
     private void OnDisable()
     {
         OnDeath -= HandleDeath;
+        OnHitAnim -= HandleHitInterrupt;
     }
-    
 
     public void Anim_LockMovement()
     {
+        if (IsDead)
+            return;
+
         _movementLocked = true;
         _rotationLocked = true;
-        if (_agent)
+
+        if (_agent && _agent.isActiveAndEnabled && _agent.isOnNavMesh)
+        {
             _agent.isStopped = true;
+            _agent.ResetPath();
+        }
     }
 
     public void Anim_UnlockMovement()
     {
+        if (IsDead)
+            return;
+
         _movementLocked = false;
         _rotationLocked = false;
     }
 
-    
-    public void Anim_EnableWeapon() => weapon?.EnableCollider();
-    public void Anim_DisableWeapon() => weapon?.DisableCollider();
+    public void Anim_EnableWeapon()
+    {
+        if (IsDead)
+            return;
 
-    // ============================
+        weapon?.EnableCollider();
+    }
+
+    public void Anim_DisableWeapon()
+    {
+        weapon?.DisableCollider();
+    }
 
     private void Update()
     {
-        if (_state == EnemyState.Dead || !player)
+        if (IsDead || _state == EnemyState.Dead || !player)
             return;
 
         float dist = Vector3.Distance(transform.position, player.position);
@@ -90,10 +114,9 @@ public class EnemyMeleeAI : EnemyMain
         {
             case EnemyState.Chasing:
             {
-                // 🔹 ещё далеко — подходим
                 if (dist > attackRange)
                 {
-                    if (!_movementLocked)
+                    if (!_movementLocked && _agent && _agent.isActiveAndEnabled)
                     {
                         _agent.isStopped = false;
                         _agent.SetDestination(player.position);
@@ -103,21 +126,23 @@ public class EnemyMeleeAI : EnemyMain
                     return;
                 }
 
-                // 🔥 дошли — СТОП и ПЕРЕХОД В АТАКУ
-                _agent.isStopped = true;
-                _agent.ResetPath();
+                if (_agent && _agent.isActiveAndEnabled)
+                {
+                    _agent.isStopped = true;
+                    _agent.ResetPath();
+                }
+
                 _state = EnemyState.Attacking;
                 return;
             }
 
             case EnemyState.Attacking:
             {
-                // ❌ В ЭТОМ СТЕЙТЕ МЫ ВООБЩЕ НЕ ДВИГАЕМСЯ
-                _agent.isStopped = true;
+                if (_agent && _agent.isActiveAndEnabled)
+                    _agent.isStopped = true;
 
                 RotateTowardsPlayer();
 
-                // 🔹 игрок убежал — выходим из атаки
                 if (dist > attackRange)
                 {
                     animatorController.CancelAttack();
@@ -125,20 +150,19 @@ public class EnemyMeleeAI : EnemyMain
                     return;
                 }
 
-                // 🔥 игрок в радиусе — просто бьём по кулдауну
                 if (!_movementLocked && Time.time >= _nextAttackTime)
-                {
                     PerformAttack();
-                }
 
                 return;
             }
         }
     }
 
-
     private void PerformAttack()
     {
+        if (IsDead || _state == EnemyState.Dead)
+            return;
+
         _nextAttackTime = Time.time + attackCooldown;
 
         int variant = UnityEngine.Random.Range(0, attackVariants);
@@ -165,15 +189,37 @@ public class EnemyMeleeAI : EnemyMain
         );
     }
 
+    private void HandleHitInterrupt(int variant)
+    {
+        if (IsDead || _state == EnemyState.Dead)
+            return;
+
+        animatorController.CancelAttack();
+
+        _state = EnemyState.Chasing;
+        _movementLocked = false;
+        _rotationLocked = false;
+        _nextAttackTime = Time.time + 0.1f;
+
+        if (_agent && _agent.isActiveAndEnabled)
+        {
+            _agent.isStopped = true;
+            _agent.ResetPath();
+        }
+    }
 
     private void HandleDeath(GameObject obj)
     {
         _state = EnemyState.Dead;
 
-        if (_agent)
+        _movementLocked = true;
+        _rotationLocked = true;
+
+        if (_agent && _agent.isActiveAndEnabled)
             _agent.enabled = false;
 
-        foreach (var c in GetComponents<Collider>())
-            c.enabled = false;
+        weapon?.DisableCollider();
+
+        enabled = false;
     }
 }

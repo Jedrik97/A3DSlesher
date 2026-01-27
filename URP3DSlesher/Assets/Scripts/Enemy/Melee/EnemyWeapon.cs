@@ -11,7 +11,7 @@ public class EnemyWeapon : MonoBehaviour
         if (weaponCollider)
             weaponCollider.enabled = false;
     }
-    
+
     public void SetupDamage(float damage)
     {
         _cachedDamage = damage;
@@ -31,11 +31,13 @@ public class EnemyWeapon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player")) return;
+        if (!other.CompareTag("Player"))
+            return;
 
         var health = other.GetComponent<HealthPlayerController>();
-        if (health == null) return;
-        
+        if (!health)
+            return;
+
         health.TakeDamage(_cachedDamage);
     }
 }

@@ -49,7 +49,7 @@ public class EnemyAnimatorController : MonoBehaviour
 
     private void Update()
     {
-        if (agent && agent.enabled)
+        if (agent && agent.enabled && !enemy.IsDead)
             animator.SetFloat(SpeedHash, agent.velocity.magnitude);
     }
 
@@ -61,6 +61,9 @@ public class EnemyAnimatorController : MonoBehaviour
 
     private void PlayAttack(int variant)
     {
+        if (enemy.IsDead)
+            return;
+
         animator.SetInteger(AttackVariantHash, variant);
         animator.ResetTrigger(CancelAttackHash);
         animator.SetTrigger(AttackHash);
@@ -68,6 +71,9 @@ public class EnemyAnimatorController : MonoBehaviour
 
     private void PlayHit(int variant)
     {
+        if (enemy.IsDead)
+            return;
+
         animator.SetInteger(HitVariantHash, variant);
         animator.SetTrigger(HitHash);
     }
@@ -77,4 +83,17 @@ public class EnemyAnimatorController : MonoBehaviour
         animator.SetInteger(DeathVariantHash, variant);
         animator.SetTrigger(DieHash);
     }
+    public void ForceCancelAttack()
+    {
+        animator.ResetTrigger(AttackHash);
+        animator.ResetTrigger(CancelAttackHash);
+
+        animator.SetBool(AttackHash, false);
+
+        animator.speed = 0f;
+        animator.Update(0f);
+        animator.speed = 1f;
+    }
+
+
 }

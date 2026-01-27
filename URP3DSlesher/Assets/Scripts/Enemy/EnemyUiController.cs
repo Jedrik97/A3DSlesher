@@ -4,16 +4,15 @@ using TMPro;
 
 public class EnemyUIController : MonoBehaviour
 {
-    [Header("UI Elements")] [SerializeField]
-    private TMP_Text enemyNameText;
-
+    [Header("UI Elements")]
+    [SerializeField] private TMP_Text enemyNameText;
     [SerializeField] private Slider healthBar;
     [SerializeField] private Image enemyCircle;
 
-    [Header("Enemy Base")] 
+    [Header("Enemy Base")]
     [SerializeField] private EnemyMain enemyMain;
 
-    [Header("Enemy Name")] 
+    [Header("Enemy Name")]
     [SerializeField] private string enemyDisplayName;
 
     private Transform playerCamera;
@@ -22,7 +21,10 @@ public class EnemyUIController : MonoBehaviour
     private void OnEnable()
     {
         if (enemyMain)
+        {
             enemyMain.OnHealthChanged += UpdateHealthUI;
+            enemyMain.OnDeath += HandleDeath;
+        }
 
         if (Camera.main)
             playerCamera = Camera.main.transform;
@@ -34,7 +36,10 @@ public class EnemyUIController : MonoBehaviour
     private void OnDisable()
     {
         if (enemyMain)
+        {
             enemyMain.OnHealthChanged -= UpdateHealthUI;
+            enemyMain.OnDeath -= HandleDeath;
+        }
 
         uiVisible = false;
     }
@@ -57,7 +62,10 @@ public class EnemyUIController : MonoBehaviour
     {
         if (enemyNameText)
         {
-            var nameToShow = string.IsNullOrEmpty(enemyDisplayName) ? gameObject.name : enemyDisplayName;
+            var nameToShow = string.IsNullOrEmpty(enemyDisplayName)
+                ? gameObject.name
+                : enemyDisplayName;
+
             enemyNameText.text = nameToShow;
         }
 
@@ -76,6 +84,12 @@ public class EnemyUIController : MonoBehaviour
 
     public void SetVisible(bool value)
     {
+        if (enemyMain && enemyMain.IsDead)
+        {
+            HideUI();
+            return;
+        }
+
         if (value)
             ShowUI();
         else
@@ -104,5 +118,11 @@ public class EnemyUIController : MonoBehaviour
         if (enemyNameText) enemyNameText.gameObject.SetActive(false);
         if (healthBar) healthBar.gameObject.SetActive(false);
         if (enemyCircle) enemyCircle.gameObject.SetActive(false);
+    }
+
+    private void HandleDeath(GameObject obj)
+    {
+        HideUI();
+        enabled = false;
     }
 }

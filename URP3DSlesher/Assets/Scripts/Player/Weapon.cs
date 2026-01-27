@@ -9,17 +9,11 @@ public class Weapon : MonoBehaviour
     [SerializeField] private int baseDamage = 25;
     [SerializeField] private float activeHitWindow = 2f;
     [SerializeField] private LayerMask enemyLayer;
-
-    private PlayerStats playerStats;
+    [SerializeField] private PlayerStats playerStats;
     private int weaponDamage;
     private Coroutine disableRoutine;
     private readonly HashSet<int> hitIds = new HashSet<int>();
-
-    [Inject]
-    public void Construct(PlayerStats stats)
-    {
-        playerStats = stats;
-    }
+    
 
     private void OnEnable()
     {
@@ -29,6 +23,7 @@ public class Weapon : MonoBehaviour
 
     public void EnableCollider(bool enable)
     {
+        
         if (!weaponCollider) return;
 
         weaponCollider.enabled = enable;
@@ -59,6 +54,7 @@ public class Weapon : MonoBehaviour
     {
         if (!playerStats) return;
         weaponDamage = baseDamage + Mathf.RoundToInt(playerStats.strength * 5f);
+        Debug.Log(weaponDamage);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -72,6 +68,8 @@ public class Weapon : MonoBehaviour
         if (other.TryGetComponent<EnemyMain>(out var enemy))
         {
             enemy.TakeDamage(weaponDamage);
+            Debug.Log("Отправил дамагу от оружия к EnemyMain");
+            Debug.Log(weaponDamage);
         }
     }
 }
