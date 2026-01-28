@@ -1,8 +1,9 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.2/respin/6000.2.6f2-cc51a95c03' branch; Version is '6000.2.6f2 (4a4dcaec6541) revision 4869578'; Using compiler version '194234433'; Build Type 'Release'
 OS: 'Windows 10  (10.0.19045) 64bit ProfessionalWorkstation' Language: 'ru' Physical Memory: 15483 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User794" at "2026-01-28T10:40:36.4224455Z"
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
-Date: 2026-01-27T15:09:13Z
+Date: 2026-01-28T10:40:36Z
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.2.6f2\Editor\Unity.exe
@@ -16,7 +17,7 @@ C:/Users/User794/Documents/My Games/A3DSlesher/URP3DSlesher
 -logFile
 Logs/AssetImportWorker4.log
 -srvPort
-50221
+56791
 -licensingIpc
 LicenseClient-User794
 -job-worker-count
@@ -29,7 +30,6 @@ LicenseClient-User794
 AssetImport
 Successfully changed project path to: C:/Users/User794/Documents/My Games/A3DSlesher/URP3DSlesher
 C:/Users/User794/Documents/My Games/A3DSlesher/URP3DSlesher
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User794" at "2026-01-27T15:09:13.8337602Z"
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-allocator-temp-initial-block-size-main=262144"
     "memorysetup-allocator-temp-initial-block-size-worker=262144"
@@ -65,12 +65,12 @@ C:/Users/User794/Documents/My Games/A3DSlesher/URP3DSlesher
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [12596]  Target information:
+Player connection [30496]  Target information:
 
-Player connection [12596]  * "[IP] 192.168.200.232 [Port] 0 [Flags] 2 [Guid] 96316440 [EditorId] 96316440 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-FPB70SL) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [30496]  * "[IP] 192.168.200.232 [Port] 0 [Flags] 2 [Guid] 2555689573 [EditorId] 2555689573 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-FPB70SL) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [12596] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [12596] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [30496] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [30496] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -79,13 +79,13 @@ Input System module state changed to: Initialized.
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.17.4+4293ba1
-  Session Id:              5ba52e8042bb461982b47d0c2641400a
+  Session Id:              69cc1fdb15cc47c98d1cf850cc4bba93
   Correlation Id:          a2f23be9242f4f397c0ab39afcd05a6f
-  External correlation Id: 2423701798516657991
+  External correlation Id: 1461999879583692366
   Machine Id:              cOZLUj/KFfzHZYya1971pplPtS4=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-User794" (connect: 0.01s, validation: 0.01s, handshake: 0.11s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User794-notifications" at "2026-01-27T15:09:13.9531372Z"
-[Licensing::Module] Licensing Background thread has ended after 0.13s
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-User794" (connect: 0.00s, validation: 0.00s, handshake: 0.03s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User794-notifications" at "2026-01-28T10:40:36.4576496Z"
+[Licensing::Module] Licensing Background thread has ended after 0.04s
 Library Redirect Path: Library/
 [Physics::Module] Selected backend.
 [Physics::Module] Name: PhysX
@@ -93,7 +93,13 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 263.79 ms, found 3 plugins.
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 7971877438162-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Refreshing native plugins compatible for Editor in 3.15 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.2.6f2 (4a4dcaec6541)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/UnitySubsystems
@@ -109,52 +115,46 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.2.6f2/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.2.6f2/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56092
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56144
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.2.6f2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-[Licensing::Client] Successfully resolved entitlement details
-[Licensing::Module] License group:
-  Id: 7971877438162-UnityPersXXXX
-  Product: Unity Personal
-  Type: Assigned
-  Expiration: Unlimited
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.2.6f2/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Registered in 0.003314 seconds.
-- Loaded All Assemblies, in  0.408 seconds
+Registered in 0.003395 seconds.
+- Loaded All Assemblies, in  0.441 seconds
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 296 ms
+Android Extension - Scanning For ADB Devices 221 ms
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.609 seconds
-Domain Reload Profiling: 1015ms
-	BeginReloadAssembly (157ms)
+- Finished resetting the current domain, in  0.537 seconds
+Domain Reload Profiling: 977ms
+	BeginReloadAssembly (200ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (39ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (43ms)
-	LoadAllAssembliesAndSetupDomain (155ms)
-		LoadAssemblies (155ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (46ms)
+	LoadAllAssembliesAndSetupDomain (152ms)
+		LoadAssemblies (197ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (152ms)
-			TypeCache.Refresh (151ms)
-				TypeCache.ScanAssembly (126ms)
+		AnalyzeDomain (147ms)
+			TypeCache.Refresh (146ms)
+				TypeCache.ScanAssembly (132ms)
 			BuildScriptInfoCaches (0ms)
-			ResolveRequiredComponents (0ms)
-	FinalizeReload (610ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (538ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (566ms)
+		SetupLoadedEditorAssemblies (493ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (368ms)
-			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (53ms)
-			ProcessInitializeOnLoadAttributes (93ms)
-			ProcessInitializeOnLoadMethodAttributes (48ms)
+			InitializePlatformSupportModulesInManaged (300ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (51ms)
+			ProcessInitializeOnLoadAttributes (95ms)
+			ProcessInitializeOnLoadMethodAttributes (44ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -167,11 +167,11 @@ Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInter
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
 Begin MonoManager ReloadAssembly
 [Licensing::Client] Successfully resolved entitlement details
-- Loaded All Assemblies, in  0.901 seconds
+- Loaded All Assemblies, in  0.801 seconds
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
 'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
 'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 1.61 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.26 ms, found 3 plugins.
 Native extension for Android target not found
 Native extension for WindowsStandalone target not found
 Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
@@ -183,222 +183,248 @@ Package Manager log level set to [2]
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.711 seconds
-Domain Reload Profiling: 1606ms
-	BeginReloadAssembly (171ms)
+- Finished resetting the current domain, in  0.630 seconds
+Domain Reload Profiling: 1427ms
+	BeginReloadAssembly (162ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (41ms)
-	RebuildCommonClasses (33ms)
+		CreateAndSetChildDomain (32ms)
+	RebuildCommonClasses (31ms)
 	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (31ms)
-	LoadAllAssembliesAndSetupDomain (650ms)
-		LoadAssemblies (456ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (562ms)
+		LoadAssemblies (396ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (284ms)
-			TypeCache.Refresh (223ms)
-				TypeCache.ScanAssembly (180ms)
-			BuildScriptInfoCaches (47ms)
-			ResolveRequiredComponents (9ms)
-	FinalizeReload (711ms)
+		AnalyzeDomain (257ms)
+			TypeCache.Refresh (188ms)
+				TypeCache.ScanAssembly (173ms)
+			BuildScriptInfoCaches (55ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (630ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (500ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (10ms)
-			SetLoadedEditorAssemblies (5ms)
-			BeforeProcessingInitializeOnLoad (132ms)
-			ProcessInitializeOnLoadAttributes (310ms)
-			ProcessInitializeOnLoadMethodAttributes (38ms)
-			AfterProcessingInitializeOnLoad (5ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 2.56 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7154 unused Assets / (5.2 MB). Loaded Objects now: 7861.
-Memory consumption went from 141.3 MB to 136.1 MB.
-Total: 10.868500 ms (FindLiveObjects: 1.312200 ms CreateObjectMapping: 0.848700 ms MarkObjects: 5.589200 ms  DeleteObjects: 3.117200 ms)
-
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 1.38 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 15 unused Assets / (1.9 MB). Loaded Objects now: 7861.
-Memory consumption went from 132.0 MB to 130.1 MB.
-Total: 7.213500 ms (FindLiveObjects: 0.776100 ms CreateObjectMapping: 0.148900 ms MarkObjects: 5.823700 ms  DeleteObjects: 0.464000 ms)
-
-Prepare: number of updated asset objects reloaded= 154
-AssetImportParameters requested are different than current active one (requested -> active):
-  buildTarget: platform 13, subtarget 0, extendedPlatform 0 -> platform 19, subtarget 2, extendedPlatform 0
-  graphicsApiMask: 2099200 -> 262148
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 15 unused Assets / (1.9 MB). Loaded Objects now: 7861.
-Memory consumption went from 132.0 MB to 130.1 MB.
-Total: 8.395200 ms (FindLiveObjects: 0.797600 ms CreateObjectMapping: 0.283700 ms MarkObjects: 6.763700 ms  DeleteObjects: 0.548800 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  buildTarget: platform 13, subtarget 0, extendedPlatform 0 -> platform 19, subtarget 2, extendedPlatform 0
-  graphicsApiMask: 2099200 -> 262148
-========================================================================
-Received Import Request.
-  Time since last request: 452977.356200 seconds.
-  path: Assets/Animations/OneHandController.controller
-  artifactKey: Guid(c2929097e368e1e4d81ca33cfee145ba) Importer(2089858483,192608db42251d675da83286b1cce702)
-Start importing Assets/Animations/OneHandController.controller using Guid(c2929097e368e1e4d81ca33cfee145ba) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'a8ff0010a16b499acacf848d59954221') in 2.4087645 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 49
-
-========================================================================
-Received Prepare
-[Licensing::Client] Successfully resolved entitlement details
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-Begin MonoManager ReloadAssembly
-[Licensing::Client] Successfully resolved entitlement details
-- Loaded All Assemblies, in  1.652 seconds
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 1.99 ms, found 3 plugins.
-Native extension for Android target not found
-Native extension for WindowsStandalone target not found
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.893 seconds
-Domain Reload Profiling: 2566ms
-	BeginReloadAssembly (514ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (16ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (2ms)
-		CreateAndSetChildDomain (215ms)
-	RebuildCommonClasses (36ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (34ms)
-	LoadAllAssembliesAndSetupDomain (1077ms)
-		LoadAssemblies (691ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (567ms)
-			TypeCache.Refresh (306ms)
-				TypeCache.ScanAssembly (182ms)
-			BuildScriptInfoCaches (227ms)
-			ResolveRequiredComponents (19ms)
-	FinalizeReload (894ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (666ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (15ms)
-			SetLoadedEditorAssemblies (12ms)
-			BeforeProcessingInitializeOnLoad (155ms)
-			ProcessInitializeOnLoadAttributes (432ms)
-			ProcessInitializeOnLoadMethodAttributes (47ms)
-			AfterProcessingInitializeOnLoad (5ms)
-			EditorAssembliesLoaded (1ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (15ms)
-Refreshing native plugins compatible for Editor in 1.22 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7150 unused Assets / (5.9 MB). Loaded Objects now: 7878.
-Memory consumption went from 144.4 MB to 138.5 MB.
-Total: 20.781800 ms (FindLiveObjects: 2.301300 ms CreateObjectMapping: 1.182000 ms MarkObjects: 9.495100 ms  DeleteObjects: 7.801100 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 554.668309 seconds.
-  path: Assets/Scenes/MainMenuScene.unity
-  artifactKey: Guid(99c9720ab356a0642a771bea13969a05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/MainMenuScene.unity using Guid(99c9720ab356a0642a771bea13969a05) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6d049569a4a55db465114337246027ad') in 0.0716264 seconds
-Number of updated asset objects reloaded before import = 1Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Prepare
-[Licensing::Client] Successfully resolved entitlement details
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-Begin MonoManager ReloadAssembly
-[Licensing::Client] Successfully resolved entitlement details
-- Loaded All Assemblies, in  3.205 seconds
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
-Native extension for Android target not found
-Native extension for WindowsStandalone target not found
-Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.923 seconds
-Domain Reload Profiling: 4141ms
-	BeginReloadAssembly (1699ms)
-		ExecutionOrderSort (4ms)
-		DisableScriptedObjects (217ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (3ms)
-		CreateAndSetChildDomain (769ms)
-	RebuildCommonClasses (39ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (40ms)
-	LoadAllAssembliesAndSetupDomain (1427ms)
-		LoadAssemblies (1274ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (426ms)
-			TypeCache.Refresh (63ms)
-				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (330ms)
-			ResolveRequiredComponents (14ms)
-	FinalizeReload (924ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (767ms)
+		SetupLoadedEditorAssemblies (457ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (8ms)
-			SetLoadedEditorAssemblies (7ms)
-			BeforeProcessingInitializeOnLoad (168ms)
-			ProcessInitializeOnLoadAttributes (537ms)
-			ProcessInitializeOnLoadMethodAttributes (41ms)
-			AfterProcessingInitializeOnLoad (5ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (110ms)
+			ProcessInitializeOnLoadAttributes (295ms)
+			ProcessInitializeOnLoadMethodAttributes (37ms)
+			AfterProcessingInitializeOnLoad (4ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (15ms)
-Refreshing native plugins compatible for Editor in 1.17 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (4ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 0.85 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7150 unused Assets / (5.0 MB). Loaded Objects now: 7880.
-Memory consumption went from 144.5 MB to 139.5 MB.
-Total: 18.541200 ms (FindLiveObjects: 2.895100 ms CreateObjectMapping: 0.718900 ms MarkObjects: 9.860100 ms  DeleteObjects: 5.065600 ms)
+Unloading 7154 unused Assets / (4.9 MB). Loaded Objects now: 7861.
+Memory consumption went from 141.1 MB to 136.2 MB.
+Total: 8.396800 ms (FindLiveObjects: 0.674100 ms CreateObjectMapping: 0.663600 ms MarkObjects: 4.536500 ms  DeleteObjects: 2.521100 ms)
 
-Prepare: number of updated asset objects reloaded= 0
 ========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 15 unused Assets / (1.9 MB). Loaded Objects now: 7880.
-Memory consumption went from 139.4 MB to 137.5 MB.
-Total: 9.833900 ms (FindLiveObjects: 0.845600 ms CreateObjectMapping: 0.337500 ms MarkObjects: 7.592100 ms  DeleteObjects: 1.057500 ms)
+Received Import Request.
+  Time since last request: 523594.213790 seconds.
+  path: Assets/TextMesh Pro/Resources/TMP Settings.asset
+  artifactKey: Guid(3f5b5dff67a942289a9defa416b206f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/TMP Settings.asset using Guid(3f5b5dff67a942289a9defa416b206f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ebc0565ee579df38e56ea5a7acc643f6') in 0.2518373 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 15
 
-Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.934615 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials
+  artifactKey: Guid(731f1baa9d144a9897cb1d341c2092b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials using Guid(731f1baa9d144a9897cb1d341c2092b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ac337e6b4a628b52eb75c657898db092') in 0.0015724 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.490838 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold.otf
+  artifactKey: Guid(4e1157030dc1c8b4fb811dc2af11f671) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold.otf using Guid(4e1157030dc1c8b4fb811dc2af11f671) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '68798c024f763464d2c65f58ecbbd359') in 0.7167875 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 36.317394 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold.otf
+  artifactKey: Guid(4e1157030dc1c8b4fb811dc2af11f671) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold.otf using Guid(4e1157030dc1c8b4fb811dc2af11f671) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c04aa67b4d71af679e4b660ffcd43a10') in 0.0167735 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.161757 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold.otf
+  artifactKey: Guid(4e1157030dc1c8b4fb811dc2af11f671) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold.otf using Guid(4e1157030dc1c8b4fb811dc2af11f671) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd777a08e0b629d32019c0cc599989971') in 0.0296445 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.991830 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold.otf
+  artifactKey: Guid(4e1157030dc1c8b4fb811dc2af11f671) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold.otf using Guid(4e1157030dc1c8b4fb811dc2af11f671) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '979ed533852a0602268a5722ce253c5c') in 0.0303431 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.317493 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold.otf
+  artifactKey: Guid(4e1157030dc1c8b4fb811dc2af11f671) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold.otf using Guid(4e1157030dc1c8b4fb811dc2af11f671) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e4d2460f37f4bfeb9cb9453add94157b') in 0.0173768 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.118296 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold.otf
+  artifactKey: Guid(4e1157030dc1c8b4fb811dc2af11f671) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold.otf using Guid(4e1157030dc1c8b4fb811dc2af11f671) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4deb22ecf1c60c185a23b0702cdc8907') in 0.0148596 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 141.730753 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold SDF.asset
+  artifactKey: Guid(946bf96b1eb58af4487c59577e536b65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold SDF.asset using Guid(946bf96b1eb58af4487c59577e536b65) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6606a0addfdbc4352916da29951a3454') in 0.1064833 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.811481 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold SDF.asset
+  artifactKey: Guid(946bf96b1eb58af4487c59577e536b65) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold SDF.asset using Guid(946bf96b1eb58af4487c59577e536b65) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '4796fa57361b0b17d2f34016e2660fd5') in 0.4244074 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 415.192673 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/ofont.ru_Nautilus Pompilius.ttf
+  artifactKey: Guid(fef5f962608f6bd43b84f2529f4a2ece) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/ofont.ru_Nautilus Pompilius.ttf using Guid(fef5f962608f6bd43b84f2529f4a2ece) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6a365ff7ceed71d9bbed3a0b8ad539bc') in 0.0276738 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.569527 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold SDF.asset
+  artifactKey: Guid(946bf96b1eb58af4487c59577e536b65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold SDF.asset using Guid(946bf96b1eb58af4487c59577e536b65) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fe95d4067fd7b2eb17f602cccc99c8ac') in 0.0388585 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.838434 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/ofont.ru_Nautilus Pompilius.ttf
+  artifactKey: Guid(fef5f962608f6bd43b84f2529f4a2ece) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/ofont.ru_Nautilus Pompilius.ttf using Guid(fef5f962608f6bd43b84f2529f4a2ece) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '8c9ebde8a0fe3f40d4f05ac91280eb87') in 0.0336437 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold SDF.asset
+  artifactKey: Guid(946bf96b1eb58af4487c59577e536b65) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold SDF.asset using Guid(946bf96b1eb58af4487c59577e536b65) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'bf94b528d4fd155d8963befd0ef18e7f') in 0.0390032 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 138.591848 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/VCHoney-SemiBoldDeck.ttf
+  artifactKey: Guid(7166696e6c0c3144b8923da9291d5626) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/VCHoney-SemiBoldDeck.ttf using Guid(7166696e6c0c3144b8923da9291d5626) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '13925eae3efb2d9e9a65284bc25d621a') in 0.0171171 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.988732 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/ofont.ru_Nautilus Pompilius SDF.asset
+  artifactKey: Guid(6b61d37b19fa9ff41adf5e3596ec280a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/ofont.ru_Nautilus Pompilius SDF.asset using Guid(6b61d37b19fa9ff41adf5e3596ec280a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '57fbf6cd621223794bbaeb49eaa18856') in 0.0430279 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.866548 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/VCHoney-SemiBoldDeck.ttf
+  artifactKey: Guid(7166696e6c0c3144b8923da9291d5626) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/VCHoney-SemiBoldDeck.ttf using Guid(7166696e6c0c3144b8923da9291d5626) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '82dbad31f9742c8f7718c8f6ef597f9b') in 0.0248033 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/ofont.ru_Nautilus Pompilius SDF.asset
+  artifactKey: Guid(6b61d37b19fa9ff41adf5e3596ec280a) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/ofont.ru_Nautilus Pompilius SDF.asset using Guid(6b61d37b19fa9ff41adf5e3596ec280a) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '177c292864ff5efef064e2157aa8fa3f') in 0.0546573 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 633.949042 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/VCHoney-SemiBoldDeck SDF.mat
+  artifactKey: Guid(a0b8b9855c48b914395b1938c2a1190b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/VCHoney-SemiBoldDeck SDF.mat using Guid(a0b8b9855c48b914395b1938c2a1190b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9579ff07bd9b5bf9b7ded238c11bdb39') in 0.0905698 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.735635 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/VCHoney-SemiBoldDeck SDF.mat
+  artifactKey: Guid(a0b8b9855c48b914395b1938c2a1190b) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/VCHoney-SemiBoldDeck SDF.mat using Guid(a0b8b9855c48b914395b1938c2a1190b) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'cd97a15ef867fd6cbc1f0855ebe8a6a3') in 0.036294 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 556.326322 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/VCHoney-SemiBoldDeck SDF 1.mat
+  artifactKey: Guid(a132cbfddccad6d44be3748dc14e2441) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/VCHoney-SemiBoldDeck SDF 1.mat using Guid(a132cbfddccad6d44be3748dc14e2441) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '40e8836b842e6fe9b028dbc9bfc8b9b8') in 0.0257933 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.793932 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/VCHoney-SemiBoldDeck SDF 1.mat
+  artifactKey: Guid(a132cbfddccad6d44be3748dc14e2441) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/VCHoney-SemiBoldDeck SDF 1.mat using Guid(a132cbfddccad6d44be3748dc14e2441) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '1eda764191a70bba9b4b607dd512b110') in 0.0681388 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 2679.629075 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold SDF.asset
+  artifactKey: Guid(946bf96b1eb58af4487c59577e536b65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold SDF.asset using Guid(946bf96b1eb58af4487c59577e536b65) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '119ab9addebe4a7f111cea1a668f18f6') in 0.4022088 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.023252 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold SDF.asset
+  artifactKey: Guid(946bf96b1eb58af4487c59577e536b65) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/Cinzel-Bold SDF.asset using Guid(946bf96b1eb58af4487c59577e536b65) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'fa733a17593588c14c3dfbadcf26748b') in 0.1630891 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/VCHoney-SemiBoldDeck SDF.asset
+  artifactKey: Guid(3eede0e31ece6ab41b59c05ab80e913b) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/VCHoney-SemiBoldDeck SDF.asset using Guid(3eede0e31ece6ab41b59c05ab80e913b) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '6d7842310ee654d71cba6d78b872fa0c') in 0.071498 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
